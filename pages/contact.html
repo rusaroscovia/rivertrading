@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – River Trading Ltd</title>
+  <meta name="description" content="Contact River Trading Ltd – call, WhatsApp, email, or send us a message. We're based in Kigali, Rwanda and ready to help." />
+
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { font-family:'DM Sans',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.section-title,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* Page hero */
+    .page-hero {
+      height:300px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:20px; padding-top:80px;
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; text-shadow:2px 2px 12px rgba(0,0,0,0.4); }
+    .page-hero h1 span { color:#FFD700; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
+    .breadcrumb a { color:#FFD700; }
+
+    /* ---- Contact layout ---- */
+    .contact-section { padding:80px 40px; }
+    .contact-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1.5fr; gap:60px; align-items:start; }
+
+    /* Info column */
+    .contact-info-col h2 { font-size:1.8rem; font-weight:900; color:#004e3b; margin-bottom:14px; }
+    .contact-info-col > p { color:#666; line-height:1.7; margin-bottom:28px; font-size:0.97rem; }
+
+    .info-card {
+      display:flex; gap:16px; align-items:flex-start;
+      background:#f9fafb; border-radius:10px; padding:18px 20px;
+      margin-bottom:14px; border:1px solid #e5e7eb;
+      transition:all 0.3s ease;
+    }
+    .info-card:hover { background:#f0fdf4; border-color:#d1fae5; transform:translateX(4px); }
+    .ic-icon { font-size:1.5rem; flex-shrink:0; margin-top:2px; }
+    .info-card h4 { font-family:'Archivo',sans-serif; font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#888; margin-bottom:4px; }
+    .info-card p, .info-card a { color:#004e3b; font-weight:600; font-size:0.95rem; line-height:1.55; }
+    .info-card a { text-decoration:none; transition:color 0.2s ease; }
+    .info-card a:hover { color:#CC0000; }
+
+    /* WhatsApp quick-message button */
+    .wa-direct-btn {
+      display:flex; align-items:center; gap:10px;
+      background:#25D366; color:#fff; border-radius:8px;
+      padding:13px 18px; margin-top:6px; text-decoration:none;
+      font-family:'Archivo',sans-serif; font-size:0.88rem; font-weight:700;
+      transition:all 0.3s ease; border:none; cursor:pointer;
+    }
+    .wa-direct-btn:hover { background:#128C7E; transform:translateY(-2px); box-shadow:0 6px 20px rgba(37,211,102,0.3); }
+    .wa-icon { font-size:1.2rem; }
+
+    /* Social links section */
+    .social-section { margin-top:28px; }
+    .social-section h4 { font-family:'Archivo',sans-serif; font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#888; margin-bottom:14px; }
+    .social-row { display:flex; gap:10px; flex-wrap:wrap; }
+
+    .social-btn {
+      display:flex; align-items:center; gap:8px;
+      padding:9px 16px; border-radius:8px;
+      font-family:'Archivo',sans-serif; font-size:0.82rem; font-weight:700;
+      text-decoration:none; transition:all 0.3s ease;
+    }
+    .social-btn .s-icon { font-size:1rem; }
+    .social-btn:hover { transform:translateY(-2px); filter:brightness(1.1); }
+
+    .social-btn.facebook  { background:#1877F2; color:#fff; }
+    .social-btn.whatsapp  { background:#25D366; color:#fff; }
+    .social-btn.instagram { background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
+    .social-btn.email-btn { background:#004e3b; color:#fff; }
+
+    /* ---- Contact Form ---- */
+    .contact-form-col { background:#fff; border-radius:12px; box-shadow:0 4px 30px rgba(0,0,0,0.09); padding:40px; border:1px solid #f0f0f0; }
+    .contact-form-col h3 { font-size:1.3rem; font-weight:900; color:#004e3b; margin-bottom:8px; }
+    .form-note { font-size:0.85rem; color:#888; margin-bottom:24px; line-height:1.5; }
+
+    .form-group { margin-bottom:18px; }
+    .form-group label { display:block; font-family:'Archivo',sans-serif; font-size:0.78rem; font-weight:800; color:#444; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width:100%; padding:12px 14px;
+      border:2px solid #e5e7eb; border-radius:8px;
+      font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#333;
+      transition:all 0.3s ease; background:#fafafa;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color:#004e3b; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
+    .form-group textarea { resize:vertical; min-height:120px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+    /* Two submit options */
+    .form-actions { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
+    .form-actions button { flex:1; min-width:160px; }
+    .btn-whatsapp-send {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:13px 20px; background:#25D366; color:#fff; border:none;
+      border-radius:8px; font-family:'Archivo',sans-serif; font-size:0.9rem;
+      font-weight:700; cursor:pointer; transition:all 0.3s ease;
+    }
+    .btn-whatsapp-send:hover { background:#128C7E; }
+    .btn-email-send {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:13px 20px; background:#004e3b; color:#fff; border:none;
+      border-radius:8px; font-family:'Archivo',sans-serif; font-size:0.9rem;
+      font-weight:700; cursor:pointer; transition:all 0.3s ease;
+    }
+    .btn-email-send:hover { background:#016630; }
+
+    /* Success toast */
+    .toast {
+      position:fixed; bottom:30px; right:30px; z-index:9999;
+      background:#004e3b; color:#fff; padding:16px 22px;
+      border-radius:10px; box-shadow:0 8px 28px rgba(0,0,0,0.2);
+      display:flex; align-items:center; gap:10px;
+      transform:translateY(20px); opacity:0;
+      transition:all 0.4s ease; pointer-events:none;
+    }
+    .toast.show { transform:translateY(0); opacity:1; }
+    .toast-icon { font-size:1.3rem; }
+
+    /* ---- Map ---- */
+    .map-section { padding:0 40px 80px; }
+    .map-inner { max-width:1100px; margin:0 auto; }
+    .map-inner h3 { font-size:1.1rem; font-weight:700; color:#004e3b; margin-bottom:16px; }
+    .map-frame {
+      width:100%; height:340px; border-radius:12px; overflow:hidden;
+      border:2px solid #e5e7eb; background:#f0fdf4;
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; gap:10px; color:#004e3b;
+    }
+    .map-frame .map-ph-icon { font-size:3rem; }
+    .map-frame p { font-size:0.9rem; color:#888; }
+    .map-frame small { font-size:0.78rem; color:#bbb; }
+
+    @media(max-width:768px) {
+      .contact-inner { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .contact-section,.map-section { padding:60px 20px 60px; }
+      .form-actions { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+      <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="has-dropdown">
+        <a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="about.html#who-we-are"><span class="dd-icon">📖</span> Who We Are</a></li>
+          <li><a href="about.html#mission-vision"><span class="dd-icon">🎯</span> Mission &amp; Vision</a></li>
+          <li><a href="about.html#our-team"><span class="dd-icon">👥</span> Our Team</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html"><span class="dd-icon">🛒</span> Product Supply</a></li>
+          <li><a href="services.html"><span class="dd-icon">📦</span> Bulk &amp; Wholesale</a></li>
+          <li><a href="services.html#delivery-section"><span class="dd-icon">🚚</span> Delivery Service</a></li>
+          <li><a href="services.html#ie-heading"><span class="dd-icon">✈️</span> Import &amp; Export</a></li>
+          <li><a href="services.html"><span class="dd-icon">⭐</span> After-Sales Support</a></li>
+        </ul>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <h1>Contact <span>Us</span></h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>&#8250;</span><span>Contact Us</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info-col reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2 id="contact-heading">We'd Love to<br />Hear From You</h2>
+        <p>Have a question about our products? Want to place a bulk order or enquire about a service? Reach out — we respond fast.</p>
+
+        <!-- Location -->
+        <div class="info-card">
+          <span class="ic-icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Kigali, Rwanda</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="info-card">
+          <span class="ic-icon">📞</span>
+          <div>
+            <h4>Phone Numbers</h4>
+            <a href="tel:+250794427058">+250 794 427 058</a><br />
+            <a href="tel:+250788386303">+250 788 386 303</a><br />
+            <a href="tel:+250788735441">+250 788 735 441</a>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="info-card">
+          <span class="ic-icon">💬</span>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/250794427058" target="_blank" rel="noopener">+250 794 427 058</a>
+            <br />
+            <!-- Direct WhatsApp message button -->
+            <a href="https://wa.me/250794427058?text=Hello%20River%20Trading%20Ltd%2C%20I%20would%20like%20to%20enquire%20about%20your%20products."
+               class="wa-direct-btn" target="_blank" rel="noopener" aria-label="Message us on WhatsApp directly">
+              <span class="wa-icon">💬</span> Message Us on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="info-card">
+          <span class="ic-icon">✉️</span>
+          <div>
+            <h4>Email Address</h4>
+            <!-- ⚠ UPDATE: Replace with the real company email address -->
+            <a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a>
+          </div>
+        </div>
+
+        <!-- Website -->
+        <div class="info-card">
+          <span class="ic-icon">🌐</span>
+          <div>
+            <h4>Website</h4>
+            <a href="https://www.rivertradingltd.com" target="_blank" rel="noopener">www.rivertradingltd.com</a>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-section">
+          <h4>Follow &amp; Connect With Us</h4>
+          <div class="social-row">
+
+            <!-- Facebook — ⚠ UPDATE href with your real Facebook page URL -->
+            <a href="https://facebook.com/rivertradingltd"
+               class="social-btn facebook" target="_blank" rel="noopener"
+               aria-label="Follow River Trading Ltd on Facebook">
+              <span class="s-icon">📘</span> Facebook
+            </a>
+
+            <!-- WhatsApp — links to real number -->
+            <a href="https://wa.me/250794427058"
+               class="social-btn whatsapp" target="_blank" rel="noopener"
+               aria-label="Chat with River Trading Ltd on WhatsApp">
+              <span class="s-icon">💬</span> WhatsApp
+            </a>
+
+            <!-- Instagram — ⚠ UPDATE href with your real Instagram handle -->
+            <a href="https://instagram.com/rivertradingltd"
+               class="social-btn instagram" target="_blank" rel="noopener"
+               aria-label="Follow River Trading Ltd on Instagram">
+              <span class="s-icon">📷</span> Instagram
+            </a>
+
+            <!-- Email shortcut -->
+            <a href="mailto:info@rivertradingltd.com"
+               class="social-btn email-btn"
+               aria-label="Send an email to River Trading Ltd">
+              <span class="s-icon">✉️</span> Email Us
+            </a>
+
+          </div>
+        </div>
+
+      </div><!-- /contact-info-col -->
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-col reveal">
+        <h3>Send Us a Message</h3>
+        <p class="form-note">
+          Fill in the form below and choose how to send it —
+          directly to our WhatsApp or to our email inbox.
+          We aim to respond within a few hours.
+        </p>
+
+        <form id="contactForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name <span style="color:#CC0000">*</span></label>
+              <input type="text" id="fname" name="fname" placeholder="Your first name" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name <span style="color:#CC0000">*</span></label>
+              <input type="text" id="lname" name="lname" placeholder="Your last name" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span style="color:#CC0000">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">— Select a subject —</option>
+              <option value="Product Inquiry">Product Inquiry</option>
+              <option value="Bulk Order">Bulk / Wholesale Order</option>
+              <option value="Pricing Information">Pricing Information</option>
+              <option value="Delivery Question">Delivery Question</option>
+              <option value="Import & Export">Import &amp; Export</option>
+              <option value="Partnership">Partnership Opportunity</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span style="color:#CC0000">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+
+          <!-- Two send options -->
+          <div class="form-actions">
+            <button type="button" class="btn-whatsapp-send" id="sendWhatsApp" aria-label="Send message via WhatsApp">
+              <span>💬</span> Send via WhatsApp
+            </button>
+            <button type="button" class="btn-email-send" id="sendEmail" aria-label="Send message via email">
+              <span>✉️</span> Send via Email
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-inner">
+      <h3>📍 Find Us in Kigali, Rwanda</h3>
+      <div class="map-frame">
+        <!--
+          TO ADD GOOGLE MAPS:
+          1. Go to https://maps.google.com
+          2. Search for your exact address in Kigali
+          3. Click Share → Embed a map → Copy HTML
+          4. Replace this entire <div class="map-frame"> block with the <iframe> code
+        -->
+        <span class="map-ph-icon">🗺️</span>
+        <p>Kigali, Rwanda</p>
+        <small>Replace with your Google Maps embed</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <span class="toast-icon" id="toastIcon">✅</span>
+    <span id="toastMsg">Opening WhatsApp…</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
+          <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        </div>
+        <p>Rwanda's trusted supplier of quality tools, lubricants, cleaning products, and hardware.</p>
+        <div class="social-links">
+          <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
+          <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="../index.html">&#8250; Home</a></li>
+          <li><a href="about.html">&#8250; About Us</a></li>
+          <li><a href="services.html">&#8250; Services</a></li>
+          <li><a href="products.html">&#8250; Products</a></li>
+          <li><a href="partners.html">&#8250; Partners</a></li>
+          <li><a href="blogs.html">&#8250; Blog</a></li>
+          <li><a href="contact.html">&#8250; Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
+        <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
+        <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
+        <div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
+      <p>Designed with care &mdash; <a href="contact.html">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+  <script src="../js/main.js"></script>
+
+  <script>
+  // ============================================================
+  //  CONTACT FORM — WhatsApp + Email submission
+  //  ⚠ UPDATE: Change WHATSAPP_NUMBER and EMAIL to real values
+  // ============================================================
+  const WHATSAPP_NUMBER = '250794427058';        // ← River Trading Ltd main WhatsApp number
+  const EMAIL_ADDRESS   = 'info@rivertradingltd.com'; // ← Real company email address
+
+  function getFormData() {
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value.trim();
+    return { fname, lname, email, phone, subject, message };
+  }
+
+  function validateForm(data) {
+    if (!data.fname) { alert('Please enter your first name.'); document.getElementById('fname').focus(); return false; }
+    if (!data.lname) { alert('Please enter your last name.');  document.getElementById('lname').focus(); return false; }
+    if (!data.subject) { alert('Please select a subject.');   document.getElementById('subject').focus(); return false; }
+    if (!data.message) { alert('Please enter your message.'); document.getElementById('message').focus(); return false; }
+    return true;
+  }
+
+  function showToast(icon, msg) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastIcon').textContent = icon;
+    document.getElementById('toastMsg').textContent  = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // ---- Send via WhatsApp ----
+  document.getElementById('sendWhatsApp').addEventListener('click', () => {
+    const d = getFormData();
+    if (!validateForm(d)) return;
+
+    // Build a readable WhatsApp message
+    const text = [
+      '👋 Hello River Trading Ltd!',
+      '',
+      `*Name:* ${d.fname} ${d.lname}`,
+      d.phone   ? `*Phone:* ${d.phone}`   : null,
+      d.email   ? `*Email:* ${d.email}`   : null,
+      `*Subject:* ${d.subject}`,
+      '',
+      `*Message:*`,
+      d.message,
+    ].filter(l => l !== null).join('\n');
+
+    const encoded = encodeURIComponent(text);
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+    showToast('💬', 'Opening WhatsApp with your message…');
+  });
+
+  // ---- Send via Email (mailto fallback) ----
+  document.getElementById('sendEmail').addEventListener('click', () => {
+    const d = getFormData();
+    if (!validateForm(d)) return;
+
+    const subject = encodeURIComponent(`[River Trading Ltd] ${d.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${d.fname} ${d.lname}\n` +
+      (d.phone ? `Phone: ${d.phone}\n` : '') +
+      (d.email ? `Reply-to: ${d.email}\n` : '') +
+      `\nMessage:\n${d.message}`
+    );
+
+    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+    showToast('✉️', 'Opening your email app…');
+  });
+  </script>
+
+</body>
+</html>

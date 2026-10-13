@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – River Trading Ltd</title>
+  <meta name="description" content="Read stories and insights from businesses and clients who work with River Trading Ltd. Real experiences from real partners across Rwanda." />
+
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { font-family:'DM Sans',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.section-title,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* Page hero */
+    .page-hero {
+      height:340px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:20px; padding-top:80px;
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; text-shadow:2px 2px 12px rgba(0,0,0,0.4); }
+    .page-hero h1 span { color:#FFD700; }
+    .page-hero p { color:rgba(255,255,255,0.8); font-size:1rem; max-width:560px; line-height:1.65; margin-top:10px; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
+    .breadcrumb a { color:#FFD700; }
+
+    /* Intro strip */
+    .blog-intro {
+      background:#f0fdf4; border-bottom:2px solid #dcfce7;
+      padding:32px 40px; text-align:center;
+    }
+    .blog-intro p { color:#004e3b; font-size:0.97rem; max-width:720px; margin:0 auto; line-height:1.75; }
+    .blog-intro strong { color:#CC0000; }
+
+    /* ---- Main layout ---- */
+    .blog-page { padding:72px 40px 80px; max-width:1200px; margin:0 auto; }
+
+    /* Section heading */
+    .blog-section-head { margin-bottom:40px; }
+    .blog-section-head p { color:#666; font-size:0.97rem; margin-top:8px; }
+
+    /* ---- Blog grid ---- */
+    .blog-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:32px;
+      margin-bottom:72px;
+    }
+
+    /* Blog card */
+    .blog-card {
+      background:#fff; border-radius:14px;
+      box-shadow:0 3px 18px rgba(0,0,0,0.08); overflow:hidden;
+      transition:all 0.35s ease; border:1px solid #f0f0f0;
+      display:flex; flex-direction:column; cursor:pointer;
+    }
+    .blog-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.14); border-color:#e5e7eb; }
+
+    /* Shop photo */
+    .blog-photo {
+      height:220px; overflow:hidden; position:relative; flex-shrink:0;
+    }
+    .blog-photo img { width:100%; height:100%; object-fit:cover; transition:transform 0.45s ease; }
+    .blog-card:hover .blog-photo img { transform:scale(1.06); }
+    .blog-photo-placeholder {
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:4rem;
+    }
+
+    /* Type badge */
+    .blog-badge {
+      position:absolute; top:14px; left:14px;
+      padding:5px 12px; border-radius:4px;
+      font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px;
+      color:#fff; background:#004e3b;
+    }
+    .blog-badge.partner { background:#CC0000; }
+    .blog-badge.longterm { background:#008138; }
+
+    /* Card body */
+    .blog-body { padding:22px 24px 26px; flex:1; display:flex; flex-direction:column; }
+
+    /* Author row */
+    .blog-author {
+      display:flex; align-items:center; gap:12px; margin-bottom:14px;
+    }
+    .author-avatar {
+      width:46px; height:46px; border-radius:50%; overflow:hidden; flex-shrink:0;
+      background:linear-gradient(135deg,#004e3b,#CC0000);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem; font-weight:900; color:#FFD700;
+      font-family:'Archivo',sans-serif; border:2px solid #FFD700;
+    }
+    .author-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
+    .author-info { flex:1; }
+    .author-name { font-family:'Archivo',sans-serif; font-size:0.95rem; font-weight:800; color:#111; line-height:1.2; }
+    .author-biz  { font-size:0.78rem; color:#888; margin-top:2px; }
+
+    /* Story date */
+    .blog-date { font-size:0.75rem; color:#bbb; letter-spacing:0.5px; text-align:right; }
+
+    .blog-title {
+      font-family:'Archivo',sans-serif; font-size:1.05rem; font-weight:900;
+      color:#111; margin-bottom:10px; line-height:1.35;
+    }
+
+    .blog-excerpt {
+      font-size:0.9rem; color:#666; line-height:1.72; flex:1; margin-bottom:18px;
+    }
+
+    .blog-quote {
+      border-left:4px solid #FFD700; padding:10px 14px;
+      background:#fffbeb; border-radius:0 6px 6px 0;
+      font-size:0.88rem; font-style:italic; color:#555;
+      line-height:1.65; margin-bottom:16px;
+    }
+
+    .blog-footer {
+      display:flex; justify-content:space-between; align-items:center;
+      padding-top:14px; border-top:1px solid #f0f0f0;
+    }
+    .blog-tags { display:flex; gap:6px; flex-wrap:wrap; }
+    .blog-tag {
+      font-size:0.7rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.5px; color:#008138; background:#f0fdf4;
+      padding:3px 8px; border-radius:10px;
+    }
+    .read-more {
+      font-family:'Archivo',sans-serif; font-size:0.8rem; font-weight:700;
+      color:#CC0000; text-transform:uppercase; letter-spacing:0.5px;
+      text-decoration:none; transition:color 0.2s ease;
+    }
+    .read-more:hover { color:#004e3b; }
+
+    /* ---- Blog Modal ---- */
+    .modal-overlay {
+      position:fixed; inset:0; z-index:2000;
+      background:rgba(0,0,0,0.75); display:flex; align-items:center; justify-content:center;
+      padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal {
+      background:#fff; border-radius:14px; max-width:680px; width:100%;
+      max-height:90vh; overflow-y:auto;
+      transform:translateY(20px) scale(0.97); transition:transform 0.3s ease;
+      box-shadow:0 24px 60px rgba(0,0,0,0.35); position:relative;
+    }
+    .modal-overlay.open .modal { transform:translateY(0) scale(1); }
+    .modal-hero { height:260px; overflow:hidden; border-radius:14px 14px 0 0; position:relative; }
+    .modal-hero img { width:100%; height:100%; object-fit:cover; }
+    .modal-hero-ph {
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:5rem;
+    }
+    .modal-close {
+      position:absolute; top:14px; right:14px; width:36px; height:36px;
+      border-radius:50%; background:rgba(0,0,0,0.5); border:none; color:#fff;
+      font-size:1.2rem; cursor:pointer; display:flex; align-items:center;
+      justify-content:center; z-index:5; transition:background 0.2s;
+    }
+    .modal-close:hover { background:rgba(0,0,0,0.85); }
+    .modal-content { padding:28px 32px 36px; }
+    .modal-meta { display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+    .modal-meta .author-avatar { width:52px; height:52px; font-size:1.3rem; }
+    .modal-title { font-family:'Archivo',sans-serif; font-size:1.5rem; font-weight:900; color:#111; margin-bottom:8px; line-height:1.3; }
+    .modal-body-text { color:#555; font-size:0.93rem; line-height:1.8; }
+    .modal-body-text p { margin-bottom:14px; }
+    .modal-pullquote {
+      border-left:5px solid #FFD700; padding:14px 18px;
+      background:#fffbeb; border-radius:0 6px 6px 0;
+      font-size:1rem; font-style:italic; color:#004e3b; font-weight:600;
+      margin:20px 0; line-height:1.65;
+    }
+
+    /* ---- CTA to share story ---- */
+    .share-cta {
+      background:#004e3b; padding:72px 40px; text-align:center;
+    }
+    .share-cta h2 { font-family:'Archivo',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:900; color:#fff; margin-bottom:12px; }
+    .share-cta p { color:rgba(255,255,255,0.8); font-size:1rem; max-width:560px; margin:0 auto 28px; line-height:1.7; }
+
+    @media(max-width:768px) {
+      .blog-page { padding:48px 20px 60px; }
+      .blog-intro { padding:24px 20px; }
+      .modal-content { padding:20px; }
+      .share-cta { padding:52px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+      <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="has-dropdown">
+        <a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="about.html#who-we-are"><span class="dd-icon">📖</span> Who We Are</a></li>
+          <li><a href="about.html#mission-vision"><span class="dd-icon">🎯</span> Mission &amp; Vision</a></li>
+          <li><a href="about.html#our-team"><span class="dd-icon">👥</span> Our Team</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html"><span class="dd-icon">🛒</span> Product Supply</a></li>
+          <li><a href="services.html"><span class="dd-icon">📦</span> Bulk &amp; Wholesale</a></li>
+          <li><a href="services.html#delivery-section"><span class="dd-icon">🚚</span> Delivery Service</a></li>
+          <li><a href="services.html#ie-heading"><span class="dd-icon">✈️</span> Import &amp; Export</a></li>
+          <li><a href="services.html"><span class="dd-icon">⭐</span> After-Sales Support</a></li>
+        </ul>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <h1>Client <span>Stories</span> &amp; Blog</h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>&#8250;</span><span>Blog</span>
+      </div>
+      <p>Real businesses. Real impact. Stories from the clients who trust River Trading Ltd.</p>
+    </div>
+  </div>
+
+  <!-- INTRO STRIP -->
+  <div class="blog-intro">
+    <p>
+      Below are stories and insights shared by businesses and individuals who have worked with River Trading Ltd.
+      These are <strong>real clients</strong> — from mechanics to shop owners — sharing how our products and service
+      have made a difference in their work and lives.
+    </p>
+  </div>
+
+  <!-- BLOG CONTENT -->
+  <main class="blog-page">
+
+    <div class="blog-section-head reveal">
+      <span class="section-label">Our Clients Speak</span>
+      <h2 class="section-title">Stories from the <span>People We Serve</span></h2>
+      <p>Each story below comes from a client or business partner who has been part of the River Trading Ltd journey.</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+      <!-- Cards rendered by JS below -->
+    </div>
+
+  </main>
+
+  <!-- BLOG MODAL -->
+  <div class="modal-overlay" id="blogModal" role="dialog" aria-modal="true" aria-labelledby="bModalTitle">
+    <div class="modal">
+      <div class="modal-hero" id="bModalHero">
+        <div class="modal-hero-ph" id="bModalHeroPh"></div>
+        <img id="bModalImg" src="" alt="" style="display:none;" />
+      </div>
+      <button class="modal-close" id="bModalClose" aria-label="Close story">&#215;</button>
+      <div class="modal-content">
+        <div class="modal-meta">
+          <div class="author-avatar" id="bModalAvatar"></div>
+          <div>
+            <div class="author-name" id="bModalAuthor"></div>
+            <div class="author-biz" id="bModalBiz"></div>
+          </div>
+          <div class="blog-date" id="bModalDate" style="margin-left:auto;"></div>
+        </div>
+        <h2 class="modal-title" id="bModalTitle"></h2>
+        <div class="modal-body-text" id="bModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA: share your story -->
+  <div class="share-cta reveal">
+    <h2>Have a Story to Share?</h2>
+    <p>
+      Are you a client or business partner of River Trading Ltd? We'd love to feature your experience.
+      Get in touch and let us know — your story could inspire others.
+    </p>
+    <a href="contact.html" class="btn btn-outline" style="border-color:#FFD700; color:#fff;">
+      Share Your Story &rarr;
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
+          <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        </div>
+        <p>Rwanda's trusted supplier of quality products since 2020.</p>
+        <div class="social-links">
+          <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
+          <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+          </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="../index.html">&#8250; Home</a></li>
+          <li><a href="about.html">&#8250; About Us</a></li>
+          <li><a href="services.html">&#8250; Services</a></li>
+          <li><a href="products.html">&#8250; Products</a></li>
+          <li><a href="blogs.html"><li><a href="partners.html">&#8250; Partners</a></li>
+          &#8250; Blog</a></li>
+          <li><a href="contact.html">&#8250; Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
+        <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
+                <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
+<div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+  <script src="../js/main.js"></script>
+
+  <script>
+  // ============================================================
+  //  BLOG / CLIENT STORIES DATA
+  //  Replace image paths and fill in real client names/photos.
+  //  avatar: initials string (2 chars) OR path to a real photo
+  // ============================================================
+  const BLOGS = [
+    {
+      id: 'b1',
+      badge: 'Long-term Partner', badgeClass: 'longterm',
+      photo: '../images/blog-shop1.jpg', photoPh: '🔧',
+      avatar: '../images/client-1.jpg', avatarInitials: 'JM',
+      author: 'Jean-Marie Nkurunziza',
+      business: 'JM Auto Garage – Kigali, Gisozi',
+      date: 'August 2024',
+      title: 'How RIVER® Lubricants Saved Us Time and Money at the Garage',
+      excerpt: 'Before working with River Trading Ltd, we were buying lubricants from different suppliers every week — inconsistent quality, unpredictable delivery. Since switching, it\'s been a different experience entirely.',
+      quote: '"The machine oil from River is consistent every time. Our engines last longer, and our customers notice the difference."',
+      tags: ['Lubricants','Auto','Long-term'],
+      fullStory: [
+        'I have been running JM Auto Garage in Gisozi for six years. In the first three years, one of our biggest headaches was sourcing quality lubricants. We tried different suppliers, but the oil quality varied, and sometimes deliveries didn\'t come on time, which meant turning customers away.',
+        'A colleague recommended River Trading Ltd in early 2022. We started with a trial order of 10 litres of RIVER® Multipurpose Machine Oil. The difference was immediately noticeable — the viscosity was consistent, the engines ran quieter, and we had zero complaints from customers about oil quality.',
+        'What I appreciate most is the reliability. I place an order on WhatsApp and the delivery arrives the next day. For a busy garage like ours, that predictability is everything.',
+        'We now order in 20L industrial drums every two weeks. River has become a trusted part of how we operate. I recommend them to every garage owner I know.'
+      ],
+      pullquote: '"Reliability is everything in this business. River Trading Ltd delivers — on time, every time."'
+    },
+    {
+      id: 'b2',
+      badge: 'Client Story', badgeClass: '',
+      photo: '../images/blog-shop2.jpg', photoPh: '🏪',
+      avatar: '../images/client-2.jpg', avatarInitials: 'AU',
+      author: 'Annette Uwamahoro',
+      business: 'Chez Annette Boutique – Kigali, Kimironko',
+      date: 'July 2024',
+      title: 'Keeping My Shop Spotless — The River Glass Cleaner Story',
+      excerpt: 'I run a small boutique in Kimironko market. Glass display cases are the face of my shop — if they\'re smudged or dirty, customers don\'t want to look inside. River\'s Glass Cleaner changed that.',
+      quote: '"My display cases are always crystal clear now. Customers comment on how clean and welcoming the shop looks."',
+      tags: ['Cleaning','Retail','Display'],
+      fullStory: [
+        'I opened Chez Annette Boutique four years ago in Kimironko. My shop sells clothing and accessories, and the display cases are what attract customers. I used to spend a lot of time cleaning them, and no matter what I used, there were always streaks left behind.',
+        'Someone at the market told me about River Trading Ltd\'s Glass Cleaner. I was sceptical at first — I had tried many products. But the first time I used it, the cases were completely streak-free and stayed clean much longer than with other products.',
+        'I now order a case of 12 bottles every month. I also use it on the shop mirrors and glass door panels. The shop looks much more professional, and I genuinely believe it has helped bring in more customers who feel welcome in a clean, bright space.',
+        'Beyond the product, the customer service from River has been excellent. I once received a damaged bottle and they replaced it the same day without any argument.'
+      ],
+      pullquote: '"A clean shop is a welcoming shop. River\'s Glass Cleaner makes that easy."'
+    },
+    {
+      id: 'b3',
+      badge: 'Partner', badgeClass: 'partner',
+      photo: '../images/blog-shop3.jpg', photoPh: '🏗️',
+      avatar: '../images/client-3.jpg', avatarInitials: 'EP',
+      author: 'Emmanuel Habimana',
+      business: 'Habimana Construction Co. – Kigali',
+      date: 'June 2024',
+      title: 'Building Better: How River\'s Hardware Supply Supports Our Projects',
+      excerpt: 'As a construction company, we need reliable hardware supply. Delays in materials mean delays in projects. River Trading Ltd has become one of our most dependable suppliers.',
+      quote: '"When I call River, I know the materials will be there. That confidence is what a construction company needs."',
+      tags: ['Hardware','Construction','Bulk Orders'],
+      fullStory: [
+        'Habimana Construction has been operating in Kigali for eight years. We handle residential and commercial builds. One of the biggest challenges in construction is material availability — if a supplier runs out of stock or delays delivery, the whole site stops.',
+        'We started working with River Trading Ltd two years ago, initially for barbed wire fencing for a residential compound project. Their delivery was on time and the wire quality was excellent. We then expanded to ordering spirit levels, junction boxes, and other hardware.',
+        'What sets River apart from other suppliers is their stock management. They always have what we need, and when we need a large quantity quickly, they handle it without a fuss. We once needed 50 rolls of barbed wire within 48 hours — River delivered all of it.',
+        'We have since added them as one of our three preferred hardware suppliers. The relationship has been professional and reliable from day one. I recommend River to every contractor I work with.'
+      ],
+      pullquote: '"In construction, time is money. River\'s on-time delivery has saved us both."'
+    },
+    {
+      id: 'b4',
+      badge: 'Client Story', badgeClass: '',
+      photo: '../images/blog-shop4.jpg', photoPh: '🐕',
+      avatar: '../images/client-4.jpg', avatarInitials: 'GR',
+      author: 'Grace Rwigamba',
+      business: 'Paws Pet Care – Kigali, Nyamirambo',
+      date: 'May 2024',
+      title: 'From Struggling to Find Pet Products to Having a Reliable Supplier',
+      excerpt: 'Finding quality pet care products in Rwanda was always a challenge for my pet care business. RIVER® Dog Shampoo solved that problem in a way I didn\'t expect.',
+      quote: '"The dogs come out cleaner, calmer, and their coats are healthier. Clients notice and keep coming back."',
+      tags: ['Household','Pet Care','Grooming'],
+      fullStory: [
+        'I started Paws Pet Care as a dog grooming and boarding service three years ago. One of my persistent challenges was finding consistent quality shampoo for the dogs. Products from the general market varied wildly — some were too harsh and irritated the dogs\' skin.',
+        'I found River Trading Ltd through a recommendation on a local business Facebook group. They had RIVER® Dog Shampoo, which I ordered one bottle of to try. Within three washes, I could see the difference — coats were shinier, skin looked healthier, and the dogs tolerated the bathing process better.',
+        'I now order in bulk — 24 bottles per month. River delivers to my shop reliably, and the price for bulk orders is very reasonable. It has allowed me to offer a consistent quality of grooming that my clients trust.',
+        'I also use their insect repellent for the outdoor play area where dogs spend time. The combination of these two products has genuinely improved the quality of service I provide.'
+      ],
+      pullquote: '"Quality products create quality service. River Trading Ltd makes that possible for small businesses like mine."'
+    },
+    {
+      id: 'b5',
+      badge: 'Long-term Partner', badgeClass: 'longterm',
+      photo: '../images/blog-shop5.jpg', photoPh: '🏠',
+      avatar: '../images/client-5.jpg', avatarInitials: 'PM',
+      author: 'Patrick Muhire',
+      business: 'Muhire Hardware Shop – Musanze',
+      date: 'April 2024',
+      title: 'Stocking River Products Doubled Our Customer Foot Traffic',
+      excerpt: 'I run a hardware shop in Musanze. When I started stocking RIVER® products, customers started asking specifically for them by name. That\'s when I knew the brand had real value.',
+      quote: '"Customers ask for River products by name now. That kind of brand trust is good for my shop."',
+      tags: ['Reseller','Hardware','Tools'],
+      fullStory: [
+        'I have been running Muhire Hardware Shop in Musanze for five years. When River Trading Ltd approached me about stocking their product lines, I was cautious — I already had several suppliers. But I agreed to trial a small selection.',
+        'Within three months, the RIVER® Lubricant and Car Wash Soap were my two fastest-selling items. Customers came in asking specifically for those products. I realised River had built a real brand reputation even in Musanze.',
+        'I expanded to stocking their tools range — the glass cutter, Tenayi wire pliers, and casters. All of them sell steadily. The quality-to-price ratio is what customers respond to.',
+        'The reseller arrangement with River has been straightforward. Good margins, reliable stock, and a team that responds quickly when I need to reorder. For a small hardware shop in a provincial town, having a supplier you can count on makes all the difference.'
+      ],
+      pullquote: '"When your supplier is reliable, your shop can be reliable too. River makes that possible."'
+    },
+    {
+      id: 'b6',
+      badge: 'Client Story', badgeClass: '',
+      photo: '../images/blog-shop6.jpg', photoPh: '🚗',
+      avatar: '../images/client-6.jpg', avatarInitials: 'CK',
+      author: 'Claudine Kayitesi',
+      business: 'Kayitesi Car Wash – Kigali, Remera',
+      date: 'March 2024',
+      title: 'Running a Professional Car Wash With RIVER® Products',
+      excerpt: 'When I opened my car wash, I needed products that would make vehicles shine — but not damage paint over time. RIVER® Car Wash Soap delivered exactly that.',
+      quote: '"Cars leave looking like they just came from the showroom. That\'s the kind of result that builds a customer base."',
+      tags: ['Cleaning','Car Wash','Bulk'],
+      fullStory: [
+        'I opened Kayitesi Car Wash in Remera 18 months ago. Starting a car wash meant investing in equipment and finding the right products. The shampoo you use matters a lot — using the wrong product can strip wax, cause paint fade, or leave residue that makes the car look worse.',
+        'I found River Trading Ltd\'s Car Wash Soap during my research phase before opening. I liked that it contained no harsh salts and included a conditioning agent for shine. I ordered a 5L test batch and used it for two weeks before opening.',
+        'The results were outstanding. Cars came off the wash looking genuinely clean — not just wet. The shine lasted longer than with other soaps I tried. I now order 10 x 5L drums every month.',
+        'River has been a great partner for my business. They deliver on schedule, the product is consistent, and the pricing for bulk orders is excellent. Starting a business is hard — having a reliable supplier is one less thing to worry about.'
+      ],
+      pullquote: '"A car that shines builds trust with customers. River\'s soap makes every wash count."'
+    }
+  ];
+
+  // ---- Render cards ----
+  function renderBlogCard(b) {
+    const avatarContent = b.avatar
+      ? `<img src="${b.avatar}" alt="${b.author}" onerror="this.style.display='none'; this.parentNode.textContent='${b.avatarInitials}';" />`
+      : b.avatarInitials;
+
+    return `
+    <article class="blog-card reveal" onclick="openBlog('${b.id}')" role="button" tabindex="0"
+      aria-label="Read ${b.author}'s story: ${b.title}"
+      onkeydown="if(event.key==='Enter'||event.key===' ')openBlog('${b.id}')">
+      <div class="blog-photo">
+        <span class="blog-badge ${b.badgeClass}">${b.badge}</span>
+        <img src="${b.photo}" alt="${b.author}'s shop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="blog-photo-placeholder" style="display:none;">${b.photoPh}</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-author">
+          <div class="author-avatar">${avatarContent}</div>
+          <div class="author-info">
+            <div class="author-name">${b.author}</div>
+            <div class="author-biz">${b.business}</div>
+          </div>
+          <div class="blog-date">${b.date}</div>
+        </div>
+        <h3 class="blog-title">${b.title}</h3>
+        <p class="blog-excerpt">${b.excerpt}</p>
+        <div class="blog-quote">${b.quote}</div>
+        <div class="blog-footer">
+          <div class="blog-tags">${b.tags.map(t=>`<span class="blog-tag">${t}</span>`).join('')}</div>
+          <span class="read-more">Read Story &#8594;</span>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  document.getElementById('blogGrid').innerHTML = BLOGS.map(renderBlogCard).join('');
+
+  // ---- Modal ----
+  function openBlog(id) {
+    const b = BLOGS.find(x => x.id === id);
+    if (!b) return;
+
+    document.getElementById('bModalAuthor').textContent = b.author;
+    document.getElementById('bModalBiz').textContent    = b.business;
+    document.getElementById('bModalDate').textContent   = b.date;
+    document.getElementById('bModalTitle').textContent  = b.title;
+
+    // Avatar
+    const av = document.getElementById('bModalAvatar');
+    av.innerHTML = b.avatar
+      ? `<img src="${b.avatar}" alt="${b.author}" onerror="this.style.display='none'; this.parentNode.textContent='${b.avatarInitials}';" />`
+      : b.avatarInitials;
+
+    // Hero photo
+    const heroImg = document.getElementById('bModalImg');
+    heroImg.src = b.photo; heroImg.alt = b.author + ' shop';
+    heroImg.style.display = '';
+    heroImg.onerror = () => { heroImg.style.display='none'; document.getElementById('bModalHeroPh').textContent = b.photoPh; };
+    document.getElementById('bModalHeroPh').textContent = b.photoPh;
+
+    // Body
+    const body = document.getElementById('bModalBody');
+    body.innerHTML = b.fullStory.map((para,i) => {
+      const text = `<p>${para}</p>`;
+      return (i === Math.floor(b.fullStory.length/2))
+        ? `<blockquote class="modal-pullquote">${b.pullquote}</blockquote>${text}`
+        : text;
+    }).join('');
+
+    document.getElementById('blogModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBlog() {
+    document.getElementById('blogModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('bModalClose').addEventListener('click', closeBlog);
+  document.getElementById('blogModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('blogModal')) closeBlog();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlog(); });
+  </script>
+
+</body>
+</html>

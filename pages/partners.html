@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Partners – River Trading Ltd</title>
+  <meta name="description" content="Meet the trusted partners of River Trading Ltd – the companies and individuals whose products and services strengthen our offering to clients across Rwanda." />
+
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { font-family:'DM Sans',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.section-title,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left  { opacity:0; transform:translateX(-44px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-right { opacity:0; transform:translateX( 44px); transition:opacity 0.75s ease,transform 0.75s ease; }
+    .reveal-left.visible,.reveal-right.visible { opacity:1; transform:translateX(0); }
+
+    /* Page hero */
+    .page-hero {
+      height:340px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:20px; padding-top:80px;
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; text-shadow:2px 2px 12px rgba(0,0,0,0.4); }
+    .page-hero h1 span { color:#FFD700; }
+    .page-hero p { color:rgba(255,255,255,0.8); font-size:1rem; max-width:560px; margin:10px auto 0; line-height:1.65; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; margin-bottom:10px; }
+    .breadcrumb a { color:#FFD700; }
+
+    .section { padding:90px 40px; }
+    .section-inner { max-width:1180px; margin:0 auto; }
+    .section-bg { background:#f9fafb; }
+
+    /* ---- Intro ---- */
+    .partners-intro {
+      display:grid; grid-template-columns:1.1fr 1fr; gap:70px; align-items:center; margin-bottom:80px;
+    }
+    .intro-text .lead { color:#555; font-size:1rem; line-height:1.85; margin-bottom:16px; }
+    .intro-text .highlight-bar {
+      border-left:5px solid #FFD700; padding:14px 20px;
+      background:#f0fdf4; color:#004e3b; font-weight:700; font-size:1.05rem;
+      line-height:1.6; border-radius:0 6px 6px 0; margin:24px 0;
+    }
+    .intro-img {
+      background:linear-gradient(160deg,#004e3b,#CC0000);
+      border-radius:12px; height:340px;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 12px 40px rgba(0,0,0,0.16); position:relative; overflow:hidden;
+    }
+    .intro-img img { width:130px; height:130px; object-fit:contain; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.4)); z-index:1; }
+    .intro-img::before { content:''; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,215,0,0.1); top:-60px; right:-60px; }
+
+    /* ---- Partner type tabs ---- */
+    .partner-tabs {
+      display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px;
+    }
+    .partner-tab {
+      padding:9px 20px; border-radius:20px; font-size:0.82rem; font-weight:700;
+      font-family:'Archivo',sans-serif; text-transform:uppercase; letter-spacing:0.5px;
+      cursor:pointer; border:2px solid #e5e7eb; background:#fff; color:#666;
+      transition:all 0.25s ease;
+    }
+    .partner-tab:hover { border-color:#004e3b; color:#004e3b; }
+    .partner-tab.active { background:#004e3b; border-color:#004e3b; color:#fff; }
+
+    /* ---- Partner cards grid ---- */
+    .partners-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:28px;
+      margin-bottom:72px;
+    }
+
+    .partner-card {
+      background:#fff; border-radius:14px;
+      box-shadow:0 3px 18px rgba(0,0,0,0.07); overflow:hidden;
+      transition:all 0.35s ease; border:1px solid #f0f0f0;
+    }
+    .partner-card:hover { transform:translateY(-6px); box-shadow:0 14px 36px rgba(0,0,0,0.13); border-color:#e5e7eb; }
+
+    /* Logo / image area */
+    .partner-logo-area {
+      height:160px; overflow:hidden; position:relative;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,#f0fdf4,#dcfce7);
+    }
+    .partner-logo-area img {
+      max-width:70%; max-height:100px; object-fit:contain;
+      transition:transform 0.4s ease;
+    }
+    .partner-card:hover .partner-logo-area img { transform:scale(1.06); }
+    .partner-logo-ph {
+      font-size:3.5rem;
+    }
+
+    /* Type ribbon */
+    .partner-type-badge {
+      position:absolute; top:12px; left:0;
+      background:#004e3b; color:#fff;
+      font-size:0.68rem; font-weight:800; text-transform:uppercase;
+      letter-spacing:1.5px; padding:5px 14px 5px 12px; border-radius:0 4px 4px 0;
+    }
+    .partner-type-badge.supplier  { background:#004e3b; }
+    .partner-type-badge.products  { background:#CC0000; }
+    .partner-type-badge.services  { background:#008138; }
+    .partner-type-badge.logistics { background:#c27006; }
+
+    /* Card body */
+    .partner-body { padding:20px 22px 24px; }
+    .partner-name { font-family:'Archivo',sans-serif; font-size:1.05rem; font-weight:900; color:#111; margin-bottom:4px; }
+    .partner-location { font-size:0.78rem; color:#888; margin-bottom:10px; display:flex; align-items:center; gap:4px; }
+    .partner-desc { font-size:0.88rem; color:#666; line-height:1.7; margin-bottom:14px; }
+
+    /* What they provide */
+    .partner-provides { list-style:none; padding:0; margin-bottom:16px; }
+    .partner-provides li {
+      font-size:0.82rem; color:#555; line-height:1.6;
+      padding-left:18px; position:relative; margin-bottom:4px;
+    }
+    .partner-provides li::before { content:'✓'; position:absolute; left:0; color:#004e3b; font-weight:700; }
+
+    .partner-footer { display:flex; justify-content:space-between; align-items:center; padding-top:12px; border-top:1px solid #f0f0f0; }
+    .partner-since { font-size:0.75rem; color:#bbb; }
+    .partner-link {
+      font-family:'Archivo',sans-serif; font-size:0.78rem; font-weight:700;
+      color:#004e3b; text-transform:uppercase; letter-spacing:0.5px;
+      text-decoration:none; border:1.5px solid #004e3b; padding:5px 12px;
+      border-radius:4px; transition:all 0.25s ease;
+    }
+    .partner-link:hover { background:#004e3b; color:#fff; }
+
+    /* ---- Become a partner CTA ---- */
+    .become-partner {
+      background:#004e3b; border-radius:16px; padding:52px 44px;
+      display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;
+      margin-bottom:0;
+    }
+    .become-partner h3 { font-family:'Archivo',sans-serif; font-size:1.5rem; font-weight:900; color:#fff; margin-bottom:8px; }
+    .become-partner p { color:rgba(255,255,255,0.8); font-size:0.95rem; line-height:1.7; }
+    .become-partner .btn-group { display:flex; gap:12px; flex-wrap:wrap; flex-shrink:0; }
+
+    @media(max-width:960px) { .partners-intro { grid-template-columns:1fr; gap:40px; } .become-partner { grid-template-columns:1fr; } }
+    @media(max-width:768px) { .section { padding:60px 20px; } .become-partner { padding:36px 24px; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+      <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="has-dropdown">
+        <a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="about.html#who-we-are"><span class="dd-icon">📖</span> Who We Are</a></li>
+          <li><a href="about.html#mission-vision"><span class="dd-icon">🎯</span> Mission &amp; Vision</a></li>
+          <li><a href="about.html#our-team"><span class="dd-icon">👥</span> Our Team</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html"><span class="dd-icon">🛒</span> Product Supply</a></li>
+          <li><a href="services.html"><span class="dd-icon">📦</span> Bulk &amp; Wholesale</a></li>
+          <li><a href="services.html#delivery-section"><span class="dd-icon">🚚</span> Delivery Service</a></li>
+          <li><a href="services.html#ie-heading"><span class="dd-icon">✈️</span> Import &amp; Export</a></li>
+          <li><a href="services.html"><span class="dd-icon">⭐</span> After-Sales Support</a></li>
+        </ul>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <h1>Our <span>Partners</span></h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>&#8250;</span><span>Partners</span>
+      </div>
+      <p>The companies and individuals who work alongside River Trading Ltd to deliver quality products and services.</p>
+    </div>
+  </div>
+
+  <!-- MAIN SECTION -->
+  <section class="section" aria-labelledby="partners-heading">
+    <div class="section-inner">
+
+      <!-- Intro -->
+      <div class="partners-intro">
+        <div class="intro-text reveal-left">
+          <span class="section-label">Built on Relationships</span>
+          <h2 class="section-title" id="partners-heading">
+            Partners Who Make<br /><span>Our Work Possible</span>
+          </h2>
+          <p class="lead">
+            River Trading Ltd does not operate alone. Behind every quality product we supply is a
+            network of trusted partners — suppliers, manufacturers, logistics companies, and service
+            providers — whose work strengthens ours.
+          </p>
+          <div class="highlight-bar">
+            Every partnership is built on shared values: quality, reliability, and commitment to serving Rwanda.
+          </div>
+          <p class="lead">
+            On this page we recognize the companies and individuals who supply products to us,
+            provide essential services that support our operations, and help us deliver the
+            River Trading Ltd promise to every client.
+          </p>
+        </div>
+        <div class="intro-img reveal-right">
+          <img src="../images/logo-icon.png" alt="River Trading Ltd Partners" onerror="this.style.opacity='0'" />
+        </div>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="partner-tabs reveal" role="tablist">
+        <button class="partner-tab active" data-filter="all" role="tab">All Partners</button>
+        <button class="partner-tab" data-filter="supplier" role="tab">Product Suppliers</button>
+        <button class="partner-tab" data-filter="products" role="tab">Product Brands</button>
+        <button class="partner-tab" data-filter="services" role="tab">Service Providers</button>
+        <button class="partner-tab" data-filter="logistics" role="tab">Logistics</button>
+      </div>
+
+      <!-- Partners grid -->
+      <div class="partners-grid" id="partnersGrid">
+
+        <!-- PARTNER 1: Lubricant Supplier -->
+        <div class="partner-card reveal" data-type="supplier">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge supplier">Product Supplier</span>
+            <img src="../images/partner-lubricant.jpg" alt="Lubricant Supplier" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">🛢️</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Lubricant &amp; Oil Manufacturer</div>
+            <div class="partner-location">📍 International Supplier</div>
+            <p class="partner-desc">
+              Our primary source for machine lubricants and multipurpose oils. This partnership ensures
+              consistent oil quality across every batch of RIVER® Lubricant we supply to clients.
+            </p>
+            <ul class="partner-provides">
+              <li>RIVER® Multipurpose Machine Oil formulation</li>
+              <li>Industrial-grade lubricants in bulk</li>
+              <li>Technical specifications and safety data</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2020</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER 2: Cleaning Products Manufacturer -->
+        <div class="partner-card reveal" data-type="supplier">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge supplier">Product Supplier</span>
+            <img src="../images/partner-cleaning.jpg" alt="Cleaning Products Supplier" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">🧽</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Cleaning Products Manufacturer</div>
+            <div class="partner-location">📍 Regional Supplier</div>
+            <p class="partner-desc">
+              Supplies the formulation and raw materials behind RIVER® Car Wash Soap, Glass Cleaner,
+              and Contact Adhesive. Quality-tested to our own standards before distribution.
+            </p>
+            <ul class="partner-provides">
+              <li>Car wash soap and glass cleaner supply</li>
+              <li>Contact adhesive formulation</li>
+              <li>Custom packaging with RIVER® branding</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2021</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER 3: Tools Distributor -->
+        <div class="partner-card reveal" data-type="products">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge products">Product Brand</span>
+            <img src="../images/partner-tools.jpg" alt="Tools Partner" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">🔧</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Professional Tools Brand</div>
+            <div class="partner-location">📍 Import Partner</div>
+            <p class="partner-desc">
+              Our authorized tools brand partner that manufactures the Tenayi pliers, Iranda wood planers,
+              glass cutters, and pneumatic nail guns we distribute across Rwanda.
+            </p>
+            <ul class="partner-provides">
+              <li>Tenayi wire plier / puller tool line</li>
+              <li>Iranda wood planer range</li>
+              <li>Glass cutting tools</li>
+              <li>Pneumatic fastening tools</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2022</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER 4: Hardware Supplier -->
+        <div class="partner-card reveal" data-type="supplier">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge supplier">Product Supplier</span>
+            <img src="../images/partner-hardware.jpg" alt="Hardware Supplier" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">🏗️</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Hardware &amp; Construction Supplier</div>
+            <div class="partner-location">📍 Rwanda / Regional</div>
+            <p class="partner-desc">
+              Supplies our range of construction hardware including barbed wire, junction boxes,
+              spirit levels, safety helmets, and caster wheels for our hardware catalogue.
+            </p>
+            <ul class="partner-provides">
+              <li>Galvanised barbed wire (standard and heavy-duty)</li>
+              <li>Electrical junction boxes</li>
+              <li>Magnetic spirit levels</li>
+              <li>Safety helmets and PPE</li>
+              <li>Swivel caster wheels</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2022</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER 5: Local Logistics -->
+        <div class="partner-card reveal" data-type="logistics">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge logistics">Logistics Partner</span>
+            <img src="../images/partner-logistics.jpg" alt="Logistics Partner" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">🚚</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Delivery &amp; Logistics Partner</div>
+            <div class="partner-location">📍 Kigali &amp; Nationwide, Rwanda</div>
+            <p class="partner-desc">
+              Our trusted local delivery and logistics partner that handles the distribution of products
+              to clients across Kigali and into Rwanda's provinces reliably and on schedule.
+            </p>
+            <ul class="partner-provides">
+              <li>Kigali same-day and next-day delivery</li>
+              <li>National province delivery routes</li>
+              <li>Safe handling and packaging of fragile items</li>
+              <li>Bulk pallet and drum delivery</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2021</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER 6: Web & Digital Services -->
+        <div class="partner-card reveal" data-type="services">
+          <div class="partner-logo-area">
+            <span class="partner-type-badge services">Service Provider</span>
+            <img src="../images/partner-digital.jpg" alt="Digital Partner" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="partner-logo-ph" style="display:none;">💻</div>
+          </div>
+          <div class="partner-body">
+            <div class="partner-name">Web &amp; Digital Services Partner</div>
+            <div class="partner-location">📍 Kigali, Rwanda</div>
+            <p class="partner-desc">
+              Provides website development, digital marketing support, and online presence management
+              for River Trading Ltd — helping us connect with clients across Rwanda digitally.
+            </p>
+            <ul class="partner-provides">
+              <li>Website design and development</li>
+              <li>Social media management</li>
+              <li>Digital marketing and online advertising</li>
+            </ul>
+            <div class="partner-footer">
+              <span class="partner-since">Partner since 2023</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /partners-grid -->
+
+      <!-- Become a partner -->
+      <div class="become-partner reveal">
+        <div>
+          <h3>Interested in Partnering with River Trading Ltd?</h3>
+          <p>
+            We are always open to new partnerships — whether you supply products we can distribute,
+            offer services that support our operations, or want to resell our products in your area.
+            Let's talk.
+          </p>
+        </div>
+        <div class="btn-group">
+          <a href="contact.html" class="btn btn-outline" style="border-color:#FFD700; color:#fff; white-space:nowrap;">
+            Get In Touch &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
+          <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        </div>
+        <p>Rwanda's trusted supplier of quality products since 2020.</p>
+        <div class="social-links">
+          <!-- ⚠ UPDATE: Replace # with real social media URLs -->
+          <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
+          <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="../index.html">&#8250; Home</a></li>
+          <li><a href="about.html">&#8250; About Us</a></li>
+          <li><a href="services.html">&#8250; Services</a></li>
+          <li><a href="products.html">&#8250; Products</a></li>
+          <li><a href="partners.html">&#8250; Partners</a></li>
+          <li><a href="blogs.html">&#8250; Blog</a></li>
+          <li><a href="contact.html">&#8250; Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"></div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
+        <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
+        <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
+        <div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+  <script src="../js/main.js"></script>
+
+  <script>
+    // Partner type filter
+    document.querySelectorAll('.partner-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.partner-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        document.querySelectorAll('.partner-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

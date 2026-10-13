@@ -1,0 +1,728 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – River Trading Ltd</title>
+  <meta name="description" content="Browse all River Trading Ltd products – lubricants, cleaning products, tools, hardware, safety equipment and more. Quality products in Rwanda." />
+
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body { font-family:'DM Sans',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.section-title,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+
+    /* Page hero */
+    .page-hero {
+      height:300px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      display:flex; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:20px; padding-top:80px;
+      position:relative; overflow:hidden;
+    }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
+    .page-hero-content { position:relative; z-index:2; }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; }
+    .page-hero h1 span { color:#FFD700; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
+    .breadcrumb a { color:#FFD700; }
+
+    /* ---- Search & Filter bar ---- */
+    .products-toolbar {
+      position:sticky; top:80px; z-index:99;
+      background:#fff; border-bottom:2px solid #e5e7eb;
+      padding:16px 40px;
+      display:flex; gap:16px; align-items:center; flex-wrap:wrap;
+    }
+    .search-wrap {
+      position:relative; flex:1; min-width:220px; max-width:400px;
+    }
+    .search-wrap input {
+      width:100%; padding:11px 44px 11px 16px;
+      border:2px solid #e5e7eb; border-radius:8px;
+      font-family:'DM Sans',sans-serif; font-size:0.95rem; color:#333;
+      transition:all 0.3s ease; background:#fafafa;
+    }
+    .search-wrap input:focus { border-color:#004e3b; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
+    .search-icon {
+      position:absolute; right:14px; top:50%; transform:translateY(-50%);
+      color:#888; font-size:1rem; pointer-events:none;
+    }
+    .clear-search {
+      position:absolute; right:38px; top:50%; transform:translateY(-50%);
+      color:#bbb; font-size:1.1rem; cursor:pointer; display:none; background:none; border:none; line-height:1;
+    }
+    .clear-search.visible { display:block; }
+
+    /* Category filter tabs */
+    .cat-tabs {
+      display:flex; gap:8px; flex-wrap:wrap; flex:1;
+    }
+    .cat-tab {
+      padding:8px 16px; border-radius:20px; font-size:0.82rem; font-weight:700;
+      font-family:'Archivo',sans-serif; text-transform:uppercase; letter-spacing:0.5px;
+      cursor:pointer; border:2px solid #e5e7eb; background:#fff; color:#666;
+      transition:all 0.25s ease; white-space:nowrap;
+    }
+    .cat-tab:hover { border-color:#004e3b; color:#004e3b; }
+    .cat-tab.active { background:#004e3b; border-color:#004e3b; color:#fff; }
+
+    /* Product count */
+    .product-count { font-size:0.85rem; color:#888; white-space:nowrap; margin-left:auto; }
+
+    /* ---- Products layout ---- */
+    .products-page { padding:48px 40px 80px; max-width:1240px; margin:0 auto; }
+
+    /* Category section */
+    .cat-section { margin-bottom:56px; }
+    .cat-section[data-hidden="true"] { display:none; }
+    .cat-heading {
+      display:flex; align-items:center; gap:16px; margin-bottom:28px;
+      padding-bottom:14px; border-bottom:3px solid #004e3b;
+    }
+    .cat-heading .cat-icon { font-size:1.8rem; }
+    .cat-heading h2 { font-size:1.3rem; font-weight:900; color:#004e3b; margin:0; }
+    .cat-heading .cat-count { font-size:0.78rem; font-weight:700; background:#f0fdf4;
+      color:#004e3b; padding:4px 10px; border-radius:12px; margin-left:auto; }
+
+    /* Product card grid */
+    .product-grid {
+      display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:22px;
+    }
+
+    /* Product card */
+    .prod-card {
+      background:#fff; border-radius:10px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.07); overflow:hidden;
+      transition:all 0.32s ease; border:1px solid #f0f0f0;
+      display:flex; flex-direction:column;
+    }
+    .prod-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.13); border-color:#e5e7eb; }
+
+    /* Product image area */
+    .prod-img {
+      height:170px; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+      background:#f9fafb; position:relative;
+    }
+    .prod-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+    .prod-card:hover .prod-img img { transform:scale(1.06); }
+    .prod-img-placeholder { font-size:3.2rem; }
+
+    /* Category badge on image */
+    .prod-cat-badge {
+      position:absolute; top:10px; left:10px;
+      background:rgba(0,78,59,0.85); color:#fff;
+      font-size:0.65rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:1px; padding:4px 10px; border-radius:4px;
+    }
+
+    /* Product card body */
+    .prod-body { padding:14px 16px 18px; flex:1; display:flex; flex-direction:column; }
+    .prod-name { font-family:'Archivo',sans-serif; font-size:0.97rem; font-weight:800; color:#111; margin-bottom:4px; }
+    .prod-size { font-size:0.78rem; color:#888; margin-bottom:4px; }
+    .prod-footer { display:flex; justify-content:flex-end; margin-top:auto; padding-top:12px; }
+    .btn-view {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:8px 16px; background:#004e3b; color:#fff;
+      border:none; border-radius:6px; font-family:'Archivo',sans-serif;
+      font-size:0.78rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.5px; cursor:pointer; transition:all 0.25s ease;
+    }
+    .btn-view:hover { background:#CC0000; }
+
+    /* No results message */
+    .no-results {
+      display:none; text-align:center; padding:60px 20px;
+      grid-column:1/-1;
+    }
+    .no-results.visible { display:block; }
+    .no-results .nr-icon { font-size:3rem; margin-bottom:12px; }
+    .no-results h3 { color:#004e3b; margin-bottom:8px; }
+    .no-results p { color:#888; font-size:0.9rem; }
+
+    /* ============================================================
+       PRODUCT MODAL
+       ============================================================ */
+    .modal-overlay {
+      position:fixed; inset:0; z-index:2000;
+      background:rgba(0,0,0,0.7);
+      display:flex; align-items:center; justify-content:center;
+      padding:20px; opacity:0; pointer-events:none;
+      transition:opacity 0.3s ease;
+    }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+
+    .modal {
+      background:#fff; border-radius:14px;
+      max-width:720px; width:100%;
+      max-height:90vh; overflow-y:auto;
+      transform:translateY(20px) scale(0.97);
+      transition:transform 0.3s ease;
+      box-shadow:0 24px 60px rgba(0,0,0,0.3);
+      position:relative;
+    }
+    .modal-overlay.open .modal { transform:translateY(0) scale(1); }
+
+    .modal-img {
+      width:100%; height:240px; object-fit:cover;
+      border-radius:14px 14px 0 0;
+      background:linear-gradient(135deg,#004e3b,#CC0000);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden; position:relative;
+    }
+    .modal-img img { width:100%; height:100%; object-fit:cover; }
+    .modal-img-placeholder { font-size:5rem; }
+
+    .modal-close {
+      position:absolute; top:14px; right:14px;
+      width:36px; height:36px; border-radius:50%;
+      background:rgba(0,0,0,0.5); border:none; color:#fff;
+      font-size:1.2rem; cursor:pointer; display:flex;
+      align-items:center; justify-content:center;
+      transition:background 0.2s ease; z-index:10;
+    }
+    .modal-close:hover { background:rgba(0,0,0,0.8); }
+
+    .modal-body { padding:28px 32px 32px; }
+    .modal-cat { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#008138; margin-bottom:6px; }
+    .modal-name { font-family:'Archivo',sans-serif; font-size:1.5rem; font-weight:900; color:#111; margin-bottom:6px; }
+    .modal-size { font-size:0.85rem; color:#888; margin-bottom:16px; }
+
+    .modal-section-title {
+      font-family:'Archivo',sans-serif; font-size:0.8rem; font-weight:800;
+      text-transform:uppercase; letter-spacing:1.5px; color:#004e3b;
+      margin:20px 0 8px; padding-bottom:6px; border-bottom:2px solid #f0fdf4;
+    }
+    .modal-desc { color:#555; font-size:0.92rem; line-height:1.75; }
+    .modal-uses { list-style:none; padding:0; }
+    .modal-uses li {
+      font-size:0.88rem; color:#555; line-height:1.6;
+      padding-left:18px; position:relative; margin-bottom:6px;
+    }
+    .modal-uses li::before { content:'✓'; position:absolute; left:0; color:#004e3b; font-weight:700; }
+
+    .modal-news {
+      background:#f0fdf4; border-left:4px solid #004e3b;
+      border-radius:0 6px 6px 0; padding:14px 16px; margin-top:8px;
+      font-size:0.88rem; color:#004e3b; line-height:1.65;
+    }
+    .modal-news strong { display:block; margin-bottom:4px; }
+
+
+
+    @media(max-width:768px) {
+      .products-toolbar { padding:12px 16px; }
+      .products-page { padding:32px 16px 60px; }
+      .modal-body { padding:20px; }
+    }
+    @media(max-width:480px) {
+      .cat-tabs { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+      <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="has-dropdown">
+        <a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="about.html#who-we-are"><span class="dd-icon">📖</span> Who We Are</a></li>
+          <li><a href="about.html#mission-vision"><span class="dd-icon">🎯</span> Mission &amp; Vision</a></li>
+          <li><a href="about.html#our-team"><span class="dd-icon">👥</span> Our Team</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+        <ul class="dropdown">
+          <li><a href="services.html"><span class="dd-icon">🛒</span> Product Supply</a></li>
+          <li><a href="services.html"><span class="dd-icon">📦</span> Bulk &amp; Wholesale</a></li>
+          <li><a href="services.html#delivery-section"><span class="dd-icon">🚚</span> Delivery Service</a></li>
+          <li><a href="services.html#ie-heading"><span class="dd-icon">✈️</span> Import &amp; Export</a></li>
+          <li><a href="services.html"><span class="dd-icon">⭐</span> After-Sales Support</a></li>
+        </ul>
+      </li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <h1>Our <span>Products</span></h1>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>&#8250;</span><span>Products</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEARCH & FILTER TOOLBAR -->
+  <div class="products-toolbar" role="search" aria-label="Product search and filter">
+    <div class="search-wrap">
+      <input type="search" id="productSearch" placeholder="Search products…" aria-label="Search products" />
+      <button class="clear-search" id="clearSearch" aria-label="Clear search">&#215;</button>
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <div class="cat-tabs" role="tablist" aria-label="Product categories">
+      <button class="cat-tab active" data-cat="all" role="tab">All</button>
+      <button class="cat-tab" data-cat="cleaning" role="tab">Cleaning</button>
+      <button class="cat-tab" data-cat="hardware" role="tab">Hardware</button>
+      <button class="cat-tab" data-cat="household" role="tab">Household</button>
+      <button class="cat-tab" data-cat="lubricants" role="tab">Lubricants</button>
+      <button class="cat-tab" data-cat="safety" role="tab">Safety</button>
+      <button class="cat-tab" data-cat="tools" role="tab">Tools</button>
+    </div>
+
+    <span class="product-count" id="productCount" aria-live="polite"></span>
+  </div>
+
+  <!-- PRODUCTS CONTENT -->
+  <main class="products-page" aria-label="Products catalogue">
+
+    <!-- No results placeholder -->
+    <div class="no-results" id="noResults" role="alert" aria-live="polite">
+      <div class="nr-icon">🔍</div>
+      <h3>No products found</h3>
+      <p>Try a different search term or select a different category.</p>
+    </div>
+
+    <!-- ======= CATEGORY: CLEANING PRODUCTS ======= -->
+    <div class="cat-section" data-category="cleaning" id="cat-cleaning">
+      <div class="cat-heading">
+        <span class="cat-icon">🧽</span>
+        <h2>Cleaning Products</h2>
+        <span class="cat-count" id="count-cleaning"></span>
+      </div>
+      <div class="product-grid" id="grid-cleaning"></div>
+    </div>
+
+    <!-- ======= CATEGORY: HARDWARE & CONSTRUCTION ======= -->
+    <div class="cat-section" data-category="hardware" id="cat-hardware">
+      <div class="cat-heading">
+        <span class="cat-icon">🏗️</span>
+        <h2>Hardware &amp; Construction</h2>
+        <span class="cat-count" id="count-hardware"></span>
+      </div>
+      <div class="product-grid" id="grid-hardware"></div>
+    </div>
+
+    <!-- ======= CATEGORY: AGRICULTURE ======= -->
+    <div class="cat-section" data-category="AGRICULTURE" id="cat-agriculture">
+      <div class="cat-heading">
+        <span class="cat-icon">🏠</span>
+        <h2>Household Essentials</h2>
+        <span class="cat-count" id="count-household"></span>
+      </div>
+      <div class="product-grid" id="grid-household"></div>
+    </div>
+
+    <!-- ======= CATEGORY: LUBRICANTS & OILS ======= -->
+    <div class="cat-section" data-category="lubricants" id="cat-lubricants">
+      <div class="cat-heading">
+        <span class="cat-icon">🛢️</span>
+        <h2>Lubricants &amp; Oils</h2>
+        <span class="cat-count" id="count-lubricants"></span>
+      </div>
+      <div class="product-grid" id="grid-lubricants"></div>
+    </div>
+
+    <!-- ======= CATEGORY: SAFETY EQUIPMENT ======= -->
+    <div class="cat-section" data-category="safety" id="cat-safety">
+      <div class="cat-heading">
+        <span class="cat-icon">🦺</span>
+        <h2>Safety Equipment</h2>
+        <span class="cat-count" id="count-safety"></span>
+      </div>
+      <div class="product-grid" id="grid-safety"></div>
+    </div>
+
+    <!-- ======= CATEGORY: TOOLS ======= -->
+    <div class="cat-section" data-category="tools" id="cat-tools">
+      <div class="cat-heading">
+        <span class="cat-icon">🔧</span>
+        <h2>Tools &amp; Equipment</h2>
+        <span class="cat-count" id="count-tools"></span>
+      </div>
+      <div class="product-grid" id="grid-tools"></div>
+    </div>
+
+  </main>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+    <div class="modal">
+      <div class="modal-img" id="modalImg">
+        <div class="modal-img-placeholder" id="modalImgPlaceholder"></div>
+        <img id="modalImgSrc" src="" alt="" style="display:none;" />
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close product details">&#215;</button>
+      <div class="modal-body">
+        <p class="modal-cat" id="modalCat"></p>
+        <h2 class="modal-name" id="modalName"></h2>
+        <p class="modal-size" id="modalSize"></p>
+
+        <p class="modal-section-title">About This Product</p>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <p class="modal-section-title">How It's Used</p>
+        <ul class="modal-uses" id="modalUses"></ul>
+
+        <p class="modal-section-title">📰 Product News</p>
+        <div class="modal-news" id="modalNews"></div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
+          <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        </div>
+        <p>Rwanda's trusted supplier of quality products since 2020.</p>
+        <div class="social-links">
+          <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
+          <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+          </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="../index.html">&#8250; Home</a></li>
+          <li><a href="about.html">&#8250; About Us</a></li>
+          <li><a href="services.html">&#8250; Services</a></li>
+          <li><a href="products.html">&#8250; Products</a></li>
+          <li><a href="blogs.html">&#8250; Blog</a></li>
+          <li><a href="contact.html">&#8250; Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Product Categories</h5>
+        <ul>
+          <li><a href="products.html?cat=lubricants">&#8250; Lubricants &amp; Oils</a></li>
+          <li><a href="products.html?cat=cleaning">&#8250; Cleaning Products</a></li>
+          <li><a href="products.html?cat=tools">&#8250; Tools &amp; Equipment</a></li>
+          <li><a href="products.html?cat=hardware">&#8250; Hardware &amp; Construction</a></li>
+          <li><a href="products.html?cat=safety">&#8250; Safety Equipment</a></li>
+          <li><a href="products.html?cat=household">&#8250; Household Essentials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
+        <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
+                <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
+<div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+  <script src="../js/main.js"></script>
+
+  <script>
+  // ============================================================
+  //  PRODUCTS DATA  (add / edit products here)
+  //  Fields: id, name, category, size, icon, image, desc, uses[], news
+  // ============================================================
+  const PRODUCTS = [
+
+    // ---- CLEANING ----
+    { id:'c1', name:'Car Wash Soap (RIVER®)', category:'cleaning', size:'500ml / 1L / 5L',
+      icon:'🚗', image:'../images/prod-carwash.jpg',
+      desc:'RIVER® Car Wash Soap is a premium formula containing active surfactants and conditioning agents that lift dirt and grime while leaving a protective shine. Free from harmful salts that corrode paint.',
+      uses:['Mix with water and apply with sponge or mitt','Safe on all paint types and finishes','Rinse off with clean water for streak-free shine','Use regularly to maintain vehicle appearance'],
+      news:'Now available in a new 5L bulk pack — ideal for car wash businesses. The formula has been improved with added wax for longer-lasting shine after washing.' },
+
+    { id:'c2', name:'Contact Adhesive (RIVER®)', category:'cleaning', size:'250ml / 500ml / 1L',
+      icon:'🔗', image:'../images/prod-adhesive.jpg',
+      desc:'RIVER® Contact Adhesive is a strong-bond solvent-based glue designed for bonding a wide variety of materials including leather, rubber, wood, fabric, and more.',
+      uses:['Mattresses and upholstered chairs','Shoe sole bonding and repair','Leather goods and accessories','Ceiling lining repairs','Paper and book binding'],
+      news:'Our contact adhesive now features an improved brush-on applicator in the 250ml size, making application cleaner and more precise.' },
+
+    { id:'c3', name:'Diamond-Mix Cleaner', category:'cleaning', size:'500ml / 1L',
+      icon:'💎', image:'../images/prod-diamond.jpg',
+      desc:'Diamond-Mix is a versatile multi-surface cleaning concentrate effective on floors, tiles, and hard surfaces. Leaves a fresh scent and streak-free finish.',
+      uses:['Dilute with water for floor mopping','Apply directly on tough stains','Safe on ceramic tiles, vinyl, and laminate','Suitable for commercial and residential use'],
+      news:'Diamond-Mix is now available in a new lemon-fresh variant alongside the classic formula.' },
+
+    { id:'c4', name:'Glass Cleaner (RIVER®)', category:'cleaning', size:'500ml / 1L',
+      icon:'🪟', image:'../images/prod-glass.jpg',
+      desc:'RIVER® Glass Cleaner (Glass Cleaner) is a fast-acting formula that removes fingerprints, dust, smudges, and grime from glass surfaces without leaving streaks or residue.',
+      uses:['Window and door glass panels','Car windscreens and mirrors','Bathroom mirrors and shower screens','Display cases and glass furniture','Eyeglasses and screen cleaning'],
+      news:'The new aerosol spray format makes application quicker and more even across large glass surfaces.' },
+
+    { id:'c5', name:'Nail Polish Remover (RIVER®)', category:'cleaning', size:'100ml / 250ml',
+      icon:'💅', image:'../images/prod-remover.jpg',
+      desc:'RIVER® Nail Polish Remover (Disolva) is an acetone-based solution that quickly dissolves nail polish, dried adhesive, stickers, and permanent marker ink.',
+      uses:['Removing nail polish from fingernails','Dissolving dried super glue and contact adhesive','Removing sticker residue from surfaces','Cleaning permanent marker from hard surfaces','Thinning certain paints and varnishes'],
+      news:'The 250ml bottle now comes with a precision dropper applicator for mess-free use.' },
+
+    // ---- HARDWARE ----
+    { id:'h1', name:'Barbed Wire', category:'hardware', size:'Per Roll (100m)',
+      icon:'🔩', image:'../images/prod-barbed.jpg',
+      desc:'Heavy-gauge galvanised barbed wire for perimeter security, livestock fencing, and crop protection. Rust-resistant coating ensures long service life outdoors.',
+      uses:['Security perimeter fencing','Livestock containment and management','Crop and garden protection','Residence boundary fencing','Industrial compound security'],
+      news:'Now available in two gauges — standard (12.5G) and heavy-duty (11G) for reinforced security applications.' },
+
+    { id:'h2', name:'Caster Wheels (Swivel)', category:'hardware', size:'40mm / 50mm / 75mm',
+      icon:'🔄', image:'../images/prod-casters.jpg',
+      desc:'Swivel caster wheels (Roulettes) in multiple sizes for attaching to furniture, equipment, and carts to allow easy rolling movement.',
+      uses:['Trolleys and serving carts','Office furniture and chairs','Workshop equipment and tool carts','Medical and hospital trolleys','Retail display units'],
+      news:'New heavy-duty casters with brake lock mechanism now available for industrial trolley use.' },
+
+    { id:'h3', name:'Electrical Junction Box', category:'hardware', size:'60mm / 100mm / 150mm',
+      icon:'⚡', image:'../images/prod-junctionbox.jpg',
+      desc:'Steel junction boxes for protecting electrical wire connections in walls, ceilings, and conduit systems. Prevents short circuits and fire hazards at connection points.',
+      uses:['Protecting wire joins in wall installations','Ceiling light and switch wiring points','Outdoor electrical connections','Industrial wiring distribution points','Solar and generator installations'],
+      news:'The 150mm jumbo junction box is now stocked — ideal for high-density wiring points in commercial buildings.' },
+
+    { id:'h4', name:'Magnetic Spirit Level', category:'hardware', size:'30cm / 60cm / 100cm',
+      icon:'📏', image:'../images/prod-level.jpg',
+      desc:'A precision magnetic spirit level (Imibaho y\'amazi ifite rukuruzi) for checking horizontal and vertical alignment during construction, tiling, and carpentry.',
+      uses:['Checking wall and floor levelness','Door and window frame installation','Tile and paving alignment','Shelf and bracket installation','Carpentry and furniture assembly'],
+      news:'All sizes now feature dual-bubble vials for simultaneous horizontal and vertical reading.' },
+
+    // ---- HOUSEHOLD ----
+    { id:'hh1', name:'Dog Shampoo (RIVER®)', category:'household', size:'250ml / 500ml',
+      icon:'🐕', image:'../images/prod-dogshampoo.jpg',
+      desc:'RIVER® Dog Shampoo is a gentle yet effective formula for cleaning and conditioning your dog\'s coat. Removes dirt, parasites, and odor while keeping skin healthy.',
+      uses:['Regular bathing for pet hygiene','Removing mud, dust, and debris from coat','Treating mild skin conditions with regular use','Maintaining coat softness and shine'],
+      news:'New variant with added aloe vera extract for dogs with sensitive or dry skin.' },
+
+    { id:'hh2', name:'Insect Repellent (RIVER®)', category:'household', size:'100ml spray',
+      icon:'🦟', image:'../images/prod-insect.jpg',
+      desc:'RIVER® Insect Repellent is a dual-function product: a pump spray that repels mosquitoes, and a small compartment with refillable liquid. Effective for up to 8 hours.',
+      uses:['Apply to exposed skin before outdoor activities','Use indoors at bedtime for overnight protection','Spray around doors and windows','Safe for adults and children over 2 years'],
+      news:'The refillable bottle design means you only need to buy the spray once — just purchase the refill liquid.' },
+
+    { id:'hh3', name:'Rain Coat (RIVER®)', category:'household', size:'S / M / L / XL / XXL',
+      icon:'🌧️', image:'../images/prod-raincoat.jpg',
+      desc:'RIVER® Rain Coat is a lightweight waterproof coat designed to keep you dry during rain. Available in multiple sizes for men, women, and children.',
+      uses:['Daily commuting and outdoor walks','Agricultural and fieldwork in wet weather','Construction site use','Sporting events and outdoor activities'],
+      news:'New reflective strip variant now available for improved visibility during night-time rain.' },
+
+    // ---- LUBRICANTS ----
+    { id:'l1', name:'Machine Lubricant (RIVER®)', category:'lubricants', size:'500ml / 1L / 5L / 20L',
+      icon:'🛢️', image:'../images/prod-lubricant.jpg',
+      desc:'RIVER® Multipurpose Machine Lubricant is a high-performance oil that reduces friction, prevents rust and corrosion, and extends the life of mechanical components.',
+      uses:['Metal-to-metal moving parts in machinery','Bicycle and motorcycle chains','Door hinges and locks','Power tools and hand tools','Agricultural equipment maintenance'],
+      news:'The 20L industrial drum is now available for businesses with high-volume machinery maintenance needs.' },
+
+    { id:'l2', name:'Multipurpose Oil (RIVER®)', category:'lubricants', size:'200ml / 500ml',
+      icon:'💧', image:'../images/prod-oil.jpg',
+      desc:'A light-viscosity multipurpose oil for general household and workshop lubrication tasks. Penetrates rust and loosens seized components easily.',
+      uses:['Loosening rusty nuts and bolts','Lubricating squeaky hinges','Protecting metal tools from rust','Electrical contact cleaning','Waterproofing leather and rubber seals'],
+      news:'Now available with a precision long-nozzle applicator for hard-to-reach lubrication points.' },
+
+    // ---- SAFETY ----
+    { id:'s1', name:'Safety Helmet (Hard Hat)', category:'safety', size:'One Size Adjustable',
+      icon:'⛑️', image:'../images/prod-helmet.jpg',
+      desc:'High-impact polycarbonate safety helmet (Ingofero y\'ubwirinzi) for head protection on construction sites, in workshops, and during industrial work.',
+      uses:['Construction site workers','Workshop and factory floor','Mining and quarry operations','Electrical work environments','Any environment with overhead hazards'],
+      news:'New ventilated design available — provides airflow to keep workers cool without compromising protection.' },
+
+    // ---- TOOLS ----
+    { id:'t1', name:'Glass Cutter (Aka Kuma)', category:'tools', size:'Standard / Heavy Duty',
+      icon:'🪟', image:'../images/prod-glasscutter.jpg',
+      desc:'A diamond-tipped glass scoring tool (Aka kuma gakata ibirahure) for cutting glass panels cleanly along a scored line. The hardened diamond tip scores without cracking.',
+      uses:['Cutting window and door glass panes','Mirror cutting and shaping','Stained glass work','Custom aquarium glass fitting','Replacing broken glass panels'],
+      news:'The new heavy-duty version features a tungsten carbide wheel that lasts 3x longer than standard diamond tips.' },
+
+    { id:'t2', name:'Pneumatic Nail Gun (Air)', category:'tools', size:'18 Gauge / 16 Gauge',
+      icon:'🔨', image:'../images/prod-nailgun.jpg',
+      desc:'An air-powered nail gun (Inyundo ikoresha umwuka) for fast, precise fastening of nails into wood. Powered by a compressed air compressor.',
+      uses:['Timber frame construction','Hardwood flooring installation','Roofing and decking','Cabinet and furniture making','Interior trim and molding work'],
+      news:'Compatible with both 18G brad nails and 16G finish nails. Now sold with a starter pack of 500 nails.' },
+
+    { id:'t3', name:'Iranda (Wood Planer)', category:'tools', size:'Block / Bench',
+      icon:'🪵', image:'../images/prod-planer.jpg',
+      desc:'The Iranda is a manual wood planer used by carpenters and woodworkers to smooth, flatten, and shape wooden surfaces and edges.',
+      uses:['Smoothing rough-sawn timber','Flattening warped or uneven boards','Chamfering and bevelling wood edges','Fitting doors and window frames','Furniture surface preparation'],
+      news:'The new bench planer version offers wider blade coverage for large-surface planning in professional workshops.' },
+
+    { id:'t4', name:'Tenayi (Wire Plier / Puller)', category:'tools', size:'Standard',
+      icon:'🔌', image:'../images/prod-tenayi.jpg',
+      desc:'The Tenayi is a specialty plier tool designed for electricians and craftsmen. It bends, cuts, and pulls wires through conduit, wood, and other materials.',
+      uses:['Pulling electrical cables through conduit','Bending and shaping wire for installations','Removing nails and staples from timber','Threading wires through tight spaces','General electrical and craft wire work'],
+      news:'Now features a rubber-grip handle for improved comfort and safety when working with live low-voltage wires.' },
+
+  ];
+
+  // ============================================================
+  //  RENDER ENGINE
+  // ============================================================
+  const categories = ['cleaning','hardware','household','lubricants','safety','tools'];
+
+  function renderCard(p) {
+    return `
+      <article class="prod-card" data-id="${p.id}" data-name="${p.name.toLowerCase()}" data-cat="${p.category}"
+        onclick="openModal('${p.id}')" role="button" tabindex="0"
+        aria-label="View details for ${p.name}"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openModal('${p.id}')">
+        <div class="prod-img">
+          <span class="prod-cat-badge">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</span>
+          <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="prod-img-placeholder" style="display:none;">${p.icon}</div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">${p.name}</div>
+          <div class="prod-size">📦 ${p.size}</div>
+          <div class="prod-footer" style="margin-top:auto; padding-top:12px;">
+            <button class="btn-view" aria-label="View more details for ${p.name}" tabindex="-1">
+              View More &#8594;
+            </button>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function buildGrids() {
+    categories.forEach(cat => {
+      const items = PRODUCTS
+        .filter(p => p.category === cat)
+        .sort((a,b) => a.name.localeCompare(b.name));
+      const grid = document.getElementById('grid-' + cat);
+      if (grid) grid.innerHTML = items.map(renderCard).join('');
+      const cnt = document.getElementById('count-' + cat);
+      if (cnt) cnt.textContent = items.length + ' item' + (items.length !== 1 ? 's' : '');
+    });
+    updateCount();
+  }
+
+  function updateCount() {
+    const visible = document.querySelectorAll('.prod-card:not([style*="display: none"])').length;
+    const el = document.getElementById('productCount');
+    if (el) el.textContent = visible + ' product' + (visible !== 1 ? 's' : '');
+  }
+
+  // ---- Search ----
+  const searchInput = document.getElementById('productSearch');
+  const clearBtn    = document.getElementById('clearSearch');
+
+  function doSearch() {
+    const q = searchInput.value.toLowerCase().trim();
+    clearBtn.classList.toggle('visible', q.length > 0);
+    let total = 0;
+    PRODUCTS.forEach(p => {
+      const card = document.querySelector(`.prod-card[data-id="${p.id}"]`);
+      if (!card) return;
+      const match = p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.category.includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) total++;
+    });
+    // Hide empty category sections
+    categories.forEach(cat => {
+      const section = document.getElementById('cat-' + cat);
+      const grid    = document.getElementById('grid-' + cat);
+      if (!section || !grid) return;
+      const anyVisible = [...grid.querySelectorAll('.prod-card')].some(c => c.style.display !== 'none');
+      section.style.display = anyVisible ? '' : 'none';
+    });
+    document.getElementById('noResults').classList.toggle('visible', total === 0);
+    const el = document.getElementById('productCount');
+    if (el) el.textContent = total + ' product' + (total !== 1 ? 's' : '');
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', doSearch);
+    clearBtn.addEventListener('click', () => { searchInput.value = ''; doSearch(); searchInput.focus(); });
+  }
+
+  // ---- Category filter tabs ----
+  document.querySelectorAll('.cat-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.cat;
+      PRODUCTS.forEach(p => {
+        const card = document.querySelector(`.prod-card[data-id="${p.id}"]`);
+        if (!card) return;
+        card.style.display = (cat === 'all' || p.category === cat) ? '' : 'none';
+      });
+      categories.forEach(c => {
+        const section = document.getElementById('cat-' + c);
+        const grid    = document.getElementById('grid-' + c);
+        if (!section || !grid) return;
+        const anyVisible = [...grid.querySelectorAll('.prod-card')].some(cd => cd.style.display !== 'none');
+        section.style.display = anyVisible ? '' : 'none';
+      });
+      searchInput.value = '';
+      clearBtn.classList.remove('visible');
+      updateCount();
+      document.getElementById('noResults').classList.remove('visible');
+    });
+  });
+
+  // ---- Modal ----
+  function openModal(id) {
+    const p = PRODUCTS.find(x => x.id === id);
+    if (!p) return;
+    document.getElementById('modalCat').textContent    = p.category.charAt(0).toUpperCase() + p.category.slice(1);
+    document.getElementById('modalName').textContent   = p.name;
+    document.getElementById('modalSize').textContent   = '📦 Available sizes: ' + p.size;
+    document.getElementById('modalDesc').textContent   = p.desc;
+    document.getElementById('modalNews').innerHTML     = '<strong>🔔 Latest:</strong>' + p.news;
+    document.getElementById('modalImgPlaceholder').textContent = p.icon;
+    const imgEl = document.getElementById('modalImgSrc');
+    imgEl.src = p.image; imgEl.alt = p.name;
+    imgEl.style.display = '';
+    imgEl.onerror = () => { imgEl.style.display='none'; };
+    document.getElementById('modalUses').innerHTML = p.uses.map(u => `<li>${u}</li>`).join('');
+    document.getElementById('productModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('productModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('productModal').addEventListener('click', e => {
+    if (e.target === document.getElementById('productModal')) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ---- URL param: ?cat=xxx ----
+  function applyURLCat() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    if (cat) {
+      const tab = document.querySelector(`.cat-tab[data-cat="${cat}"]`);
+      if (tab) tab.click();
+    }
+  }
+
+  // ---- Init ----
+  buildGrids();
+  applyURLCat();
+  </script>
+
+</body>
+</html>
