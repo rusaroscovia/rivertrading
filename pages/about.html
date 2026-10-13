@@ -150,7 +150,10 @@
     .stat-cell .stat-desc { font-size:0.88rem; color:rgba(255,255,255,.45); margin-top:6px; line-height:1.5; }
 
     /* ── WHO WE ARE ─────────────────────────────────────────── */
-    .who-section { padding:110px 40px; background:#fff; }
+    .who-section {
+      padding:110px 40px; background:#fff;
+      scroll-margin-top: 80px; /* offset for fixed navbar */
+    }
     .who-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 
     .who-img-side { position:relative; }
@@ -182,9 +185,36 @@
       font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111;
       line-height:1.15; margin-bottom:24px;
     }
-    .who-text-side h2 em { font-style:normal; color:#004e3b; }
+    .who-text-side h2 em { font-style:italic; color:#CC0000; }
 
-    .who-text-side p { font-size:0.97rem; color:#555; line-height:1.85; margin-bottom:16px; }
+    .who-text-side p { font-size:1rem; color:#444; line-height:1.85; margin-bottom:18px; }
+    .who-text-side p strong { color:#004e3b; font-weight:700; }
+
+    /* "— OUR STORY —" label exactly like Igire */
+    .story-label {
+      display:flex; align-items:center; gap:10px;
+      margin-bottom:22px;
+    }
+    .story-label-line {
+      display:block; height:2px; width:28px;
+      background:#CC0000; flex-shrink:0;
+    }
+    .story-label-text {
+      font-family:'Archivo',sans-serif;
+      font-size:0.7rem; font-weight:800;
+      text-transform:uppercase; letter-spacing:3.5px;
+      color:#CC0000; white-space:nowrap;
+    }
+
+    /* Contact CTA line */
+    .who-cta-line { margin-top:8px; }
+    .who-contact-btn {
+      display:inline-block; font-family:'Archivo',sans-serif;
+      font-size:0.88rem; font-weight:700; color:#004e3b;
+      border-bottom:2px solid #FFD700; padding-bottom:2px;
+      transition:color .2s ease, border-color .2s ease;
+    }
+    .who-contact-btn:hover { color:#CC0000; border-color:#CC0000; }
 
     .who-quote {
       border-left:4px solid #FFD700; padding:16px 20px;
@@ -206,7 +236,10 @@
     .tl-item p  { font-size:0.85rem; color:#777; line-height:1.6; margin:0; }
 
     /* ── MISSION & VISION ───────────────────────────────────── */
-    .mv-section { background:#f9fafb; padding:110px 40px; }
+    .mv-section {
+      background:#f9fafb; padding:110px 40px;
+      scroll-margin-top: 80px;
+    }
     .mv-inner { max-width:1180px; margin:0 auto; }
 
     .section-header { text-align:center; max-width:640px; margin:0 auto 64px; }
@@ -289,7 +322,10 @@
     .value-pill p  { font-size:0.8rem; color:#888; line-height:1.5; }
 
     /* ── TEAM ───────────────────────────────────────────────── */
-    .team-section { background:#004e3b; padding:110px 40px; }
+    .team-section {
+      background:#004e3b; padding:110px 40px;
+      scroll-margin-top: 80px;
+    }
     .team-inner { max-width:1180px; margin:0 auto; }
 
     .team-header { text-align:center; max-width:620px; margin:0 auto 64px; }
@@ -395,22 +431,34 @@
       <li class="has-dropdown">
         <a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
         <ul class="dropdown">
-          <li><a href="about.html#who-we-are"><span class="dd-icon">📖</span> Who We Are</a></li>
-          <li><a href="about.html#mission-vision"><span class="dd-icon">🎯</span> Mission &amp; Vision</a></li>
-          <li><a href="about.html#our-team"><span class="dd-icon">👥</span> Our Team</a></li>
+          <li><a href="about.html#who-we-are">Who We Are</a></li>
+          <li><a href="about.html#mission-vision">Mission &amp; Vision</a></li>
+          <li><a href="about.html#our-team">Our Team</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
         <ul class="dropdown">
-          <li><a href="services.html"><span class="dd-icon">🛒</span> Product Supply</a></li>
-          <li><a href="services.html"><span class="dd-icon">📦</span> Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#delivery-section"><span class="dd-icon">🚚</span> Delivery Service</a></li>
-          <li><a href="services.html#ie-heading"><span class="dd-icon">✈️</span> Import &amp; Export</a></li>
-          <li><a href="services.html"><span class="dd-icon">⭐</span> After-Sales Support</a></li>
+          <li><a href="services.html">Product Supply</a></li>
+          <li><a href="services.html">Bulk &amp; Wholesale</a></li>
+          <li><a href="services.html#delivery-section">Delivery Service</a></li>
+          <li><a href="services.html#ie-heading">Import &amp; Export</a></li>
+          <li><a href="services.html">After-Sales Support</a></li>
         </ul>
       </li>
-      <li><a href="products.html">Products</a></li>
+      <li class="has-dropdown">
+      <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown">
+        <li><a href="products.html">All Products</a></li>
+        <li class="dd-sub-label">Agriculture</li>
+        <li><a href="cat-sanitary.html">Sanitary Products</a></li>
+        <li><a href="cat-handtools.html">Hand Tools</a></li>
+        <li><a href="cat-electrical.html">Electrical</a></li>
+        <li><a href="cat-construction.html">Construction</a></li>
+        <li><a href="cat-chemical.html">Chemical Products</a></li>
+      </ul>
+    </li>
+      <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
       <li><a href="partners.html">Partners</a></li>
       <li><a href="blogs.html">Blog</a></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
@@ -502,7 +550,7 @@
   <div class="who-inner">
 
     <!-- Image side -->
-    <div class="who-img-side reveal-left">
+    <div class="who-img-side">
       <div class="who-img-main">
         <img src="../images/who-we-are.jpg" alt="River Trading Ltd products and team"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
@@ -516,63 +564,55 @@
     </div>
 
     <!-- Text side -->
-    <div class="who-text-side reveal-right">
-      <span class="eyebrow">Who We Are</span>
-      <h2>Where It All <em>Began</em></h2>
+    <div class="who-text-side">
 
-      <div class="who-quote">
-        <p>"We started with one vision — to make quality products accessible to every Rwandan."</p>
+      <!-- Label line — "— OUR STORY —" style -->
+      <div class="story-label">
+        <span class="story-label-line"></span>
+        <span class="story-label-text">OUR STORY</span>
+        <span class="story-label-line"></span>
       </div>
 
+      <h2>Quality Products,<br />Trusted <em>Across Rwanda.</em></h2>
+
       <p>
-        River Trading Ltd was founded in <strong>2020</strong> in Kigali, Rwanda, by entrepreneurs
-        who identified a clear gap: quality industrial and household products were either hard to
-        find or unaffordably priced. They set out to change that.
-      </p>
-      <p>
-        Starting with a focused selection of machine lubricants and cleaning products, the company
-        quickly earned a reputation for reliability. Within the first year, businesses, craftsmen,
-        and households across Kigali were turning to River Trading Ltd as their trusted supplier.
-      </p>
-      <p>
-        By 2022, River Trading Ltd had launched its own branded lines — <em>RIVER® Lubricant,
-        RIVER® Car Wash Soap, and RIVER® Contact Adhesive</em> — setting a new standard for
-        locally distributed quality products.
+        River Trading Ltd is a company specializing in import and export in Kigali, Rwanda.
+        With more than <strong>10 years of experience</strong> in Construction, Electric,
+        Plumbing, Wall Plaster, and Chemical materials used in construction, Food ingredients,
+        and Cosmetics.
       </p>
 
-      <!-- Milestones timeline -->
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <p class="tl-year">2020</p>
-          <h4>Company Founded in Kigali</h4>
-          <p>Initial focus on lubricants and cleaning products.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <p class="tl-year">2021</p>
-          <h4>First 100 Regular Clients</h4>
-          <p>Built on repeat orders and strong word-of-mouth referrals.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <p class="tl-year">2022</p>
-          <h4>RIVER® Brand Launched</h4>
-          <p>Own branded product lines introduced to the market.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <p class="tl-year">2023</p>
-          <h4>Product Range Expanded</h4>
-          <p>Tools, hardware, safety wear, and construction supplies added.</p>
-        </div>
-        <div class="tl-item">
-          <div class="tl-dot"></div>
-          <p class="tl-year">2024 – Today</p>
-          <h4>Growing Nationally</h4>
-          <p>Serving clients across multiple provinces, expanding further.</p>
-        </div>
-      </div>
+      <p>
+        Although our <strong>RIVER® brand</strong> is very popular in the Rwandan market, we have
+        also added hygiene-related products. We now manufacture all kinds of hygienic products such
+        as Liquid Detergent, Laundry Liquid, Hand Wash, and all kinds of Shampoo — for men and
+        animals — without forgetting the importation of toilet paper and towels of all kinds.
+      </p>
+
+      <p>
+        We have also various other products that are imported mostly from <strong>PRC, Kenya,
+        Egypt, Tanzania, India, and Dubai City in the UAE</strong> — as a solution to our esteemed
+        customers ranging from individuals to small and big hardware businesses.
+      </p>
+
+      <p>
+        Our reputation is significant in the Rwanda building sector for combining experience
+        with high-quality products and responsive customer care.
+      </p>
+
+      <p>
+        Our highly qualified staff are always delighted to welcome you at our main offices,
+        our branches, and our agents countrywide.
+      </p>
+
+      <p>
+        Keep contacting us for further information, support, or delivery.
+      </p>
+
+      <p class="who-cta-line">
+        <a href="contact.html" class="who-contact-btn">Contact Us &rarr;</a>
+      </p>
+
     </div>
 
   </div>

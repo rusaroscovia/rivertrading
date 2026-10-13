@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Electrical – River Trading Ltd</title>
+<link rel="icon" type="image/png" href="../images/logo-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+body{font-family:'DM Sans',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a{font-family:'Archivo',sans-serif;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}.reveal.visible{opacity:1;transform:none;}
+.page-hero{min-height:320px;padding:120px 40px 60px;background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);position:relative;overflow:hidden;}
+.page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.42);}
+.page-hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;}
+.breadcrumb{display:flex;gap:8px;align-items:center;color:rgba(255,255,255,.65);font-size:0.85rem;margin-bottom:16px;flex-wrap:wrap;}
+.breadcrumb a{color:#FFD700;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#FFD700;}
+.page-hero p{color:rgba(255,255,255,.78);font-size:1rem;max-width:580px;line-height:1.7;}
+.subcat-nav{background:#fff;border-bottom:2px solid #e5e7eb;padding:0 40px;position:sticky;top:72px;z-index:90;}
+.subcat-nav-inner{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
+.subcat-nav a{display:inline-block;padding:16px 22px;font-family:'Archivo',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
+.subcat-nav a:hover{color:#004e3b;border-bottom-color:#FFD700;}.subcat-nav a.active{color:#CC0000;border-bottom-color:#CC0000;}
+.products-section{padding:72px 40px 80px;max-width:1180px;margin:0 auto;}
+.section-intro{margin-bottom:48px;}
+.story-label{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.story-label-line{display:block;height:2px;width:28px;background:#CC0000;flex-shrink:0;}
+.story-label-text{font-family:'Archivo',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
+.section-intro h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#111;margin-bottom:14px;line-height:1.2;}
+.section-intro h2 em{font-style:italic;color:#CC0000;}.section-intro p{color:#555;font-size:0.97rem;line-height:1.8;max-width:680px;}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px;}
+.prod-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1px solid #f0f0f0;display:flex;flex-direction:column;cursor:pointer;transition:all .3s ease;}
+.prod-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.13);}
+.prod-img{height:170px;overflow:hidden;background:#f9fafb;display:flex;align-items:center;justify-content:center;}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}.prod-card:hover .prod-img img{transform:scale(1.06);}
+.prod-img-ph{font-size:3rem;color:#ccc;}
+.prod-body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;}
+.prod-name{font-family:'Archivo',sans-serif;font-size:0.97rem;font-weight:800;color:#111;margin-bottom:4px;}
+.prod-size{font-size:0.78rem;color:#888;margin-bottom:12px;}.prod-footer{margin-top:auto;}
+.btn-view{display:inline-block;padding:8px 18px;background:#CC0000;color:#fff;border:none;border-radius:5px;font-family:'Archivo',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;}
+.btn-view:hover{background:#a00000;}
+.modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:12px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(20px) scale(.97);transition:transform .3s ease;box-shadow:0 24px 60px rgba(0,0,0,.3);}
+.modal-overlay.open .modal{transform:none;}
+.modal-img{height:220px;background:linear-gradient(135deg,#004e3b,#CC0000);display:flex;align-items:center;justify-content:center;border-radius:12px 12px 0 0;overflow:hidden;}
+.modal-img img{width:100%;height:100%;object-fit:cover;}.modal-img-ph{font-size:5rem;}
+.modal-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;}
+.modal-close:hover{background:rgba(0,0,0,.85);}
+.modal-body{padding:26px 30px 30px;}
+.modal-cat{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#CC0000;margin-bottom:6px;}
+.modal-name{font-family:'Archivo',sans-serif;font-size:1.4rem;font-weight:900;color:#111;margin-bottom:6px;}
+.modal-size{font-size:0.85rem;color:#888;margin-bottom:14px;}
+.modal-sec{font-family:'Archivo',sans-serif;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#004e3b;margin:18px 0 8px;padding-bottom:5px;border-bottom:2px solid #f0fdf4;}
+.modal-desc{color:#555;font-size:0.9rem;line-height:1.75;}
+.modal-uses{list-style:none;padding:0;}
+.modal-uses li{font-size:0.87rem;color:#555;line-height:1.6;padding-left:18px;position:relative;margin-bottom:5px;}
+.modal-uses li::before{content:'✓';position:absolute;left:0;color:#004e3b;font-weight:700;}
+.modal-news{background:#f0fdf4;border-left:4px solid #004e3b;border-radius:0 6px 6px 0;padding:12px 16px;margin-top:8px;font-size:0.87rem;color:#004e3b;line-height:1.65;}
+.modal-news strong{display:block;margin-bottom:3px;}
+.dd-sub-label{padding:8px 16px 4px;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#aaa;}
+@media(max-width:768px){.products-section,.page-hero{padding-left:20px;padding-right:20px;}.subcat-nav{padding:0 16px;}.modal-body{padding:20px;}}
+</style></head><body>
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div></a>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-menu" role="menubar">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
+    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#delivery-section">Delivery Service</a></li><li><a href="services.html#ie-heading">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
+    <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html">All Products</a></li><li class="dd-sub-label">Agriculture</li><li><a href="cat-sanitary.html">Sanitary Products</a></li>
+<li><a href="cat-handtools.html">Hand Tools</a></li>
+<li><a href="cat-electrical.html" class="active">Electrical</a></li>
+<li><a href="cat-construction.html">Construction</a></li>
+<li><a href="cat-chemical.html">Chemical Products</a></li></ul></li>
+    <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
+    <li><a href="partners.html">Partners</a></li><li><a href="blogs.html">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+<div class="page-hero"><div class="page-hero-inner">
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="products.html">Products</a><span>›</span><a href="#">Agriculture</a><span>›</span><span>Electrical</span></div>
+  <h1>Electrical <em>Products</em></h1>
+  <p>Quality electrical materials and components for domestic, commercial, and industrial installations across Rwanda.</p>
+</div></div>
+<nav class="subcat-nav" aria-label="Agriculture sub-categories"><div class="subcat-nav-inner">
+  <a href="cat-sanitary.html">Sanitary</a>
+  <a href="cat-handtools.html">Hand Tools</a>
+  <a href="cat-electrical.html" class="active">Electrical</a>
+  <a href="cat-construction.html">Construction</a>
+  <a href="cat-chemical.html">Chemical Products</a>
+</div></nav>
+<main class="products-section">
+  <div class="section-intro reveal">
+    <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Agriculture — Electrical</span><span class="story-label-line"></span></div>
+    <h2>Electrical <em>Products</em></h2>
+    <p>A comprehensive range of electrical products including cables, switches, breakers, and conduit — all sourced and distributed by River Trading Ltd.</p>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</main>
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal"><div class="modal-img"><div class="modal-img-ph" id="modalPh"></div><img id="modalImgSrc" src="" alt="" style="display:none;"/></div>
+  <button class="modal-close" id="modalClose" aria-label="Close">&#215;</button>
+  <div class="modal-body"><p class="modal-cat" id="modalCat"></p><h2 class="modal-name" id="modalName"></h2><p class="modal-size" id="modalSize"></p><p class="modal-sec">About This Product</p><p class="modal-desc" id="modalDesc"></p><p class="modal-sec">How It Is Used</p><ul class="modal-uses" id="modalUses"></ul><p class="modal-sec">Product News</p><div class="modal-news" id="modalNews"></div></div></div>
+</div>
+<footer role="contentinfo"><div class="footer-main"><div class="footer-brand"><div class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div></div><p>Rwanda's trusted supplier of quality products.</p><div class="social-links"><a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a><a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a><a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a></div></div>
+<div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">&#8250; All Products</a></li><li><a href="cat-sanitary.html">&#8250; Sanitary</a></li><li><a href="cat-handtools.html">&#8250; Hand Tools</a></li><li><a href="cat-electrical.html">&#8250; Electrical</a></li><li><a href="cat-construction.html">&#8250; Construction</a></li><li><a href="cat-chemical.html">&#8250; Chemical Products</a></li></ul></div>
+<div class="footer-col"><h5>Quick Links</h5><ul><li><a href="../index.html">&#8250; Home</a></li><li><a href="about.html">&#8250; About Us</a></li><li><a href="services.html">&#8250; Services</a></li><li><a href="contact.html">&#8250; Contact Us</a></li></ul></div>
+<div class="footer-col"><h5>Contact Us</h5><div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div><div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058</span></div><div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div></div></div>
+<div class="footer-bottom"><p>&copy; 2024 River Trading Ltd. All rights reserved.</p></div></footer>
+<button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+<script src="../js/main.js"></script>
+<script>
+const CAT_LABEL = 'Agriculture — Electrical';
+const PH = '⚡';
+const PRODUCTS = [
+  { "id":"el1","name":"Electrical Junction Box","size":"60mm / 100mm / 150mm","image":"../images/prod-junctionbox.jpg","desc":"Steel junction boxes for protecting electrical wire connections in walls and ceilings. Prevents short circuits and fire hazards at connection points.","uses":["Protecting wire joins in wall installations","Ceiling light and switch wiring points","Outdoor electrical connections","Solar and generator installations"],"news":"The 150mm jumbo box is now stocked for high-density commercial wiring."},
+  { "id":"el2","name":"Electrical Cable (2.5mm)","size":"Per metre / Roll 100m","image":"../images/prod-cable.jpg","desc":"Standard 2.5mm electrical cable suitable for domestic and light commercial wiring installations.","uses":["Wall socket and switch wiring","Lighting circuits","Extension leads and fixed installations","Solar and battery system wiring"],"news":"Now available in pre-cut lengths of 10m, 25m, and 50m for convenience."},
+  { "id":"el3","name":"Light Switch & Socket Set","size":"Single / Double","image":"../images/prod-switch.jpg","desc":"Quality wall-mounted light switches and power sockets for domestic and commercial electrical installations.","uses":["Wall-mounted power outlets in homes and offices","Light switch installations","Kitchen and bathroom fitting","Commercial outlet installations"],"news":"New flush-mounted design with child-safety shutters now available."},
+  { "id":"el4","name":"Circuit Breaker (MCB)","size":"6A / 10A / 16A / 20A / 32A","image":"../images/prod-mcb.jpg","desc":"Miniature circuit breakers for overload and short-circuit protection in electrical distribution boards.","uses":["Distribution board protection","Individual circuit protection","Residential and commercial panels","Solar and generator system protection"],"news":"DIN-rail compatible models now in stock for easy installation."},
+  { "id":"el5","name":"PVC Conduit Pipe","size":"16mm / 20mm / 25mm / 32mm","image":"../images/prod-conduit.jpg","desc":"Rigid PVC conduit pipes for protecting and routing electrical cables in walls, ceilings, and floors.","uses":["Surface and concealed cable routing","Wall and ceiling cable protection","Underground cable ducting","Panel and distribution board wiring"],"news":"Flexible conduit in 20mm and 25mm now in stock for tight bends."}
+];
+const grid = document.getElementById('productGrid');
+grid.innerHTML = [...PRODUCTS].sort((a,b)=>a.name.localeCompare(b.name)).map(p=>
+  <article class="prod-card" onclick="openModal('${p.id}')" role="button" tabindex="0" aria-label="View ${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openModal('${p.id}')">
+    <div class="prod-img"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/><div class="prod-img-ph" style="display:none;">${PH}</div></div>
+    <div class="prod-body"><div class="prod-name">${p.name}</div><div class="prod-size">📦 ${p.size}</div><div class="prod-footer"><button class="btn-view" tabindex="-1">View More</button></div></div>
+  </article>).join('');
+function openModal(id){const p=PRODUCTS.find(x=>x.id===id);if(!p)return;document.getElementById('modalCat').textContent=CAT_LABEL;document.getElementById('modalName').textContent=p.name;document.getElementById('modalSize').textContent='📦 '+p.size;document.getElementById('modalDesc').textContent=p.desc;document.getElementById('modalNews').innerHTML='<strong>Latest:</strong> '+p.news;document.getElementById('modalPh').textContent=PH;const img=document.getElementById('modalImgSrc');img.src=p.image;img.alt=p.name;img.style.display='';img.onerror=()=>{img.style.display='none';};document.getElementById('modalUses').innerHTML=p.uses.map(u=><li>${u}</li>).join('');document.getElementById('productModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('productModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('productModal').addEventListener('click',e=>{if(e.target===document.getElementById('productModal'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script></body></html>

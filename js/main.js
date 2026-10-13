@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   counters.forEach(c => countObserver.observe(c));
 
   // ---- SCROLL REVEAL ----
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -155,8 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   reveals.forEach(el => revealObserver.observe(el));
+
+  // Also trigger immediately for any elements already in viewport on load
+  // (handles direct anchor navigation like #who-we-are)
+  setTimeout(() => {
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  }, 100);
 
 });

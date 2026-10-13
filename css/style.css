@@ -258,6 +258,17 @@ img { max-width: 100%; display: block; }
   margin: 6px 0;
 }
 
+/* Sub-section label inside dropdown (e.g. "Agriculture") */
+.dropdown .dd-sub-label {
+  padding: 8px 18px 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #aaa;
+  cursor: default;
+}
+
 /* ============================================
    HAMBURGER
    ============================================ */

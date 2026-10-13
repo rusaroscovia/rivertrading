@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mirah – River Trading Ltd</title>
+<link rel="icon" type="image/png" href="../images/logo-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+    body{font-family:'DM Sans',sans-serif;}
+    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a{font-family:'Archivo',sans-serif;}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease;}.reveal.visible{opacity:1;transform:none;}
+    .reveal-left{opacity:0;transform:translateX(-44px);transition:opacity .75s ease,transform .75s ease;}.reveal-right{opacity:0;transform:translateX(44px);transition:opacity .75s ease,transform .75s ease;}
+    .reveal-left.visible,.reveal-right.visible{opacity:1;transform:none;}
+    .page-hero{min-height:340px;padding:130px 40px 70px;position:relative;overflow:hidden;}
+    .page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.42);}
+    .page-hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;}
+    .breadcrumb{display:flex;gap:8px;align-items:center;color:rgba(255,255,255,.65);font-size:0.85rem;margin-bottom:16px;flex-wrap:wrap;}
+    .breadcrumb a{color:#FFD700;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
+    .page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#FFD700;}
+    .page-hero p{color:rgba(255,255,255,.8);font-size:1.05rem;max-width:600px;line-height:1.75;}
+    .brand-tabs{background:#fff;border-bottom:2px solid #e5e7eb;padding:0 40px;position:sticky;top:72px;z-index:90;}
+    .brand-tabs-inner{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
+    .brand-tabs a{display:inline-block;padding:16px 22px;font-family:'Archivo',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
+    .brand-tabs a:hover{color:#004e3b;border-bottom-color:#FFD700;}.brand-tabs a.active{color:#CC0000;border-bottom-color:#CC0000;}
+    .brand-main{padding:72px 40px 96px;max-width:1180px;margin:0 auto;}
+    .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+    .brand-img-col{position:relative;}
+    .brand-img-frame{width:100%;aspect-ratio:1;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;}
+    .brand-img-frame img{width:100%;height:100%;object-fit:contain;padding:32px;}
+    .brand-img-frame-ph{font-family:'Archivo',sans-serif;font-size:4rem;font-weight:900;color:rgba(255,255,255,.6);}
+    .story-label{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+    .story-label-line{display:block;height:2px;width:28px;background:#CC0000;flex-shrink:0;}
+    .story-label-text{font-family:'Archivo',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
+    .brand-text h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#111;margin-bottom:10px;line-height:1.15;}
+    .brand-text h2 em{font-style:italic;color:#CC0000;}
+    .brand-tagline-text{font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:22px;display:block;}
+    .brand-text p{font-size:1rem;color:#444;line-height:1.88;margin-bottom:16px;}
+    .brand-text p strong{color:#004e3b;font-weight:700;}
+    .brand-products-label{font-family:'Archivo',sans-serif;font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#004e3b;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid #f0fdf4;display:block;}
+    .brand-products-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .brand-products-list li{font-size:0.9rem;color:#555;padding-left:16px;position:relative;line-height:1.6;}
+    .brand-products-list li::before{content:'→';position:absolute;left:0;color:#CC0000;font-weight:700;}
+    .brand-cta{display:inline-block;margin-top:28px;padding:13px 28px;background:#CC0000;color:#fff;border-radius:5px;font-family:'Archivo',sans-serif;font-size:0.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;transition:all .25s ease;}
+    .brand-cta:hover{background:#a00000;}
+    @media(max-width:960px){.brand-grid{grid-template-columns:1fr;gap:40px;}}
+    @media(max-width:768px){.brand-main,.page-hero{padding-left:20px;padding-right:20px;}.brand-tabs{padding:0 16px;}.brand-products-list{grid-template-columns:1fr;}}
+.page-hero { background:linear-gradient(135deg,#CC0000 0%,#8B0000 50%,#CC0000 100%); }
+</style></head><body>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+      <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+    </a>
+    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" role="menubar">
+      <li><a href="../index.html">Home</a></li>
+      <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
+      <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#delivery-section">Delivery Service</a></li><li><a href="services.html#ie-heading">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
+      <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html">All Products</a></li><li class="dd-sub-label">Agriculture</li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-chemical.html">Chemical Products</a></li></ul></li>
+      <li class="has-dropdown"><a href="brands.html" class="active">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+<div class="page-hero"><div class="page-hero-inner">
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="brands.html">Brands</a><span>›</span><span>Mirah</span></div>
+  <h1>Mirah <em>Brand</em></h1>
+  <p>River Trading Ltd's personal care brand — everyday hygiene and beauty products crafted for Rwandan homes, salons, and institutions.</p>
+</div></div>
+<nav class="brand-tabs" aria-label="Brand navigation">
+  <div class="brand-tabs-inner">
+    <a href="brands.html">All Brands</a>
+    <a href="brand-river.html">RIVER®</a>
+    <a href="brand-mirah.html" class="active">Mirah</a>
+    <a href="brand-diamondmix.html">Diamond Mix</a>
+    <a href="brand-magpow.html">MAGPOW</a>
+  </div>
+</nav>
+<main class="brand-main">
+  <div class="brand-grid">
+    <div class="brand-img-col reveal-left">
+      <div class="brand-img-frame" style="background:linear-gradient(135deg,#CC0000,#8B0000);">
+        <img src="../images/brand-mirah.png" alt="Mirah logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
+        <div class="brand-img-frame-ph" style="display:none;">M</div>
+      </div>
+    </div>
+    <div class="brand-text reveal-right">
+      <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Personal Care Brand</span><span class="story-label-line"></span></div>
+      <h2>Mirah <em>Brand</em></h2>
+      <span class="brand-tagline-text">Gentle. Effective. Made for You.</span>
+      <p>
+  <strong>Mirah</strong> is River Trading Ltd's dedicated personal care brand, created to give
+  Rwandan consumers access to quality hygiene and beauty products that are gentle on the skin,
+  effective in daily use, and affordable for every household.
+</p>
+<p>
+  The Mirah brand was born out of the growing demand for personal care products that are
+  locally available and reliably consistent in quality. Rather than rely on inconsistent
+  imports, River Trading Ltd developed Mirah to fill that gap with products made to our
+  own standards.
+</p>
+<p>
+  Mirah products are used in homes, schools, hair salons, hotels, and healthcare facilities
+  across Rwanda. The range includes <strong>shampoo variants for different hair types</strong>,
+  <strong>gentle hand wash</strong>, and <strong>skin care basics</strong> for men and women.
+</p>
+      <span class="brand-products-label">Products Under This Brand</span>
+      <ul class="brand-products-list">
+        <li>Shampoo (Men)</li>
+        <li>Shampoo (Women)</li>
+        <li>Shampoo (Children)</li>
+        <li>Hand Wash</li>
+        <li>Body Lotion</li>
+        <li>Skin Moisturiser</li>
+        <li>Hair Conditioner</li>
+        <li>Facial Wash</li>
+      </ul>
+      <a href="products.html" class="brand-cta">View All Products</a>
+    </div>
+  </div>
+</main>
+<footer role="contentinfo">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div></div>
+      <p>Rwanda's trusted supplier of quality products since 2020.</p>
+      <div class="social-links"><a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a><a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a><a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a></div>
+    </div>
+    <div class="footer-col"><h5>Our Brands</h5><ul><li><a href="brands.html">&#8250; All Brands</a></li><li><a href="brand-river.html">&#8250; RIVER®</a></li><li><a href="brand-mirah.html">&#8250; Mirah</a></li><li><a href="brand-diamondmix.html">&#8250; Diamond Mix</a></li><li><a href="brand-magpow.html">&#8250; MAGPOW</a></li></ul></div>
+    <div class="footer-col"><h5>Quick Links</h5><ul><li><a href="../index.html">&#8250; Home</a></li><li><a href="about.html">&#8250; About Us</a></li><li><a href="services.html">&#8250; Services</a></li><li><a href="products.html">&#8250; Products</a></li><li><a href="blogs.html">&#8250; Blog</a></li><li><a href="contact.html">&#8250; Contact Us</a></li></ul></div>
+    <div class="footer-col"><h5>Contact Us</h5><div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div><div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br/>+250 788 386 303</span></div><div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div></div>
+  </div>
+  <div class="footer-bottom"><p>&copy; 2024 River Trading Ltd. All rights reserved.</p></div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+<script src="../js/main.js"></script>
+</body></html>
