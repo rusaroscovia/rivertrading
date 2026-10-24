@@ -1,28 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>River Trading Ltd – Quality and Good Service</title>
   <meta name="description" content="River Trading Ltd – Rwanda's trusted supplier of quality tools, lubricants, cleaning products, and hardware. Quality and Good Service." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/" />
 
   <!-- Favicon placeholder -->
   <link rel="icon" type="image/png" href="images/logo-icon.png" />
 
-  <!-- Google Fonts: Archivo (headings) + Geist via self-hosting fallback -->
+  <!-- Google Fonts: Barlow for headings and Inter for body text -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
     /* Override font-family to use Google Fonts */
-    body { font-family: 'DM Sans', sans-serif; }
+    body { font-family: 'Inter', sans-serif; }
     h1,h2,h3,h4,h5,h6,
     .hero-title,.hero-tagline,.section-title,
     .nav-logo-text,.btn,.nav-menu a {
-      font-family: 'Archivo', sans-serif;
+      font-family: 'Barlow', sans-serif;
     }
 
     /* Scroll-reveal base state */
@@ -77,6 +78,38 @@
       object-position: center;
     }
 
+    /* ---- Photo strip below the hero ---- */
+    #photo-strip {
+      background: #0d1f18;
+      padding: 18px 0;
+      border-top: 3px solid #c9a227;
+      border-bottom: 3px solid #c9a227;
+    }
+    .strip-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+    .strip-track {
+      display: flex;
+      gap: 16px;
+      will-change: transform;
+    }
+    .strip-cell {
+      flex: 0 0 220px;
+      width: 220px;
+      height: 140px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #14312a;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    }
+    .strip-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     /* About image placeholder */
     .about-img-placeholder {
       width: 100%;
@@ -127,17 +160,53 @@
     .pc-purple { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
     .pc-orange { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "River Trading Ltd",
+      "description": "Supplier of tools, lubricants, cleaning products, hardware and related goods in Rwanda.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "KN 4 St",
+        "addressLocality": "Kigali",
+        "addressCountry": "RW"
+      },
+      "telephone": "+250788386303",
+      "email": "info@rivertradingltd.com",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday",
+          "https://schema.org/Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Rwanda"
+      }
+    }
+  </script>
 </head>
 
-<body>
+<body class="has-contact-bar">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- ================================================
        NAVBAR
        ================================================ -->
+  <!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="River Trading Ltd Home">
       <img src="images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
-      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+      <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
     </a>
     <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -157,25 +226,31 @@
         <ul class="dropdown">
           <li><a href="pages/services.html">Product Supply</a></li>
           <li><a href="pages/services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="pages/services.html#delivery-section">Delivery Service</a></li>
-          <li><a href="pages/services.html#ie-heading">Import &amp; Export</a></li>
+          <li><a href="pages/services.html#shopping-delivery">Delivery Service</a></li>
+          <li><a href="pages/services.html#import-export">Import &amp; Export</a></li>
           <li><a href="pages/services.html">After-Sales Support</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
       <a href="pages/products.html">Products <span class="drop-arrow">&#9660;</span></a>
       <ul class="dropdown">
-        <li><a href="pages/products.html">All Products</a></li>
-        <li class="dd-sub-label">Agriculture</li>
-        <li><a href="pages/cat-sanitary.html">Sanitary Products</a></li>
-        <li><a href="pages/cat-handtools.html">Hand Tools</a></li>
-        <li><a href="pages/cat-electrical.html">Electrical</a></li>
-        <li><a href="pages/cat-construction.html">Construction</a></li>
-        <li><a href="pages/cat-chemical.html">Chemical Products</a></li>
-      </ul>
+            <li><a href="pages/products.html#inventoryCatalog">All Products</a></li>
+            <li><a href="pages/cat-agriculture.html">Agriculture</a></li>
+            <li><a href="pages/special-products.html">Special Products</a></li>
+            <li><a href="pages/cat-sanitary.html">Sanitary Products</a></li>
+            <li><a href="pages/safety-equipment.html">Safety Equipment</a></li>
+            <li><a href="pages/cat-handtools.html">Hand Tools</a></li>
+            <li><a href="pages/cat-electrical.html">Electrical</a></li>
+            <li><a href="pages/cat-construction.html">Construction</a></li>
+            <li><a href="pages/cat-chemical.html">Chemical Products</a></li>
+            <li><a href="pages/tailoring.html">Tailoring</a></li>
+            <li><a href="pages/salon-assets.html">Salon Assets</a></li>
+            <li><a href="pages/party-supplies.html">Party Supplies</a></li>
+          </ul>
     </li>
       <li class="has-dropdown"><a href="pages/brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="pages/brand-river.html">River</a></li><li><a href="pages/brand-mirah.html">Mirah</a></li><li><a href="pages/brand-diamondmix.html">Diamond Mix</a></li><li><a href="pages/brand-magpow.html">MAGPOW</a></li></ul></li>
-      <li><a href="pages/blogs.html">Blog</a></li>
+      <li><a href="pages/events.html">Events</a></li>
+      <li class="has-dropdown"><a href="pages/branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="pages/branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="pages/branches.html#muhima">Muhima Branch</a></li></ul></li>
       <li><a href="pages/contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
   </nav>
@@ -192,9 +267,10 @@
       <!-- SLIDE 1 -->
       <div class="slide slide-1 active" aria-hidden="false">
         <div class="slide-visual">
-          <!-- Replace src with your actual product/company image -->
-          <img src="images/slide-1.jpg"
-               alt="River Trading Ltd – Quality Products"
+          <!-- Real product photo from the live site; falls back to the green
+               gradient below if the file is missing -->
+          <img src="images/welcomeimages-optimized/AMAVUTA-YIMASHINI-B.jpg"
+               alt="RIVER® machine lubricants"
                onerror="this.style.display='none'" />
         </div>
       </div>
@@ -202,8 +278,8 @@
       <!-- SLIDE 2 -->
       <div class="slide slide-2" aria-hidden="true">
         <div class="slide-visual">
-          <img src="images/slide-2.jpg"
-               alt="River Trading Ltd – Lubricants and Tools"
+          <img src="images/welcomeimages-optimized/GLASS-CLEANER-kinya-B.jpg"
+               alt="RIVER® glass cleaner and cleaning products"
                onerror="this.style.display='none'" />
         </div>
       </div>
@@ -211,8 +287,8 @@
       <!-- SLIDE 3 -->
       <div class="slide slide-3" aria-hidden="true">
         <div class="slide-visual">
-          <img src="images/slide-3.jpg"
-               alt="River Trading Ltd – Serving Rwanda"
+          <img src="images/welcomeimages-optimized/TOWER-PINCER-b.jpg"
+               alt="River Trading Ltd professional hand tools"
                onerror="this.style.display='none'" />
         </div>
       </div>
@@ -232,12 +308,8 @@
 
     <!-- Hero text overlay -->
     <div class="hero-content">
-      <img src="images/logo-icon.png"
-           alt="River Trading Ltd"
-           class="hero-logo"
-           onerror="this.style.display='none'" />
       <p class="hero-tagline">Welcome to</p>
-      <h1 class="hero-title">
+      <h1 id="main-content" class="hero-title" tabindex="-1">
         <span>RIVER</span> TRADING LTD
       </h1>
       <p class="hero-subtitle">— Quality and Good Service —</p>
@@ -245,19 +317,26 @@
         Rwanda's trusted supplier of premium tools, lubricants, cleaning products, and hardware.
         Serving homes, businesses, and industries with quality products since 2020.
       </p>
-      <div class="hero-buttons">
-        <a href="pages/products.html" class="btn btn-primary">Our Products</a>
-        <a href="pages/about.html"    class="btn btn-outline">Learn About Us</a>
-      </div>
-    </div>
-
-  </section>
+    </div>  </section>
   <!-- /HERO -->
 
 
   <!-- ================================================
+       PHOTO STRIP — every landing-page photo, one after another
+       Cells are built by js/main.js from js/landing-photos.js,
+       which is the same list the hero slider above draws from.
+  ================================================ -->
+  <section id="photo-strip" aria-label="Our products in pictures">
+    <div class="strip-viewport">
+      <div class="strip-track" aria-hidden="true"></div>
+    </div>
+  </section>
+  <!-- /PHOTO STRIP -->
+
+
+  <!-- ================================================
        ABOUT SNAPSHOT
-       ================================================ -->
+  ================================================ -->
   <section id="about-snapshot" aria-labelledby="about-heading">
     <div class="about-snapshot-grid">
 
@@ -400,141 +479,88 @@
 
 
   <!-- ================================================
-       WHY CHOOSE US
-       ================================================ -->
-  <section id="why-us" aria-labelledby="why-heading">
-    <div class="why-us-header reveal">
-      <span class="section-label" style="border-color:#FFD700; color:#FFD700;">Why Choose Us</span>
-      <h2 class="section-title" id="why-heading">
-        The <span>River Trading</span> Difference
+       BRANCHES PREVIEW  (scroll down to find us)
+  ================================================ -->
+  <section id="branches-preview" aria-labelledby="branches-heading">
+    <div class="products-preview-header reveal">
+      <span class="section-label">Visit Us</span>
+      <h2 class="section-title" id="branches-heading">
+        Our <span>Branches</span>
       </h2>
-      <p>We don't just sell products — we build lasting relationships with our customers through trust, quality, and service.</p>
+      <p style="color:#666; margin-top:10px; font-size:0.95rem;">
+        Find RIVER® products at our branches in Kigali — walk in for retail or bulk orders.
+      </p>
     </div>
 
-    <div class="why-grid">
+    <div class="products-grid">
 
-      <div class="why-card reveal">
-        <span class="why-icon">✅</span>
-        <h4>Guaranteed Quality</h4>
-        <p>Every product is carefully sourced and tested to meet the highest standards before it reaches you.</p>
+      <div class="product-card reveal">
+        <div class="product-card-img pc-green"><span class="branch-photo-ph"><img src="images/location-pin.png" alt="" aria-hidden="true" /><small>Branch photo coming soon</small></span></div>
+        <div class="product-card-body">
+          <h4>Muhima Branch</h4>
+          <p>Walk-in retail and bulk orders for homes, shops and businesses around Muhima.</p>
+        </div>
       </div>
 
-      <div class="why-card reveal">
-        <span class="why-icon">🚀</span>
-        <h4>Fast Delivery</h4>
-        <p>We deliver across Rwanda promptly so your projects and daily operations never face unnecessary delays.</p>
+      <div class="product-card reveal">
+        <div class="product-card-img pc-blue"><span class="branch-photo-ph"><img src="images/location-pin.png" alt="" aria-hidden="true" /><small>Branch photo coming soon</small></span></div>
+        <div class="product-card-body">
+          <h4>Nyarugenge Branch</h4>
+          <p>Full product range, bulk orders, walk-in retail and pickup in Nyarugenge.</p>
+        </div>
       </div>
 
-      <div class="why-card reveal">
-        <span class="why-icon">💰</span>
-        <h4>Affordable Pricing</h4>
-        <p>Competitive prices without compromising quality. We believe everyone deserves access to great products.</p>
-      </div>
+    </div>
 
-      <div class="why-card reveal">
-        <span class="why-icon">🤝</span>
-        <h4>Trusted by Many</h4>
-        <p>With hundreds of satisfied customers since 2020, our reputation speaks for itself.</p>
-      </div>
-
+    <div class="products-preview-footer reveal">
+      <a href="pages/branches.html" class="btn btn-primary" style="background:#004e3b; border-color:#004e3b;">
+        View All Branches &rarr;
+      </a>
     </div>
   </section>
-  <!-- /WHY CHOOSE US -->
+  <!-- /BRANCHES PREVIEW -->
 
 
   <!-- ================================================
        FOOTER  (Contact info lives here only)
        ================================================ -->
   <footer role="contentinfo">
-    <div class="footer-main">
-
-      <!-- Brand column -->
-      <div class="footer-brand">
-        <div class="nav-logo">
-          <img src="images/logo-icon.png"
-               alt="River Trading Ltd"
-               style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;"
-               onerror="this.style.display='none'" />
-          <div class="nav-logo-text">
-            <span class="river">RIVER</span>
-            <span class="trading">Trading Ltd</span>
-          </div>
-        </div>
-        <p>
-          Rwanda's trusted supplier of quality tools, lubricants, cleaning products, and hardware.
-          Committed to Quality and Good Service since 2020.
-        </p>
-        <!-- Social Media -->
-        <div class="social-links">
-          <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-          <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
-          <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
-          </div>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <img src="images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
       </div>
-
-      <!-- Quick Links -->
-      <div class="footer-col">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="index.html">&#8250; Home</a></li>
-          <li><a href="pages/about.html">&#8250; About Us</a></li>
-          <li><a href="pages/products.html">&#8250; Products</a></li>
-          <li><a href="pages/contact.html">&#8250; Contact Us</a></li>
-        </ul>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788386303" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
       </div>
-
-      <!-- Products -->
-      <div class="footer-col">
-        <h5>About Us</h5>
-        <ul>
-          <li><a href="pages/about.html#who-we-are">&#8250; Who We Are</a></li>
-          <li><a href="pages/about.html#mission-vision">&#8250; Mission &amp; Vision</a></li>
-          <li><a href="pages/about.html#our-team">&#8250; Our Team</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="footer-col">
-        <h5>Contact Us</h5>
-
-        <div class="contact-item">
-          <span class="contact-icon">📍</span>
-          <span>Kigali, Rwanda</span>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <span>
-            +250 794 427 058<br />
-            +250 788 386 303<br />
-            +250 788 735 441
-          </span>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-icon">💬</span>
-          <span>WhatsApp available on the numbers above</span>
-        </div>
-
-                <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
-<div class="contact-item">
-          <span class="contact-icon">🌐</span>
-          <span>
-            <a href="https://www.rivertradingltd.com" style="color:#FFD700;">
-              www.rivertradingltd.com
-            </a>
-          </span>
-        </div>
-      </div>
-
-    </div><!-- /footer-main -->
-
-    <div class="footer-bottom">
-      <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
-      <p>Designed with care &mdash; <a href="pages/contact.html">Contact Us</a></p>
     </div>
-
-  </footer>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="pages/about.html#who-we-are">About Us</a></li>
+        <li><a href="pages/products.html">Products &amp; Services</a></li>
+        <li><a href="pages/brands.html">Brands</a></li>
+        <li><a href="pages/branches.html">Branches</a></li>
+        <li><a href="pages/events.html">Projects &amp; Events</a></li>
+        <li><a href="pages/about.html#our-team">Teams &amp; Departments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788386303">+250 788 386 303</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788386303" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
+  </div>
+</footer>
   <!-- /FOOTER -->
 
 
@@ -542,7 +568,8 @@
   <button id="scrollTop" aria-label="Scroll to top of page">&#8679;</button>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/landing-photos.js?v=2"></script>
+  <script src="js/main.js?v=6"></script>
 
 </body>
 </html>

@@ -1,20 +1,21 @@
-﻿<!DOCTYPE html>
+now <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services – River Trading Ltd</title>
-  <meta name="description" content="Discover River Trading Ltd's services – product supply, import & export, bulk orders, delivery, and more across Rwanda and East Africa." />
+  <meta name="description" content="Explore River Trading Ltd's wholesale and retail distribution, import and export, local manufacturing, delivery, and project supply services in Rwanda." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/pages/services.html" />
   <link rel="icon" type="image/png" href="../images/logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
     /* ── Base ──────────────────────────────────────────────── */
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'DM Sans',sans-serif; color:#111; background:#fff; overflow-x:hidden; }
-    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+    body { font-family:'Inter',sans-serif; color:#111; background:#fff; overflow-x:hidden; }
+    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; display:block; }
 
@@ -27,9 +28,9 @@
 
     /* ── HERO ──────────────────────────────────────────────── */
     .services-hero {
-      min-height:72vh; background:#004e3b;
+      background:#004e3b;
       display:flex; align-items:center;
-      padding:140px 40px 80px; position:relative; overflow:hidden;
+      padding:40px 40px; position:relative; overflow:hidden;
     }
     .services-hero::before {
       content:''; position:absolute; width:500px; height:500px; border-radius:50%;
@@ -65,241 +66,73 @@
       font-size:0.82rem; font-weight:600; letter-spacing:.3px;
     }
 
-    /* ── INTRO split ────────────────────────────────────────── */
-    .intro-section { padding:100px 40px; background:#fff; }
-    .intro-inner {
-      max-width:1180px; margin:0 auto;
-      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
-    }
-
-    .intro-text .section-label {
-      display:inline-block; font-size:0.72rem; font-weight:800;
-      text-transform:uppercase; letter-spacing:3px; color:#CC0000; margin-bottom:14px;
-    }
-    .intro-text h2 {
-      font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111;
-      line-height:1.2; margin-bottom:20px;
-    }
-    .intro-text h2 em { font-style:normal; color:#004e3b; }
-    .intro-text p { color:#555; font-size:0.97rem; line-height:1.85; margin-bottom:14px; }
-
-    .highlight-bar {
-      border-left:5px solid #FFD700; padding:14px 20px;
-      background:#f0fdf4; color:#004e3b; font-weight:700;
-      font-size:1rem; line-height:1.6; border-radius:0 8px 8px 0; margin:24px 0;
-    }
-
-    .intro-img {
-      border-radius:16px; overflow:hidden;
-      background:linear-gradient(160deg,#004e3b,#CC0000);
-      aspect-ratio:4/5; display:flex; align-items:center; justify-content:center;
-      box-shadow:0 16px 50px rgba(0,0,0,.16); position:relative;
-    }
-    .intro-img::before {
-      content:''; position:absolute; width:200px; height:200px; border-radius:50%;
-      background:rgba(255,215,0,.1); top:-50px; right:-50px;
-    }
-    .intro-img img { width:100%; height:100%; object-fit:cover; }
-    .intro-img-ph { width:130px; height:130px; object-fit:contain; filter:drop-shadow(0 4px 20px rgba(0,0,0,.4)); z-index:1; }
-
-    /* ── SERVICES GRID (like Igire programs) ───────────────── */
-    .services-section { padding:100px 40px; background:#f9fafb; }
+    /* ── SERVICES ──────────────────────────────────────────── */
+    .services-section { padding:150px 40px 88px; background:#f9fafb; }
     .services-inner { max-width:1180px; margin:0 auto; }
 
     .section-header { text-align:center; max-width:640px; margin:0 auto 64px; }
     .section-header .eyebrow { display:inline-block; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#CC0000; margin-bottom:12px; }
-    .section-header h2 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111; line-height:1.2; }
-    .section-header h2 em { font-style:normal; color:#004e3b; }
+    .section-header h1 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111; line-height:1.2; }
+    .section-header h1 em { font-style:normal; color:#004e3b; }
     .section-header p { color:#666; font-size:0.97rem; margin-top:14px; line-height:1.75; }
 
-    /* Main service cards — large, like Igire program cards */
-    .service-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; }
-
-    .svc-card {
-      background:#fff; border-radius:16px; overflow:hidden;
-      box-shadow:0 3px 20px rgba(0,0,0,.07); border:1px solid #f0f0f0;
-      transition:all .35s ease; display:flex; flex-direction:column;
+    .service-list { display:grid; gap:26px; }
+    .service-detail {
+      display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+      align-items:stretch; overflow:hidden; background:#fff; border:1px solid #e5e7eb;
+      border-radius:16px; box-shadow:0 4px 22px rgba(0,0,0,.06);
     }
-    .svc-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.13); border-color:#e5e7eb; }
-
-    /* Top color bar */
-    .svc-top {
-      padding:32px 28px 24px; position:relative; overflow:hidden;
-      background:#004e3b;
+    .service-detail:nth-child(even) .service-photo { order:2; }
+    .service-photo {
+      height:320px; align-self:center; padding:24px; display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(145deg,#e8f2ee,#f8f9fa 58%,#f9e8e8);
     }
-    .svc-card:nth-child(2) .svc-top { background:#CC0000; }
-    .svc-card:nth-child(3) .svc-top { background:#016630; }
-    .svc-card:nth-child(4) .svc-top { background:#004e3b; }
-    .svc-card:nth-child(5) .svc-top { background:#CC0000; }
-    .svc-card:nth-child(6) .svc-top { background:#016630; }
-
-    .svc-top::after {
-      content:''; position:absolute; width:140px; height:140px; border-radius:50%;
-      background:rgba(255,255,255,.06); bottom:-60px; right:-40px;
+    .service-photo-placeholder {
+      width:100%; min-height:270px; padding:28px; border:2px dashed #b9c8c1;
+      border-radius:12px; display:flex; flex-direction:column; align-items:center;
+      justify-content:center; text-align:center; gap:10px; color:#004e3b;
+      background:rgba(255,255,255,.6);
     }
-
-    .svc-icon {
-      width:52px; height:52px; border-radius:12px;
-      background:rgba(255,255,255,.15); display:flex; align-items:center;
-      justify-content:center; font-size:1.7rem; margin-bottom:16px;
-    }
-    .svc-tag {
-      font-size:0.68rem; font-weight:800; text-transform:uppercase;
-      letter-spacing:2px; color:rgba(255,255,255,.6); display:block; margin-bottom:6px;
-    }
-    .svc-top h3 { font-size:1.15rem; font-weight:900; color:#fff; }
-
-    /* Duration-like badge (reuse idea from Igire "Program Duration") */
-    .svc-badge {
-      display:inline-block; margin-top:14px; padding:5px 12px;
-      background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
-      border-radius:20px; font-size:0.72rem; font-weight:700; color:rgba(255,255,255,.8);
-    }
-
-    .svc-body { padding:24px 28px 28px; flex:1; }
-    .svc-body p { color:#555; font-size:0.9rem; line-height:1.75; margin-bottom:14px; }
-    .svc-list { list-style:none; padding:0; }
-    .svc-list li {
-      font-size:0.86rem; color:#444; line-height:1.65;
-      padding-left:18px; position:relative; margin-bottom:6px;
-    }
-    .svc-list li::before { content:'→'; position:absolute; left:0; color:#CC0000; font-weight:700; }
-
-    /* ── DELIVERY SECTION ───────────────────────────────────── */
-    .delivery-section { padding:100px 40px; background:#fff; }
-    .delivery-inner { max-width:1180px; margin:0 auto; }
-
-    .delivery-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-
-    /* Left steps */
-    .delivery-steps h2 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111; line-height:1.2; margin-bottom:36px; }
-    .delivery-steps h2 em { font-style:normal; color:#004e3b; }
-
-    .step-item { display:flex; gap:18px; align-items:flex-start; margin-bottom:28px; }
-    .step-num {
-      width:44px; height:44px; border-radius:50%; flex-shrink:0;
-      display:flex; align-items:center; justify-content:center;
-      font-family:'Archivo',sans-serif; font-weight:900; font-size:1rem;
-      background:#004e3b; color:#FFD700; box-shadow:0 4px 12px rgba(0,78,59,.3);
-    }
-    .step-item:last-child .step-num { background:#CC0000; box-shadow:0 4px 12px rgba(204,0,0,.3); }
-    .step-text h4 { font-size:0.97rem; font-weight:800; color:#004e3b; margin-bottom:4px; }
-    .step-item:last-child .step-text h4 { color:#CC0000; }
-    .step-text p  { font-size:0.88rem; color:#666; line-height:1.65; margin:0; }
-
-    /* Right coverage cards */
-    .coverage-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .cov-card {
-      background:#f9fafb; border-radius:12px; padding:28px 22px;
-      border-top:4px solid #004e3b; text-align:center; transition:all .3s ease;
-      box-shadow:0 2px 12px rgba(0,0,0,.06);
-    }
-    .cov-card:nth-child(2) { border-top-color:#CC0000; }
-    .cov-card:nth-child(3) { border-top-color:#FFD700; }
-    .cov-card:nth-child(4) { border-top-color:#008138; }
-    .cov-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.11); background:#fff; }
-    .cov-icon { font-size:2rem; margin-bottom:10px; display:block; }
-    .cov-card h4 { font-size:0.92rem; font-weight:800; color:#004e3b; margin-bottom:6px; }
-    .cov-card:nth-child(2) h4 { color:#CC0000; }
-    .cov-card p  { font-size:0.82rem; color:#777; line-height:1.6; }
-
-    /* Delivery promise banner */
-    .delivery-promise {
-      background:#004e3b; border-radius:16px; padding:44px 48px;
-      display:flex; justify-content:space-between; align-items:center;
-      gap:24px; flex-wrap:wrap; margin-top:64px; box-shadow:0 8px 32px rgba(0,78,59,.25);
-    }
-    .delivery-promise h3 { font-size:1.3rem; font-weight:900; color:#FFD700; margin-bottom:8px; }
-    .delivery-promise p  { color:rgba(255,255,255,.78); font-size:0.95rem; line-height:1.7; max-width:560px; }
-    .btn-promise {
-      display:inline-block; padding:14px 28px; background:#FFD700; color:#111;
-      border-radius:8px; font-family:'Archivo',sans-serif; font-weight:800;
-      font-size:0.88rem; text-transform:uppercase; letter-spacing:.5px;
-      white-space:nowrap; flex-shrink:0; transition:all .3s ease;
-    }
-    .btn-promise:hover { background:#fff; }
-
-    /* ── IMPORT & EXPORT ────────────────────────────────────── */
-    .ie-section { background:#111; padding:100px 40px; }
-    .ie-inner { max-width:1180px; margin:0 auto; }
-
-    .ie-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-
-    .ie-text .eyebrow-light {
-      display:inline-block; font-size:0.72rem; font-weight:800;
-      text-transform:uppercase; letter-spacing:3px; color:#FFD700; margin-bottom:14px;
-    }
-    .ie-text h2 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#fff; line-height:1.2; margin-bottom:20px; }
-    .ie-text h2 em { font-style:normal; color:#FFD700; }
-    .ie-text p { color:rgba(255,255,255,.7); font-size:0.97rem; line-height:1.85; margin-bottom:14px; }
-
-    /* 2×2 feature boxes */
-    .ie-features { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:28px 0 36px; }
-    .ie-feat {
-      background:rgba(255,255,255,.06); border:1px solid rgba(255,215,0,.15);
-      border-radius:10px; padding:20px; transition:all .3s ease;
-    }
-    .ie-feat:hover { background:rgba(255,215,0,.08); border-color:rgba(255,215,0,.4); }
-    .ie-feat .fi  { font-size:1.5rem; margin-bottom:8px; display:block; }
-    .ie-feat h4   { font-size:0.88rem; font-weight:800; color:#FFD700; margin-bottom:4px; }
-    .ie-feat p    { font-size:0.8rem; color:rgba(255,255,255,.55); line-height:1.5; margin:0; }
-
-    .btn-ie {
-      display:inline-block; padding:14px 28px; background:#FFD700; color:#111;
-      border-radius:6px; font-family:'Archivo',sans-serif; font-weight:800;
-      font-size:0.88rem; text-transform:uppercase; letter-spacing:.5px; transition:all .3s ease;
-    }
-    .btn-ie:hover { background:#CC0000; color:#fff; }
-
-    /* Steps panel */
-    .ie-steps-panel {
-      background:rgba(255,255,255,.05); border:1px solid rgba(255,215,0,.15);
-      border-radius:16px; padding:40px;
-    }
-    .ie-steps-panel h3 { font-size:1.1rem; font-weight:900; color:#FFD700; margin-bottom:28px; }
-
-    .ie-step { display:flex; gap:16px; align-items:flex-start; margin-bottom:22px; }
-    .ie-step:last-child { margin-bottom:0; }
-    .ie-step-num {
-      width:36px; height:36px; border-radius:50%; background:#FFD700; color:#111; flex-shrink:0;
-      display:flex; align-items:center; justify-content:center;
-      font-family:'Archivo',sans-serif; font-weight:900; font-size:0.88rem;
-    }
-    .ie-step h5 { font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:3px; }
-    .ie-step p  { font-size:0.83rem; color:rgba(255,255,255,.55); line-height:1.55; margin:0; }
-
-    /* ── CTA BAND ────────────────────────────────────────────── */
-    .cta-band { background:#CC0000; padding:88px 40px; text-align:center; }
-    .cta-band h2 { font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:900; color:#fff; margin-bottom:12px; }
-    .cta-band p  { color:rgba(255,255,255,.85); font-size:1rem; max-width:520px; margin:0 auto 32px; line-height:1.7; }
-    .btn-cta {
-      display:inline-block; padding:16px 36px; background:#fff; color:#CC0000;
-      border-radius:6px; font-family:'Archivo',sans-serif; font-weight:800;
-      font-size:0.95rem; text-transform:uppercase; letter-spacing:.5px; transition:all .3s ease;
-    }
-    .btn-cta:hover { background:#FFD700; color:#111; }
+    .service-photo-icon { font-size:2.8rem; line-height:1; }
+    .service-photo-label { font-family:'Barlow',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; }
+    .service-photo-hint { color:#717b76; font-size:.78rem; }
+    .service-copy { padding:38px clamp(28px,4vw,52px); align-self:center; }
+    .service-copy h3 { margin:8px 0 14px; color:#004e3b; font-size:clamp(1.35rem,2.4vw,1.8rem); font-weight:900; line-height:1.15; }
+    .service-copy p { color:#555; font-size:.95rem; line-height:1.8; margin-bottom:16px; text-align:justify; }
+    .service-copy h4 { color:#333; font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:800; margin:18px 0 8px; }
+    .service-list-items { list-style:none; padding:0; display:grid; gap:8px; }
+    .service-list-items li { position:relative; padding-left:20px; color:#444; font-size:.88rem; line-height:1.65; }
+    .service-list-items li::before { content:'•'; position:absolute; left:2px; color:#CC0000; font-size:1.1rem; font-weight:900; }
+    .service-product-groups { display:grid; gap:10px; }
+    .service-product-groups li { padding-left:0; }
+    .service-product-groups li::before { content:none; }
+    .service-product-groups strong { display:block; color:#004e3b; margin-bottom:2px; }
 
     /* ── Responsive ─────────────────────────────────────────── */
-    @media(max-width:960px) {
-      .intro-inner,.delivery-grid,.ie-grid { grid-template-columns:1fr; gap:48px; }
+    @media(max-width:760px) {
+      .services-hero { padding:72px 20px; }
+      .services-section { padding:140px 20px 72px; }
+      .service-detail { grid-template-columns:1fr; }
+      .service-detail:nth-child(even) .service-photo { order:0; }
+      .service-photo { height:260px; padding:20px; }
+      .service-photo-placeholder { min-height:0; }
+      .service-copy { padding:28px 24px 32px; }
     }
-    @media(max-width:680px) {
-      .services-hero,.intro-section,.services-section,.delivery-section,.ie-section,.cta-band { padding:72px 20px; }
-      .ie-features { grid-template-columns:1fr; }
-      .coverage-grid { grid-template-columns:1fr; }
-      .delivery-promise { flex-direction:column; padding:32px 24px; }
-    }
-  </style>
+
+</style>
 </head>
-<body>
+<body class="has-contact-bar">
+  <a class="skip-link" href="#services-grid-heading">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════════════════════ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
+<!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="https://wa.me/250788403079" target="_blank" rel="noopener"><span aria-hidden="true">&#9742;</span><span>0788403079</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
       <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
-      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+      <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
     </a>
     <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -317,27 +150,33 @@
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
         <ul class="dropdown">
-          <li><a href="services.html">Product Supply</a></li>
-          <li><a href="services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#delivery-section">Delivery Service</a></li>
-          <li><a href="services.html#ie-heading">Import &amp; Export</a></li>
-          <li><a href="services.html">After-Sales Support</a></li>
+          <li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li>
+          <li><a href="services.html#import-export">Import &amp; Export Operations</a></li>
+          <li><a href="services.html#local-manufacturing">Local Manufacturing</a></li>
+          <li><a href="services.html#shopping-delivery">In-Store Shopping &amp; Delivery</a></li>
+          <li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
-      <ul class="dropdown">
-        <li><a href="products.html">All Products</a></li>
-        <li class="dd-sub-label">Agriculture</li>
-        <li><a href="cat-sanitary.html">Sanitary Products</a></li>
-        <li><a href="cat-handtools.html">Hand Tools</a></li>
-        <li><a href="cat-electrical.html">Electrical</a></li>
-        <li><a href="cat-construction.html">Construction</a></li>
-        <li><a href="cat-chemical.html">Chemical Products</a></li>
-      </ul>
+      <ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul>
     </li>
       <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
-      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li class="has-dropdown"><a href="branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="branches.html#muhima">Muhima Branch</a></li></ul></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
   </nav>
@@ -346,354 +185,116 @@
 <!-- ═══════════════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════════════════ -->
-<section class="services-hero" aria-labelledby="services-hero-heading">
-  <div class="hero-inner">
-    <span class="eyebrow">What We Do</span>
-    <h1 id="services-hero-heading">
-      More Than Products —<br />
-      A Complete <em>Service.</em>
-    </h1>
-    <p class="hero-sub">
-      River Trading Ltd delivers quality products to your door, connects buyers across borders,
-      supports your business with expert consultation, and stands by you after every sale.
-    </p>
-    <div class="hero-pills">
-      <span class="hero-pill">📦 Product Supply</span>
-      <span class="hero-pill">🚚 Nationwide Delivery</span>
-      <span class="hero-pill">✈️ Import &amp; Export</span>
-      <span class="hero-pill">🤝 Reseller Partnerships</span>
-      <span class="hero-pill">⭐ After-Sales Support</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     INTRO — two column
-════════════════════════════════════════════════════════════ -->
-<section class="intro-section" aria-labelledby="intro-heading">
-  <div class="intro-inner">
-
-    <div class="intro-text reveal-left">
-      <span class="section-label">Our Commitment</span>
-      <h2 id="intro-heading">Built Around <em>Your Needs</em></h2>
-      <p>
-        We don't just hand you a product and walk away. River Trading Ltd is structured to support
-        you from the moment you reach out — through delivery, consultation, and after-sales care.
-      </p>
-      <div class="highlight-bar">
-        From local household supply to cross-border import &amp; export — we handle it all.
-      </div>
-      <p>
-        Whether you're a homeowner, a construction firm, or a retailer looking to stock quality
-        goods, our service offering is designed to meet you exactly where you are.
-      </p>
-    </div>
-
-    <div class="intro-img reveal-right">
-      <img src="../images/services-intro.jpg" alt="River Trading Ltd services"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-      <img class="intro-img-ph" src="../images/logo-icon.png" alt="River Trading Ltd"
-           style="display:none;" />
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     CORE SERVICES GRID
-════════════════════════════════════════════════════════════ -->
 <section class="services-section" aria-labelledby="services-grid-heading">
   <div class="services-inner">
-
     <div class="section-header reveal">
-      <span class="eyebrow">Core Services</span>
-      <h2 id="services-grid-heading">Everything We <em>Offer</em></h2>
-      <p>Six pillars of service that keep River Trading Ltd reliable, responsive, and trusted across Rwanda.</p>
+      <h1 id="services-grid-heading" tabindex="-1">What We <em>Do</em></h1>
     </div>
 
-    <div class="service-cards">
-
-      <!-- 1 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">🛒</div>
-          <span class="svc-tag">Core Service</span>
-          <h3>Product Supply &amp; Distribution</h3>
-          <span class="svc-badge">Available Now</span>
+    <div class="service-list">
+      <article class="service-detail reveal" id="wholesale-retail">
+        <div class="service-photo" role="img" aria-label="Image placeholder for wholesale and retail distribution">
+          <div class="service-photo-placeholder">
+            <span class="service-photo-icon" aria-hidden="true">▦</span>
+            <span class="service-photo-label">Wholesale &amp; Retail Photo</span>
+            <span class="service-photo-hint">Add image: images/services-wholesale-retail.jpg</span>
+          </div>
         </div>
-        <div class="svc-body">
-          <p>Supplying homes, businesses, and industries with quality products at competitive prices — with our own RIVER® branded lines.</p>
-          <ul class="svc-list">
-            <li>Wide catalogue: tools, lubricants, cleaning products, hardware</li>
-            <li>Consistent stock availability for regular customers</li>
-            <li>RIVER® branded lines manufactured to our standards</li>
-            <li>Walk-in, phone, and WhatsApp orders accepted</li>
+        <div class="service-copy">
+          <h3>Wholesale &amp; Retail Distribution</h3>
+          <p>We supply a broad catalogue of industrial, hardware and household goods to individual buyers, contractors, and small-to-large hardware stores across Rwanda and the East African region.</p>
+          <h4>Product supply categories</h4>
+          <ul class="service-list-items service-product-groups">
+            <li><strong>Construction &amp; hardware</strong>Wall plaster, cement, adhesives, contact glue, silicone sealant, thinner, welding electrodes and discs, helmets, raincoats, measuring tapes, and building materials.</li>
+            <li><strong>Electrical supplies</strong>Electric cables and wires, circuit breakers, switches, sockets, metal and plastic junction boxes, and lighting equipment.</li>
+            <li><strong>Plumbing &amp; sanitary items</strong>Pipes, fittings, and bathroom and sanitary fixtures.</li>
+            <li><strong>Chemicals &amp; industrial oils</strong>Caustic soda, machine lubricants, anti-rust oils, and motor oils.</li>
+            <li><strong>Hand tools, power tools &amp; equipment</strong>Pliers, wire cutters, glass cutters, carpenter’s planers, pneumatic hammers, welding machines, and padlocks.</li>
+            <li><strong>Hygiene &amp; paper products</strong>Toilet paper, paper towels, and cleaning agents.</li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <!-- 2 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">📦</div>
-          <span class="svc-tag">Business Service</span>
-          <h3>Bulk &amp; Wholesale Orders</h3>
-          <span class="svc-badge">Flexible Pricing</span>
+      <article class="service-detail reveal" id="import-export">
+        <div class="service-photo" role="img" aria-label="Image placeholder for import and export operations">
+          <div class="service-photo-placeholder">
+            <span class="service-photo-icon" aria-hidden="true">⇄</span>
+            <span class="service-photo-label">Import &amp; Export Photo</span>
+            <span class="service-photo-hint">Add image: images/services-import-export.jpg</span>
+          </div>
         </div>
-        <div class="svc-body">
-          <p>Serving businesses, retailers, and institutions that need products in large quantities — with preferential pricing and dedicated support.</p>
-          <ul class="svc-list">
-            <li>Customised pricing for large-volume orders</li>
-            <li>Dedicated account manager for business clients</li>
-            <li>Flexible payment arrangements for trusted partners</li>
-            <li>Regular restocking schedules available</li>
+        <div class="service-copy">
+          <h3>Import &amp; Export Operations</h3>
+          <p>We source and import products for Rwanda through international partners, supporting the supply of construction, industrial, and household goods. Our trading activity also connects buyers and sellers across borders.</p>
+          <h4>Products and sourcing markets</h4>
+          <ul class="service-list-items">
+            <li>Construction, electrical, hand and power tools, plumbing and sanitary products.</li>
+            <li>Hygienic tissues, agricultural tools and machines, and industrial raw materials such as chemicals.</li>
+            <li>International sourcing partners in China (PRC), India, Italy, Kenya, Egypt, Tanzania, and Dubai (UAE).</li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <!-- 3 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">🔍</div>
-          <span class="svc-tag">Advisory</span>
-          <h3>Product Consultation</h3>
-          <span class="svc-badge">Free Service</span>
+      <article class="service-detail reveal" id="local-manufacturing">
+        <div class="service-photo" role="img" aria-label="Image placeholder for local manufacturing and production">
+          <div class="service-photo-placeholder">
+            <span class="service-photo-icon" aria-hidden="true">⚙</span>
+            <span class="service-photo-label">Manufacturing Photo</span>
+            <span class="service-photo-hint">Add image: images/services-manufacturing.jpg</span>
+          </div>
         </div>
-        <div class="svc-body">
-          <p>Not sure which product is right for your needs? Our team provides free product consultation to help you choose correctly the first time.</p>
-          <ul class="svc-list">
-            <li>Free advice on lubricant grades for specific machinery</li>
-            <li>Cleaning product selection for different surfaces</li>
-            <li>Tool recommendations for construction or craft projects</li>
-            <li>Safety equipment guidance</li>
+        <div class="service-copy">
+          <h3>Local Manufacturing &amp; Production</h3>
+          <p>We produce selected cleaning, hygiene and car-care products under our proprietary RIVER® and MIRAH® brands for customers in Rwanda and the region.</p>
+          <h4>Products include</h4>
+          <ul class="service-list-items">
+            <li>Liquid detergents and laundry liquids.</li>
+            <li>Hand wash and shampoos for personal and animal care.</li>
+            <li>Acetone-based nail polish removers, glass cleaners, and machine lubricants.</li>
+            <li>Wheel bins and sanitation accessories.</li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <!-- 4 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">🤝</div>
-          <span class="svc-tag">Partnership</span>
-          <h3>Supplier &amp; Reseller Partnerships</h3>
-          <span class="svc-badge">Open Applications</span>
+      <article class="service-detail reveal" id="shopping-delivery">
+        <div class="service-photo" role="img" aria-label="Image placeholder for in-store shopping, collection, and delivery">
+          <div class="service-photo-placeholder">
+            <span class="service-photo-icon" aria-hidden="true">⌖</span>
+            <span class="service-photo-label">Shopping &amp; Delivery Photo</span>
+            <span class="service-photo-hint">Add image: images/services-shopping-delivery.jpg</span>
+          </div>
         </div>
-        <div class="svc-body">
-          <p>We partner with resellers, retailers, and distributors who want to carry RIVER® products or our wider product range in their outlets.</p>
-          <ul class="svc-list">
-            <li>Reseller agreements with defined margins</li>
-            <li>Marketing support and branded materials</li>
-            <li>Training on product knowledge and sales</li>
-            <li>Priority access to new products and stock</li>
+        <div class="service-copy">
+          <h3>In-Store Shopping, Pick-Up &amp; Delivery</h3>
+          <p>Customers can shop directly at our Kigali and provincial locations, collect orders in person, or request delivery. We serve both commercial and residential customers.</p>
+          <ul class="service-list-items">
+            <li>Direct counter service at our Kigali and provincial locations.</li>
+            <li>Order pick-up and delivery options for residential and commercial customers.</li>
           </ul>
         </div>
-      </div>
+      </article>
 
-      <!-- 5 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">⭐</div>
-          <span class="svc-tag">Support</span>
-          <h3>After-Sales Support</h3>
-          <span class="svc-badge">Always Available</span>
+      <article class="service-detail reveal" id="project-supply">
+        <div class="service-photo" role="img" aria-label="Image placeholder for business and construction project supply">
+          <div class="service-photo-placeholder">
+            <span class="service-photo-icon" aria-hidden="true">⌂</span>
+            <span class="service-photo-label">Project Supply Photo</span>
+            <span class="service-photo-hint">Add image: images/services-project-supply.jpg</span>
+          </div>
         </div>
-        <div class="svc-body">
-          <p>Our service doesn't end at delivery. We support clients after every purchase to ensure satisfaction and address any concerns quickly.</p>
-          <ul class="svc-list">
-            <li>WhatsApp support line for product questions</li>
-            <li>Returns and replacements for defective items</li>
-            <li>Usage guidance provided on request</li>
-            <li>Customer feedback used to improve every order</li>
+        <div class="service-copy">
+          <h3>B2B &amp; Project Supply</h3>
+          <p>We support business customers and building projects with planned supply of project-grade materials and hardware in the quantities their work requires.</p>
+          <ul class="service-list-items">
+            <li>Formal quotations for business and project requirements.</li>
+            <li>Project-grade material fulfilment for building and construction sites.</li>
+            <li>Bulk hardware provisions for small and large projects.</li>
           </ul>
         </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="svc-card reveal">
-        <div class="svc-top">
-          <div class="svc-icon">✈️</div>
-          <span class="svc-tag">Cross-Border</span>
-          <h3>Import &amp; Export</h3>
-          <span class="svc-badge">Rwanda &amp; East Africa</span>
-        </div>
-        <div class="svc-body">
-          <p>Bridging international suppliers with the Rwandan market — and connecting Rwandan products with buyers across East Africa.</p>
-          <ul class="svc-list">
-            <li>Product import from verified international suppliers</li>
-            <li>Export of Rwandan products to regional markets</li>
-            <li>Full customs and documentation handling</li>
-            <li>Trade partnership sourcing and management</li>
-          </ul>
-        </div>
-      </div>
-
+      </article>
     </div>
   </div>
 </section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     DELIVERY  (featured)
-════════════════════════════════════════════════════════════ -->
-<section id="delivery-section" class="delivery-section" aria-labelledby="delivery-heading">
-  <div class="delivery-inner">
-
-    <div class="section-header reveal">
-      <span class="eyebrow">Logistics</span>
-      <h2 id="delivery-heading">Our <em>Delivery Service</em></h2>
-      <p>We don't just sell — we bring the products to you. Reliable, tracked, and delivered on time across Kigali and all of Rwanda.</p>
-    </div>
-
-    <div class="delivery-grid">
-
-      <!-- Steps -->
-      <div class="delivery-steps reveal-left">
-        <h2>Order Today, <em>Delivered to Your Door</em></h2>
-
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-text">
-            <h4>Place Your Order</h4>
-            <p>Call us, send a WhatsApp message, or fill in the contact form with what you need and your delivery location.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-text">
-            <h4>We Confirm &amp; Pack</h4>
-            <p>We confirm your order, carefully pack every item to prevent damage, and prepare for same-day or next-day dispatch.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-text">
-            <h4>Out for Delivery</h4>
-            <p>Your order is dispatched and you receive a WhatsApp update with delivery details and estimated arrival time.</p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-text">
-            <h4>Delivered &amp; Confirmed</h4>
-            <p>Order arrives at your door. We follow up on WhatsApp to confirm everything is correct and you are satisfied.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Coverage cards -->
-      <div class="reveal-right">
-        <div class="coverage-grid">
-
-          <div class="cov-card">
-            <span class="cov-icon">🏙️</span>
-            <h4>Kigali City</h4>
-            <p>Same-day or next-day delivery within Kigali. Fast, reliable, and tracked via WhatsApp.</p>
-          </div>
-
-          <div class="cov-card">
-            <span class="cov-icon">🗺️</span>
-            <h4>Nationwide Rwanda</h4>
-            <p>We deliver to all provinces across Rwanda on scheduled delivery routes.</p>
-          </div>
-
-          <div class="cov-card">
-            <span class="cov-icon">📦</span>
-            <h4>Bulk &amp; Heavy Items</h4>
-            <p>Drums, wire rolls, large packs — we handle heavy and bulk deliveries safely.</p>
-          </div>
-
-          <div class="cov-card">
-            <span class="cov-icon">💬</span>
-            <h4>WhatsApp Tracking</h4>
-            <p>Real-time delivery updates sent directly to your WhatsApp. No guessing.</p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Delivery promise banner -->
-    <div class="delivery-promise reveal">
-      <div>
-        <h3>Our Delivery Promise</h3>
-        <p>Every order is packed with care, dispatched promptly, and delivered to your exact location. If anything is wrong with your delivery, we fix it — no arguments, no delays.</p>
-      </div>
-      <a href="contact.html" class="btn-promise">Request a Delivery &rarr;</a>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     IMPORT & EXPORT  (dark band)
-════════════════════════════════════════════════════════════ -->
-<section class="ie-section" id="ie-heading" aria-labelledby="ie-h2">
-  <div class="ie-inner">
-    <div class="ie-grid">
-
-      <!-- Text -->
-      <div class="ie-text reveal-left">
-        <span class="eyebrow-light">Cross-Border Trade</span>
-        <h2 id="ie-h2">Import &amp; <em>Export</em></h2>
-        <p>River Trading Ltd operates an active import and export division, bridging the gap between international suppliers and the Rwandan market.</p>
-        <p>We source quality goods from verified international partners and bring them into Rwanda at competitive prices. At the same time, we open doors for export — connecting Rwandan products with buyers across East Africa and beyond.</p>
-
-        <div class="ie-features">
-          <div class="ie-feat"><span class="fi">✈️</span><h4>Product Import</h4><p>Sourcing quality goods internationally and bringing them to Rwanda.</p></div>
-          <div class="ie-feat"><span class="fi">📤</span><h4>Export Services</h4><p>Helping Rwandan products reach buyers across East Africa.</p></div>
-          <div class="ie-feat"><span class="fi">📋</span><h4>Customs Handling</h4><p>We manage all documentation, clearance, and compliance.</p></div>
-          <div class="ie-feat"><span class="fi">🤝</span><h4>Trade Partnerships</h4><p>Long-term relationships with suppliers and buyers across borders.</p></div>
-        </div>
-
-        <a href="contact.html" class="btn-ie">Enquire About Import / Export &rarr;</a>
-      </div>
-
-      <!-- Process steps -->
-      <div class="ie-steps-panel reveal-right">
-        <h3>How the Process Works</h3>
-
-        <div class="ie-step">
-          <div class="ie-step-num">1</div>
-          <div><h5>Enquiry &amp; Needs Assessment</h5><p>Tell us what you need — product, quantity, destination, and timeline.</p></div>
-        </div>
-        <div class="ie-step">
-          <div class="ie-step-num">2</div>
-          <div><h5>Supplier / Buyer Sourcing</h5><p>We identify and vet the best suppliers or buyers from our regional network.</p></div>
-        </div>
-        <div class="ie-step">
-          <div class="ie-step-num">3</div>
-          <div><h5>Quotation &amp; Agreement</h5><p>A clear quote covering product cost, shipping, and all fees — no hidden charges.</p></div>
-        </div>
-        <div class="ie-step">
-          <div class="ie-step-num">4</div>
-          <div><h5>Customs &amp; Documentation</h5><p>We handle all paperwork, import/export declarations, and compliance requirements.</p></div>
-        </div>
-        <div class="ie-step">
-          <div class="ie-step-num">5</div>
-          <div><h5>Delivery &amp; Confirmation</h5><p>Goods delivered to your location. We follow up to confirm everything is right.</p></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     CTA BAND
-════════════════════════════════════════════════════════════ -->
-<div class="cta-band reveal">
-  <h2>Need any of our services?</h2>
-  <p>Reach out today — we'll respond promptly and work with you to find the right solution.</p>
-  <a href="contact.html" class="btn-cta">Get In Touch</a>
-</div>
 
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -703,52 +304,41 @@
   <div class="footer-main">
     <div class="footer-brand">
       <div class="nav-logo">
-        <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
-        <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        <img src="../images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
       </div>
-      <p>Rwanda's trusted supplier of quality tools, lubricants, cleaning products, and hardware.</p>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
       <div class="social-links">
         <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-        <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
         <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788403079" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
       </div>
     </div>
     <div class="footer-col">
-      <h5>Quick Links</h5>
+      <h5>Explore</h5>
       <ul>
-        <li><a href="../index.html">&#8250; Home</a></li>
-        <li><a href="about.html">&#8250; About Us</a></li>
-        <li><a href="services.html">&#8250; Services</a></li>
-        <li><a href="products.html">&#8250; Products</a></li>
-        <li><a href="blogs.html">&#8250; Blog</a></li>
-        <li><a href="contact.html">&#8250; Contact Us</a></li>
+        <li><a href="about.html#who-we-are">About Us</a></li>
+        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="events.html">Projects &amp; Events</a></li>
+        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Our Services</h5>
-      <ul>
-        <li><a href="services.html">&#8250; Product Supply</a></li>
-        <li><a href="services.html">&#8250; Bulk &amp; Wholesale</a></li>
-        <li><a href="services.html#delivery-section">&#8250; Delivery</a></li>
-        <li><a href="services.html#ie-heading">&#8250; Import &amp; Export</a></li>
-        <li><a href="services.html">&#8250; Reseller Partnerships</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact Us</h5>
-      <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
-      <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
-      <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
-      <div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="../images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788403079">0788403079</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788403079" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
-    <p>Designed with care &mdash; <a href="contact.html">Contact Us</a></p>
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
   </div>
 </footer>
 
 <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=5"></script>
 </body>
 </html>

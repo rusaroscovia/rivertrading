@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Electrical – River Trading Ltd</title>
+  <meta name="description" content="Browse electrical products from River Trading Ltd, including lighting, cables, switches and related supplies." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/pages/cat-electrical.html" />
 <link rel="icon" type="image/png" href="../images/logo-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../css/style.css"/>
 <style>
-body{font-family:'DM Sans',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a{font-family:'Archivo',sans-serif;}
+body{font-family:'Inter',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a{font-family:'Barlow',sans-serif;}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}.reveal.visible{opacity:1;transform:none;}
 .page-hero{min-height:320px;padding:120px 40px 60px;background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);position:relative;overflow:hidden;}
 .page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.42);}
@@ -17,116 +19,436 @@ body{font-family:'DM Sans',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu
 .page-hero p{color:rgba(255,255,255,.78);font-size:1rem;max-width:580px;line-height:1.7;}
 .subcat-nav{background:#fff;border-bottom:2px solid #e5e7eb;padding:0 40px;position:sticky;top:72px;z-index:90;}
 .subcat-nav-inner{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
-.subcat-nav a{display:inline-block;padding:16px 22px;font-family:'Archivo',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
+.subcat-nav a{display:inline-block;padding:16px 22px;font-family:'Barlow',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
 .subcat-nav a:hover{color:#004e3b;border-bottom-color:#FFD700;}.subcat-nav a.active{color:#CC0000;border-bottom-color:#CC0000;}
-.products-section{padding:72px 40px 80px;max-width:1180px;margin:0 auto;}
+.products-section{padding:48px 40px 24px;max-width:1240px;margin:0 auto;}
 .section-intro{margin-bottom:48px;}
 .story-label{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
 .story-label-line{display:block;height:2px;width:28px;background:#CC0000;flex-shrink:0;}
-.story-label-text{font-family:'Archivo',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
+.story-label-text{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
 .section-intro h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#111;margin-bottom:14px;line-height:1.2;}
 .section-intro h2 em{font-style:italic;color:#CC0000;}.section-intro p{color:#555;font-size:0.97rem;line-height:1.8;max-width:680px;}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px;}
-.prod-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1px solid #f0f0f0;display:flex;flex-direction:column;cursor:pointer;transition:all .3s ease;}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.prod-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #f0f0f0;border-radius:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:transform .32s ease,box-shadow .32s ease;}
 .prod-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.13);}
-.prod-img{height:170px;overflow:hidden;background:#f9fafb;display:flex;align-items:center;justify-content:center;}
-.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}.prod-card:hover .prod-img img{transform:scale(1.06);}
-.prod-img-ph{font-size:3rem;color:#ccc;}
-.prod-body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;}
-.prod-name{font-family:'Archivo',sans-serif;font-size:0.97rem;font-weight:800;color:#111;margin-bottom:4px;}
-.prod-size{font-size:0.78rem;color:#888;margin-bottom:12px;}.prod-footer{margin-top:auto;}
-.btn-view{display:inline-block;padding:8px 18px;background:#CC0000;color:#fff;border:none;border-radius:5px;font-family:'Archivo',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;}
-.btn-view:hover{background:#a00000;}
+.prod-img{height:170px;display:flex;align-items:center;justify-content:center;background:#f9fafb;color:#7b8580;font-size:.88rem;position:relative;overflow:hidden;}
+.prod-img img{display:none;width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.prod-img.has-image img{display:block;}
+.prod-img.has-image span{display:none;}
+.prod-card:hover .prod-img img{transform:scale(1.06);}
+.prod-body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column;}
+.prod-name{font-family:'Barlow',sans-serif;font-size:1.02rem;font-weight:900;line-height:1.35;color:#111;min-height:2.7em;margin:0 0 10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.prod-spec-preview{color:#555;font-size:.9rem;line-height:1.5;margin:0;}
+.prod-spec-icon{color:#004e3b;margin-right:4px;}
+.prod-meta{font-size:.82rem;color:#737b76;line-height:normal;margin:6px 0 0;}
+.prod-footer{display:flex;justify-content:flex-end;margin-top:auto;padding-top:16px;}
+.btn-view{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border:0;border-radius:7px;background:#004e3b;color:#fff;font:700 .8rem 'Barlow',sans-serif;text-transform:uppercase;cursor:pointer;transition:background .25s ease;}
+.btn-view:hover{background:#CC0000;}
 .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
 .modal{background:#fff;border-radius:12px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(20px) scale(.97);transition:transform .3s ease;box-shadow:0 24px 60px rgba(0,0,0,.3);}
 .modal-overlay.open .modal{transform:none;}
-.modal-img{height:220px;background:linear-gradient(135deg,#004e3b,#CC0000);display:flex;align-items:center;justify-content:center;border-radius:12px 12px 0 0;overflow:hidden;}
-.modal-img img{width:100%;height:100%;object-fit:cover;}.modal-img-ph{font-size:5rem;}
-.modal-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;}
-.modal-close:hover{background:rgba(0,0,0,.85);}
+.modal-hero{height:180px;position:relative;overflow:hidden;background:linear-gradient(135deg,#004e3b,#016630 55%,#002b20);}
+.modal-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}
+.modal-hero.has-video video{display:block;}
+.modal-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.18));}
+.modal-hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px 70px 22px 28px;color:#fff;}
+.modal-cat{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#ffb3a8;margin:0 0 8px;}
+.modal-name{font-family:'Barlow',sans-serif;font-size:1.9rem;line-height:1.2;font-weight:900;color:#fff;margin:0;letter-spacing:-.02em;}
+.modal-video-status{position:absolute;right:12px;bottom:10px;color:#fff;font-size:.7rem;text-shadow:0 1px 4px #000;z-index:1;}
+.modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);border:none;color:#222;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;}
+.modal-close:hover{background:#fff;}
+.product-gallery{padding:16px 22px 0;}
+.gallery-stage{height:250px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:8px;background:#f5f7f6;color:#69736f;}
+.gallery-stage img{width:100%;height:100%;object-fit:contain;display:none;}
+.gallery-stage.has-image img{display:block;}
+.gallery-stage.has-image .gallery-image-placeholder{display:none;}
+.gallery-image-placeholder{text-align:center;padding:20px;font-size:.9rem;}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:1.4rem;cursor:pointer;}
+.gallery-arrow:hover{background:rgba(0,0,0,.8);}
+.gallery-arrow.prev{left:10px;}.gallery-arrow.next{right:10px;}
+.gallery-thumbnails{display:flex;justify-content:center;gap:10px;padding:12px 0 6px;}
+.gallery-thumb{width:70px;height:54px;position:relative;overflow:hidden;padding:0;border:2px solid #dfe5e2;border-radius:6px;background:#f5f7f6;color:#69736f;cursor:pointer;}
+.gallery-thumb.active{border-color:#005b46;}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;display:none;}
+.gallery-thumb.has-image img{display:block;}
+.gallery-thumb.has-image .gallery-thumb-placeholder{display:none;}
+.gallery-thumb-placeholder{position:absolute;inset:0;display:grid;place-items:center;font-size:.75rem;}
+.gallery-file-hint{margin:0 0 4px;color:#6b7280;text-align:center;font-size:.72rem;line-height:1.5;}
 .modal-body{padding:26px 30px 30px;}
-.modal-cat{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#CC0000;margin-bottom:6px;}
-.modal-name{font-family:'Archivo',sans-serif;font-size:1.4rem;font-weight:900;color:#111;margin-bottom:6px;}
-.modal-size{font-size:0.85rem;color:#888;margin-bottom:14px;}
-.modal-sec{font-family:'Archivo',sans-serif;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#004e3b;margin:18px 0 8px;padding-bottom:5px;border-bottom:2px solid #f0fdf4;}
-.modal-desc{color:#555;font-size:0.9rem;line-height:1.75;}
-.modal-uses{list-style:none;padding:0;}
-.modal-uses li{font-size:0.87rem;color:#555;line-height:1.6;padding-left:18px;position:relative;margin-bottom:5px;}
-.modal-uses li::before{content:'✓';position:absolute;left:0;color:#004e3b;font-weight:700;}
-.modal-news{background:#f0fdf4;border-left:4px solid #004e3b;border-radius:0 6px 6px 0;padding:12px 16px;margin-top:8px;font-size:0.87rem;color:#004e3b;line-height:1.65;}
-.modal-news strong{display:block;margin-bottom:3px;}
+.modal-details{display:grid;gap:12px;margin:0;}
+.modal-details div{padding:14px 16px;border-radius:8px;background:#f5f8f6;}
+.modal-details dt{font-family:'Barlow',sans-serif;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:#004e3b;margin-bottom:6px;}
+.modal-details dd{color:#444;font-size:.92rem;line-height:1.65;overflow-wrap:anywhere;margin:0;}
+.spec-list{display:grid;gap:8px;list-style:none;margin:0;padding:0;}
+.spec-list li{padding-left:12px;border-left:2px solid #b8d4cb;white-space:normal;}
 .dd-sub-label{padding:8px 16px 4px;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#aaa;}
-@media(max-width:768px){.products-section,.page-hero{padding-left:20px;padding-right:20px;}.subcat-nav{padding:0 16px;}.modal-body{padding:20px;}}
-</style></head><body>
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <a href="../index.html" class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div></a>
+@media(max-width:768px){.products-section,.page-hero{padding-left:20px;padding-right:20px;}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}.prod-body{padding:14px;}.subcat-nav{padding:0 16px;}.modal-hero{height:155px;}.modal-hero-content{padding:20px 60px 18px 20px;}.modal-name{font-size:1.55rem;}.product-gallery{padding:12px 14px 0;}.gallery-stage{height:210px;}.modal-body{padding:20px;}}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;}}
+    /* Product pagination */
+    .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;flex-wrap:wrap;}
+    .pagination.hidden{display:none;}
+    .page-btn{min-width:40px;height:40px;padding:0 14px;border:2px solid #e5e7eb;background:#fff;color:#555;border-radius:8px;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+    .page-btn:hover:not(:disabled):not(.active){border-color:#CC0000;color:#CC0000;}
+    .page-btn.active{background:#CC0000;border-color:#CC0000;color:#fff;cursor:default;}
+    .page-btn:disabled{opacity:.4;cursor:not-allowed;}
+    .page-dots{color:#9aa0a6;font-weight:700;}
+  </style></head><body class="has-contact-bar">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div></a>
   <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-menu" role="menubar">
     <li><a href="../index.html">Home</a></li>
     <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
-    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#delivery-section">Delivery Service</a></li><li><a href="services.html#ie-heading">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
-    <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html">All Products</a></li><li class="dd-sub-label">Agriculture</li><li><a href="cat-sanitary.html">Sanitary Products</a></li>
-<li><a href="cat-handtools.html">Hand Tools</a></li>
-<li><a href="cat-electrical.html" class="active">Electrical</a></li>
-<li><a href="cat-construction.html">Construction</a></li>
-<li><a href="cat-chemical.html">Chemical Products</a></li></ul></li>
+    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
+    <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul></li>
     <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
-    <li><a href="blogs.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li class="has-dropdown"><a href="branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="branches.html#muhima">Muhima Branch</a></li></ul></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
   </ul>
 </nav>
 <div class="page-hero"><div class="page-hero-inner">
-  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="products.html">Products</a><span>›</span><a href="#">Agriculture</a><span>›</span><span>Electrical</span></div>
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="products.html">Products</a><span>›</span><span>Electrical</span></div>
   <h1>Electrical <em>Products</em></h1>
   <p>Quality electrical materials and components for domestic, commercial, and industrial installations across Rwanda.</p>
 </div></div>
-<nav class="subcat-nav" aria-label="Agriculture sub-categories"><div class="subcat-nav-inner">
-  <a href="cat-sanitary.html">Sanitary</a>
-  <a href="cat-handtools.html">Hand Tools</a>
-  <a href="cat-electrical.html" class="active">Electrical</a>
-  <a href="cat-construction.html">Construction</a>
-  <a href="cat-chemical.html">Chemical Products</a>
-</div></nav>
-<main class="products-section">
+<main id="main-content" class="products-section" tabindex="-1">
   <div class="section-intro reveal">
-    <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Agriculture — Electrical</span><span class="story-label-line"></span></div>
+    <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Electrical Tools &amp; Accessories</span><span class="story-label-line"></span></div>
     <h2>Electrical <em>Products</em></h2>
-    <p>A comprehensive range of electrical products including cables, switches, breakers, and conduit — all sourced and distributed by River Trading Ltd.</p>
   </div>
   <div class="product-grid" id="productGrid"></div>
+<nav class="pagination hidden" id="pagination" aria-label="Product pages"></nav>
 </main>
 <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
-  <div class="modal"><div class="modal-img"><div class="modal-img-ph" id="modalPh"></div><img id="modalImgSrc" src="" alt="" style="display:none;"/></div>
+  <div class="modal">
+  <div class="modal-hero" id="modalHero">
+    <video id="modalBackgroundVideo" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    <div class="modal-hero-shade"></div>
+    <div class="modal-hero-content">
+      <p class="modal-cat">Electrical Product Details</p>
+      <h2 class="modal-name" id="modalName"></h2>
+    </div>
+    <span class="modal-video-status" id="modalVideoStatus" aria-live="polite">Add a 5–10 second video for this product.</span>
+  </div>
   <button class="modal-close" id="modalClose" aria-label="Close">&#215;</button>
-  <div class="modal-body"><p class="modal-cat" id="modalCat"></p><h2 class="modal-name" id="modalName"></h2><p class="modal-size" id="modalSize"></p><p class="modal-sec">About This Product</p><p class="modal-desc" id="modalDesc"></p><p class="modal-sec">How It Is Used</p><ul class="modal-uses" id="modalUses"></ul><p class="modal-sec">Product News</p><div class="modal-news" id="modalNews"></div></div></div>
+  <section class="product-gallery" aria-label="Product photos">
+    <div class="gallery-stage" id="galleryStage">
+      <img id="galleryImage" src="" alt="" />
+      <span class="gallery-image-placeholder" id="galleryImagePlaceholder"></span>
+      <button class="gallery-arrow prev" id="galleryPrevious" type="button" aria-label="Previous product photo">&#8249;</button>
+      <button class="gallery-arrow next" id="galleryNext" type="button" aria-label="Next product photo">&#8250;</button>
+    </div>
+    <div class="gallery-thumbnails" id="galleryThumbnails" aria-label="Choose product photo"></div>
+    <p class="gallery-file-hint">Add three photos as <code>images/electrical/&lt;product-id&gt;-1.jpg</code> to <code>-3.jpg</code>. Add a muted 5–10 second MP4 as <code>videos/electrical/&lt;product-id&gt;.mp4</code>.</p>
+  </section>
+  <div class="modal-body">
+    <dl class="modal-details">
+      <div><dt>Specification</dt><dd><ul class="spec-list" id="modalSpecification"></ul></dd></div>
+      <div><dt>PCS/CTN</dt><dd id="modalPiecesPerCarton"></dd></div>
+      <div><dt>Power Source</dt><dd id="modalPowerSource"></dd></div>
+    </dl>
+  </div>
+  </div>
 </div>
-<footer role="contentinfo"><div class="footer-main"><div class="footer-brand"><div class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div></div><p>Rwanda's trusted supplier of quality products.</p><div class="social-links"><a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a><a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a><a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a></div></div>
-<div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">&#8250; All Products</a></li><li><a href="cat-sanitary.html">&#8250; Sanitary</a></li><li><a href="cat-handtools.html">&#8250; Hand Tools</a></li><li><a href="cat-electrical.html">&#8250; Electrical</a></li><li><a href="cat-construction.html">&#8250; Construction</a></li><li><a href="cat-chemical.html">&#8250; Chemical Products</a></li></ul></div>
-<div class="footer-col"><h5>Quick Links</h5><ul><li><a href="../index.html">&#8250; Home</a></li><li><a href="about.html">&#8250; About Us</a></li><li><a href="services.html">&#8250; Services</a></li><li><a href="contact.html">&#8250; Contact Us</a></li></ul></div>
-<div class="footer-col"><h5>Contact Us</h5><div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div><div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058</span></div><div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div></div></div>
-<div class="footer-bottom"><p>&copy; 2024 River Trading Ltd. All rights reserved.</p></div></footer>
+<footer role="contentinfo">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <img src="../images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
+      </div>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788386303" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html#who-we-are">About Us</a></li>
+        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="events.html">Projects &amp; Events</a></li>
+        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="../images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788386303">+250 788 386 303</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788386303" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
+  </div>
+</footer>
 <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=6"></script>
+<script src="../js/electrical-products-data.js?v=1"></script>
+<script src="../js/product-search.js?v=4"></script>
 <script>
-const CAT_LABEL = 'Agriculture — Electrical';
-const PH = '⚡';
-const PRODUCTS = [
-  { "id":"el1","name":"Electrical Junction Box","size":"60mm / 100mm / 150mm","image":"../images/prod-junctionbox.jpg","desc":"Steel junction boxes for protecting electrical wire connections in walls and ceilings. Prevents short circuits and fire hazards at connection points.","uses":["Protecting wire joins in wall installations","Ceiling light and switch wiring points","Outdoor electrical connections","Solar and generator installations"],"news":"The 150mm jumbo box is now stocked for high-density commercial wiring."},
-  { "id":"el2","name":"Electrical Cable (2.5mm)","size":"Per metre / Roll 100m","image":"../images/prod-cable.jpg","desc":"Standard 2.5mm electrical cable suitable for domestic and light commercial wiring installations.","uses":["Wall socket and switch wiring","Lighting circuits","Extension leads and fixed installations","Solar and battery system wiring"],"news":"Now available in pre-cut lengths of 10m, 25m, and 50m for convenience."},
-  { "id":"el3","name":"Light Switch & Socket Set","size":"Single / Double","image":"../images/prod-switch.jpg","desc":"Quality wall-mounted light switches and power sockets for domestic and commercial electrical installations.","uses":["Wall-mounted power outlets in homes and offices","Light switch installations","Kitchen and bathroom fitting","Commercial outlet installations"],"news":"New flush-mounted design with child-safety shutters now available."},
-  { "id":"el4","name":"Circuit Breaker (MCB)","size":"6A / 10A / 16A / 20A / 32A","image":"../images/prod-mcb.jpg","desc":"Miniature circuit breakers for overload and short-circuit protection in electrical distribution boards.","uses":["Distribution board protection","Individual circuit protection","Residential and commercial panels","Solar and generator system protection"],"news":"DIN-rail compatible models now in stock for easy installation."},
-  { "id":"el5","name":"PVC Conduit Pipe","size":"16mm / 20mm / 25mm / 32mm","image":"../images/prod-conduit.jpg","desc":"Rigid PVC conduit pipes for protecting and routing electrical cables in walls, ceilings, and floors.","uses":["Surface and concealed cable routing","Wall and ceiling cable protection","Underground cable ducting","Panel and distribution board wiring"],"news":"Flexible conduit in 20mm and 25mm now in stock for tight bends."}
-];
+const PRODUCTS = window.RIVER_ELECTRICAL_PRODUCTS;
+if (!Array.isArray(PRODUCTS) || PRODUCTS.length === 0) {
+  throw new Error('Electrical product data did not load.');
+}
+
+const PAGE_SIZE = 12;
+let currentPage = 1;
+let lastFocusedProductButton = null;
 const grid = document.getElementById('productGrid');
-grid.innerHTML = [...PRODUCTS].sort((a,b)=>a.name.localeCompare(b.name)).map(p=>
-  <article class="prod-card" onclick="openModal('${p.id}')" role="button" tabindex="0" aria-label="View ${p.name}" onkeydown="if(event.key==='Enter'||event.key===' ')openModal('${p.id}')">
-    <div class="prod-img"><img src="${p.image}" alt="${p.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/><div class="prod-img-ph" style="display:none;">${PH}</div></div>
-    <div class="prod-body"><div class="prod-name">${p.name}</div><div class="prod-size">📦 ${p.size}</div><div class="prod-footer"><button class="btn-view" tabindex="-1">View More</button></div></div>
-  </article>).join('');
-function openModal(id){const p=PRODUCTS.find(x=>x.id===id);if(!p)return;document.getElementById('modalCat').textContent=CAT_LABEL;document.getElementById('modalName').textContent=p.name;document.getElementById('modalSize').textContent='📦 '+p.size;document.getElementById('modalDesc').textContent=p.desc;document.getElementById('modalNews').innerHTML='<strong>Latest:</strong> '+p.news;document.getElementById('modalPh').textContent=PH;const img=document.getElementById('modalImgSrc');img.src=p.image;img.alt=p.name;img.style.display='';img.onerror=()=>{img.style.display='none';};document.getElementById('modalUses').innerHTML=p.uses.map(u=><li>${u}</li>).join('');document.getElementById('productModal').classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(){document.getElementById('productModal').classList.remove('open');document.body.style.overflow='';}
-document.getElementById('modalClose').addEventListener('click',closeModal);
-document.getElementById('productModal').addEventListener('click',e=>{if(e.target===document.getElementById('productModal'))closeModal();});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-</script></body></html>
+const pager = document.getElementById('pagination');
+const modal = document.getElementById('productModal');
+const modalClose = document.getElementById('modalClose');
+const galleryStage = document.getElementById('galleryStage');
+const galleryImage = document.getElementById('galleryImage');
+const galleryImagePlaceholder = document.getElementById('galleryImagePlaceholder');
+const galleryThumbnails = document.getElementById('galleryThumbnails');
+const backgroundVideo = document.getElementById('modalBackgroundVideo');
+const videoStatus = document.getElementById('modalVideoStatus');
+let currentGalleryIndex = 0;
+let currentMediaProductId = '';
+const modalFields = {
+  specification: document.getElementById('modalSpecification'),
+  piecesPerCarton: document.getElementById('modalPiecesPerCarton'),
+  powerSource: document.getElementById('modalPowerSource')
+};
+const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;'
+})[character]);
+
+function getSpecificationLines(value) {
+  return value
+    .split(/\s*>\s*|\s+(?=VOLT(?:AGE)?\s*:)/i)
+    .map(line => line.replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+}
+
+function showGalleryImage(index) {
+  currentGalleryIndex = (index + 3) % 3;
+  const productId = currentMediaProductId;
+  const imageNumber = currentGalleryIndex + 1;
+  galleryStage.classList.remove('has-image');
+  galleryImage.alt = `Product photo ${imageNumber}`;
+  galleryImage.onerror = () => {
+    galleryStage.classList.remove('has-image');
+    galleryImagePlaceholder.textContent = `Product photo ${imageNumber} not added yet.`;
+  };
+  galleryImage.onload = () => {
+    galleryStage.classList.add('has-image');
+  };
+  galleryImagePlaceholder.textContent = `Loading product photo ${imageNumber}...`;
+  galleryImage.src = `../images/electrical/${encodeURIComponent(productId)}-${imageNumber}.jpg`;
+
+  for (const thumbnail of galleryThumbnails.children) {
+    thumbnail.classList.toggle('active', Number(thumbnail.dataset.imageIndex) === currentGalleryIndex);
+    thumbnail.setAttribute('aria-pressed', String(Number(thumbnail.dataset.imageIndex) === currentGalleryIndex));
+  }
+}
+
+function renderProductGallery(product) {
+  currentMediaProductId = product.id;
+  galleryThumbnails.innerHTML = Array.from({ length: 3 }, (_, index) => `
+    <button class="gallery-thumb" type="button" data-image-index="${index}" aria-label="Show product photo ${index + 1}" aria-pressed="${index === 0}">
+      <img alt="" />
+      <span class="gallery-thumb-placeholder">${index + 1}</span>
+    </button>
+  `).join('');
+
+  for (const thumbnail of galleryThumbnails.children) {
+    const index = Number(thumbnail.dataset.imageIndex);
+    const image = thumbnail.querySelector('img');
+    image.onerror = () => thumbnail.classList.remove('has-image');
+    image.onload = () => thumbnail.classList.add('has-image');
+    image.src = `../images/electrical/${encodeURIComponent(product.id)}-${index + 1}.jpg`;
+  }
+
+  showGalleryImage(0);
+}
+
+function playProductBackgroundVideo(product) {
+  const path = `../videos/electrical/${encodeURIComponent(product.id)}.mp4`;
+  document.getElementById('modalHero').classList.remove('has-video');
+  videoStatus.textContent = `Add a 5–10 second video at videos/electrical/${product.id}.mp4.`;
+  backgroundVideo.onerror = () => {
+    document.getElementById('modalHero').classList.remove('has-video');
+    videoStatus.textContent = `Video unavailable. Add a 5–10 second MP4 at videos/electrical/${product.id}.mp4.`;
+  };
+  backgroundVideo.onloadedmetadata = () => {
+    if (!Number.isFinite(backgroundVideo.duration) || backgroundVideo.duration < 5 || backgroundVideo.duration > 10) {
+      backgroundVideo.pause();
+      document.getElementById('modalHero').classList.remove('has-video');
+      videoStatus.textContent = 'Use a video that is between 5 and 10 seconds long.';
+      return;
+    }
+
+    document.getElementById('modalHero').classList.add('has-video');
+    videoStatus.textContent = '';
+    backgroundVideo.play().catch(error => {
+      document.getElementById('modalHero').classList.remove('has-video');
+      videoStatus.textContent = error.name === 'NotAllowedError'
+        ? 'Background video could not autoplay in this browser.'
+        : 'Background video could not be played.';
+    });
+  };
+  backgroundVideo.src = path;
+  backgroundVideo.load();
+}
+
+function renderProducts() {
+  const filteredProducts = window.RIVER_CATEGORY_SEARCH.filter(PRODUCTS);
+  const pageCount = Math.max(1, Math.ceil(filteredProducts.length / PAGE_SIZE));
+  currentPage = Math.min(currentPage, pageCount);
+  const start = (currentPage - 1) * PAGE_SIZE;
+
+  grid.innerHTML = filteredProducts.slice(start, start + PAGE_SIZE).map(product => `
+    <article class="prod-card">
+      <div class="prod-img">
+        <img data-image-src="../images/electrical/${encodeURIComponent(product.id)}-1.jpg" alt="${escapeHtml(product.name)}" />
+        <span>Product image</span>
+      </div>
+      <div class="prod-body">
+        <h3 class="prod-name">${escapeHtml(product.name)}</h3>
+        <p class="prod-spec-preview">
+          <span class="prod-spec-icon" aria-hidden="true">&#128230;</span>
+          <span>${escapeHtml(getSpecificationLines(product.specification)[0] || 'Specification not provided.')}</span>
+        </p>
+        <p class="prod-meta">PCS/CTN: ${escapeHtml(product.piecesPerCarton)}</p>
+        <div class="prod-footer">
+          <button class="btn-view" type="button" data-product-id="${escapeHtml(product.id)}">
+            View More <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+
+  for (const image of grid.querySelectorAll('.prod-img img')) {
+    image.onload = () => image.parentElement.classList.add('has-image');
+    image.onerror = () => image.remove();
+    image.src = image.dataset.imageSrc;
+  }
+
+  let pagination = `<button class="page-btn" data-page="${currentPage - 1}"${currentPage === 1 ? ' disabled' : ''}>&#8249; Prev</button>`;
+  const pageWindowStart = Math.max(1, Math.min(currentPage - 2, pageCount - 4));
+  const pageWindowEnd = Math.min(pageCount, pageWindowStart + 4);
+
+  if (pageWindowStart > 1) {
+    pagination += '<button class="page-btn" data-page="1">1</button>';
+    if (pageWindowStart > 2) pagination += '<span class="page-dots">&#8230;</span>';
+  }
+
+  for (let page = pageWindowStart; page <= pageWindowEnd; page++) {
+    pagination += `<button class="page-btn${page === currentPage ? ' active' : ''}" data-page="${page}" aria-label="Page ${page}"${page === currentPage ? ' aria-current="page"' : ''}>${page}</button>`;
+  }
+
+  if (pageWindowEnd < pageCount) {
+    if (pageWindowEnd < pageCount - 1) pagination += '<span class="page-dots">&#8230;</span>';
+    pagination += `<button class="page-btn" data-page="${pageCount}">${pageCount}</button>`;
+  }
+
+  pagination += `<button class="page-btn" data-page="${currentPage + 1}"${currentPage === pageCount ? ' disabled' : ''}>Next &#8250;</button>`;
+  pager.innerHTML = pagination;
+  pager.classList.toggle('hidden', pageCount <= 1);
+}
+
+window.RIVER_CATEGORY_SEARCH.onChange(() => {
+  currentPage = 1;
+  renderProducts();
+});
+
+grid.addEventListener('click', event => {
+  const button = event.target.closest('[data-product-id]');
+  if (button) openModal(button.dataset.productId, button);
+});
+
+pager.addEventListener('click', event => {
+  const button = event.target.closest('.page-btn');
+  if (!button || button.disabled) return;
+  currentPage = Number(button.dataset.page);
+  renderProducts();
+  grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+function openModal(id, trigger = document.activeElement) {
+  const product = PRODUCTS.find(item => item.id === id);
+  if (!product) return;
+
+  lastFocusedProductButton = trigger;
+  document.getElementById('modalName').textContent = product.name;
+  const specificationLines = getSpecificationLines(product.specification);
+  modalFields.specification.innerHTML = specificationLines.length
+    ? specificationLines.map(line => `<li>${escapeHtml(line)}</li>`).join('')
+    : '<li>Not specified in the source list.</li>';
+  modalFields.piecesPerCarton.textContent = product.piecesPerCarton;
+  modalFields.powerSource.textContent = product.powerSource || 'Not specified in the source list.';
+  renderProductGallery(product);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+  modalClose.focus();
+  playProductBackgroundVideo(product);
+}
+
+function closeModal() {
+  if (!modal.classList.contains('open')) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+  backgroundVideo.pause();
+  backgroundVideo.onerror = null;
+  backgroundVideo.onloadedmetadata = null;
+  backgroundVideo.removeAttribute('src');
+  backgroundVideo.load();
+  document.getElementById('modalHero').classList.remove('has-video');
+  if (lastFocusedProductButton && lastFocusedProductButton.isConnected) {
+    lastFocusedProductButton.focus();
+  }
+}
+
+galleryThumbnails.addEventListener('click', event => {
+  const thumbnail = event.target.closest('[data-image-index]');
+  if (thumbnail) showGalleryImage(Number(thumbnail.dataset.imageIndex));
+});
+document.getElementById('galleryPrevious').addEventListener('click', () => {
+  showGalleryImage(currentGalleryIndex - 1);
+});
+document.getElementById('galleryNext').addEventListener('click', () => {
+  showGalleryImage(currentGalleryIndex + 1);
+});
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', event => {
+  if (event.target === modal) closeModal();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeModal();
+});
+
+renderProducts();
+</script>
+</body></html>

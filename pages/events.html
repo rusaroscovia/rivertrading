@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – River Trading Ltd</title>
+  <meta name="description" content="See River Trading Ltd event and expo updates, product showcases and opportunities to connect in Rwanda." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/pages/events.html" />
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body { font-family:'Inter',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .page-hero { min-height:300px; padding:120px 40px 56px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);
+      position:relative; overflow:hidden; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.42); }
+    .page-hero-inner { position:relative; z-index:2; max-width:1180px; margin:0 auto; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; color:rgba(255,255,255,.65); font-size:.85rem; margin-bottom:16px; flex-wrap:wrap; }
+    .breadcrumb a { color:#FFD700; text-decoration:none; }
+    .breadcrumb a:hover { color:#fff; }
+    .breadcrumb span { color:rgba(255,255,255,.4); }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:12px; }
+    .page-hero h1 em { font-style:italic; color:#FFD700; }
+    .page-hero p { color:rgba(255,255,255,.78); font-size:1rem; max-width:620px; line-height:1.7; }
+
+    .subcat-nav { background:#fff; border-bottom:2px solid #e5e7eb; padding:0 40px; position:sticky; top:72px; z-index:90; }
+    .subcat-nav-inner { max-width:1180px; margin:0 auto; display:flex; gap:0; overflow-x:auto; }
+    .subcat-nav a { display:inline-block; padding:16px 20px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#666; border-bottom:3px solid transparent; margin-bottom:-2px; white-space:nowrap; transition:all .25s ease; text-decoration:none; }
+    .subcat-nav a:hover { color:#004e3b; border-bottom-color:#FFD700; }
+    .subcat-nav a.active { color:#CC0000; border-bottom-color:#CC0000; }
+
+    .products-section { padding:56px 40px 80px; max-width:1180px; margin:0 auto; }
+    .section-intro { margin-bottom:36px; }
+    .section-intro .story-label { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+    .section-intro .story-label-line { display:block; height:2px; width:28px; background:#CC0000; flex-shrink:0; }
+    .section-intro .story-label-text { font-family:'Barlow',sans-serif; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:3.5px; color:#CC0000; }
+    .section-intro h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:900; color:#111; margin-bottom:14px; line-height:1.2; }
+    .section-intro h2 em { font-style:italic; color:#CC0000; }
+    .section-intro p { color:#555; font-size:.97rem; line-height:1.8; max-width:680px; }
+
+    /* section tabs */
+    .sec-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 30px; }
+    .sec-tab { padding:10px 18px; border:2px solid #e5e7eb; background:#fff; border-radius:24px; font-family:'Barlow',sans-serif; font-size:.8rem; font-weight:700; color:#555; cursor:pointer; transition:all .22s ease; }
+    .sec-tab:hover { border-color:#CC0000; color:#CC0000; }
+    .sec-tab.active { background:#CC0000; border-color:#CC0000; color:#fff; }
+
+    .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
+    .prod-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); border:1px solid #f0f0f0; display:flex; flex-direction:column; cursor:pointer; transition:all .3s ease; }
+    .prod-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,.13); }
+    .prod-img { height:170px; overflow:hidden; position:relative; background:#f9fafb; display:flex; align-items:center; justify-content:center; }
+    .prod-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+    .prod-card:hover .prod-img img { transform:scale(1.06); }
+    .prod-badge { position:absolute; top:10px; left:10px; background:rgba(0,78,59,.9); color:#fff; font-family:'Barlow',sans-serif; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:4px 9px; border-radius:4px; z-index:2; }
+    .prod-badge.river { background:rgba(204,0,0,.92); }
+    .prod-count { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.6); color:#fff; font-size:.68rem; font-weight:700; padding:3px 8px; border-radius:10px; z-index:2; }
+    .prod-body { padding:14px 16px 18px; flex:1; display:flex; flex-direction:column; }
+    .prod-name { font-family:'Barlow',sans-serif; font-size:.97rem; font-weight:800; color:#111; margin-bottom:4px; }
+    .prod-size { font-size:.78rem; color:#888; margin-bottom:12px; }
+    .prod-footer { margin-top:auto; }
+    .btn-view { display:inline-block; padding:8px 18px; background:#CC0000; color:#fff; border:none; border-radius:5px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; cursor:pointer; transition:all .25s ease; }
+    .btn-view:hover { background:#a00000; }
+
+    .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;flex-wrap:wrap;}
+    .pagination.hidden{display:none;}
+    .page-btn{min-width:40px;height:40px;padding:0 14px;border:2px solid #e5e7eb;background:#fff;color:#555;border-radius:8px;font-family:'Barlow',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+    .page-btn:hover:not(:disabled):not(.active){border-color:#CC0000;color:#CC0000;}
+    .page-btn.active{background:#CC0000;border-color:#CC0000;color:#fff;cursor:default;}
+    .page-btn:disabled{opacity:.4;cursor:not-allowed;}
+    .page-dots{color:#9aa0a6;font-weight:700;}
+
+    /* Modal */
+    .modal-overlay { position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.72); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .3s ease; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:#fff; border-radius:12px; max-width:720px; width:100%; max-height:92vh; overflow-y:auto; position:relative; transform:translateY(20px) scale(.97); transition:transform .3s ease; box-shadow:0 24px 60px rgba(0,0,0,.3); }
+    .modal-overlay.open .modal { transform:none; }
+    .modal-media { position:relative; background:#000; }
+    .modal-main { width:100%; height:300px; object-fit:cover; display:block; background:#111; }
+    .modal-video-wrap { width:100%; height:300px; display:none; background:#000; position:relative; }
+    .modal-video-wrap video { width:100%; height:100%; object-fit:contain; background:#000; }
+    .video-note { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; text-align:center; font-size:.82rem; padding:20px; background:#111; }
+    .video-note .play { font-size:2.6rem; margin-bottom:8px; }
+    .modal-thumbs { display:flex; gap:8px; padding:10px; background:#f3f4f6; overflow-x:auto; }
+    .modal-thumb { flex:0 0 auto; width:70px; height:52px; border-radius:6px; overflow:hidden; border:2px solid transparent; cursor:pointer; background:#ddd; }
+    .modal-thumb.active { border-color:#CC0000; }
+    .modal-thumb img { width:100%; height:100%; object-fit:cover; }
+    .modal-thumb.vt { display:flex; align-items:center; justify-content:center; background:#111; color:#fff; font-size:.62rem; font-weight:800; flex-direction:column; line-height:1.1; }
+    .modal-close { position:absolute; top:12px; right:12px; width:34px; height:34px; border-radius:50%; background:rgba(0,0,0,.55); border:none; color:#fff; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:6; transition:background .2s; }
+    .modal-close:hover { background:rgba(0,0,0,.85); }
+    .modal-body { padding:24px 30px 30px; }
+    .modal-cat { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#CC0000; margin-bottom:6px; }
+    .modal-name { font-family:'Barlow',sans-serif; font-size:1.4rem; font-weight:900; color:#111; margin-bottom:6px; }
+    .modal-size { font-size:.85rem; color:#888; margin-bottom:14px; }
+    .modal-sec { font-family:'Barlow',sans-serif; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#004e3b; margin:18px 0 8px; padding-bottom:5px; border-bottom:2px solid #f0fdf4; }
+    .modal-desc { color:#555; font-size:.9rem; line-height:1.75; }
+    .modal-uses { list-style:none; padding:0; }
+    .modal-uses li { font-size:.87rem; color:#555; line-height:1.6; padding-left:18px; position:relative; margin-bottom:5px; }
+    .modal-uses li::before { content:'\2713'; position:absolute; left:0; color:#004e3b; font-weight:700; }
+    .modal-news { background:#f0fdf4; border-left:4px solid #004e3b; border-radius:0 6px 6px 0; padding:12px 16px; margin-top:8px; font-size:.87rem; color:#004e3b; line-height:1.65; }
+    .modal-news strong { display:block; margin-bottom:3px; }
+
+    @media(max-width:768px) {
+      .products-section,.page-hero { padding-left:20px; padding-right:20px; }
+      .subcat-nav { padding:0 16px; }
+      .modal-body { padding:20px; }
+      .modal-main,.modal-video-wrap { height:220px; }
+    }
+
+    /* Events / Branches shared */
+    .content-section { padding:64px 40px; max-width:1180px; margin:0 auto; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
+    .info-card2 { background:#fff; border:1px solid #f0f0f0; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); transition:all .3s ease; display:flex; flex-direction:column; }
+    .info-card2:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.12); }
+    .card-top { height:8px; background:linear-gradient(90deg,#004e3b,#CC0000); }
+    .card-body { padding:22px 24px 24px; flex:1; display:flex; flex-direction:column; }
+    .card-icon { font-size:2rem; margin-bottom:12px; }
+    .card-body h3 { font-family:'Barlow',sans-serif; font-size:1.1rem; font-weight:900; color:#111; margin-bottom:8px; }
+    .card-body p { color:#555; font-size:.9rem; line-height:1.7; }
+    .tag { display:inline-block; font-family:'Barlow',sans-serif; font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:4px 10px; border-radius:12px; margin-bottom:12px; }
+    .tag.upcoming { background:#f0fdf4; color:#004e3b; }
+    .tag.past { background:#f3f4f6; color:#666; }
+    .tag.branch { background:#fef2f2; color:#CC0000; }
+    .card-meta { margin-top:auto; padding-top:14px; border-top:1px solid #f0f0f0; font-size:.8rem; color:#888; display:flex; flex-direction:column; gap:4px; }
+    .wa-inline { display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:#25D366; color:#fff; padding:11px 18px; border-radius:8px; font-family:'Barlow',sans-serif; font-size:.85rem; font-weight:700; text-decoration:none; transition:all .3s ease; align-self:flex-start; }
+    .wa-inline:hover { background:#128C7E; transform:translateY(-2px); }
+    .empty-note { background:#f9fafb; border:2px dashed #e5e7eb; border-radius:12px; padding:40px; text-align:center; color:#888; font-size:.92rem; margin-top:28px; }
+    @media(max-width:768px){ .content-section,.page-hero{ padding-left:20px; padding-right:20px; } }
+</style>
+</head>
+<body class="has-contact-bar">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+    <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+    <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
+  </a>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-menu" role="menubar">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
+    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li></ul></li>
+    <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li></ul></li>
+    <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
+    <li><a href="events.html">Events</a></li>
+    <li class="has-dropdown"><a href="branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="branches.html#muhima">Muhima Branch</a></li></ul></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+<div class="page-hero"><div class="page-hero-inner">
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>Events &amp;</span></div>
+  <h1>Events &amp; <em>Expos</em></h1>
+  <p>Exhibitions, trade fairs and special marketing campaigns from River Trading Ltd.</p>
+</div></div>
+<main id="main-content" class="content-section" tabindex="-1">
+  <div class="section-intro reveal">
+    <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Events &amp;</span><span class="story-label-line"></span></div>
+    <h2>Events, Fairs &amp; <em>Campaigns</em></h2><p>Catch River Trading Ltd at expos and trade fairs, or join our seasonal marketing campaigns for schools, hospitals and institutions. Dates are published here as soon as they are confirmed.</p>
+  </div>
+  <div class="card-grid">
+<div class="info-card2 reveal">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-icon">🏪</div>
+        <span class="tag branch">Expo</span>
+        <h3>Kigali International Expo</h3>
+        <p>Visit our stand at Rwanda’s largest trade exhibition — full River and Mirah range on display, live product demos and show-only bulk pricing.</p>
+        <div class="card-meta"><span><strong>When:</strong> Announced here once dates are confirmed</span><span><strong>Where:</strong> Kigali Convention Centre / Booth details TBC</span><span><strong>For:</strong> Retailers, institutions, distributors</span></div>
+      </div>
+    </div>
+<div class="info-card2 reveal">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-icon">🎓</div>
+        <span class="tag branch">Campaign</span>
+        <h3>Schools & Hospitals Supply Campaign</h3>
+        <p>Term-time special campaign: institutional pricing on liquid soap, tissues, disinfectants and first-aid kits for schools, clinics and hospitals.</p>
+        <div class="card-meta"><span><strong>When:</strong> Rolling campaign — contact us to join</span><span><strong>Where:</strong> Nationwide delivery</span><span><strong>For:</strong> Schools, hospitals, NGOs</span></div>
+      </div>
+    </div>
+<div class="info-card2 reveal">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-icon">🇱🇾</div>
+        <span class="tag branch">Expo</span>
+        <h3>Made in Rwanda Trade Fair</h3>
+        <p>Showcasing River-manufactured products — hand wash, laundry liquid, insect repellent — at the national buy-Rwanda fair.</p>
+        <div class="card-meta"><span><strong>When:</strong> Announced here once dates are confirmed</span><span><strong>Where:</strong> Venue TBC</span><span><strong>For:</strong> Public, wholesalers, partners</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="empty-note reveal">
+    Planning a fair or expo? Invite us — we bring demos, show pricing and product samples.
+    <div style="margin-top:16px"><a class="wa-inline" href="https://wa.me/250794427058?text=Hello%20River%20Trading%20Ltd%2C%20I%20would%20like%20to%20invite%20you%20to%20our%20event." target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /> Invite us to your event</a></div>
+  </div>
+</main>
+<footer role="contentinfo">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <img src="../images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
+      </div>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788386303" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html#who-we-are">About Us</a></li>
+        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="events.html">Projects &amp; Events</a></li>
+        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="../images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788386303">+250 788 386 303</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788386303" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+<script src="../js/main.js?v=5"></script>
+</body>
+</html>

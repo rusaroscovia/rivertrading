@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailoring – River Trading Ltd</title>
+  <meta name="description" content="Browse tailoring supplies from River Trading Ltd, with products available in Kigali, Rwanda." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/pages/tailoring.html" />
+  <link rel="icon" type="image/png" href="../images/logo-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body { font-family:'Inter',sans-serif; }
+    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease,transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .page-hero { min-height:300px; padding:120px 40px 56px;
+      background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);
+      position:relative; overflow:hidden; }
+    .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.42); }
+    .page-hero-inner { position:relative; z-index:2; max-width:1180px; margin:0 auto; }
+    .breadcrumb { display:flex; gap:8px; align-items:center; color:rgba(255,255,255,.65); font-size:.85rem; margin-bottom:16px; flex-wrap:wrap; }
+    .breadcrumb a { color:#FFD700; text-decoration:none; }
+    .breadcrumb a:hover { color:#fff; }
+    .breadcrumb span { color:rgba(255,255,255,.4); }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:12px; }
+    .page-hero h1 em { font-style:italic; color:#FFD700; }
+    .page-hero p { color:rgba(255,255,255,.78); font-size:1rem; max-width:620px; line-height:1.7; }
+
+    .subcat-nav { background:#fff; border-bottom:2px solid #e5e7eb; padding:0 40px; position:sticky; top:72px; z-index:90; }
+    .subcat-nav-inner { max-width:1180px; margin:0 auto; display:flex; gap:0; overflow-x:auto; }
+    .subcat-nav a { display:inline-block; padding:16px 20px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#666; border-bottom:3px solid transparent; margin-bottom:-2px; white-space:nowrap; transition:all .25s ease; text-decoration:none; }
+    .subcat-nav a:hover { color:#004e3b; border-bottom-color:#FFD700; }
+    .subcat-nav a.active { color:#CC0000; border-bottom-color:#CC0000; }
+
+    .products-section { padding:56px 40px 80px; max-width:1180px; margin:0 auto; }
+    .section-intro { margin-bottom:36px; }
+    .section-intro .story-label { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+    .section-intro .story-label-line { display:block; height:2px; width:28px; background:#CC0000; flex-shrink:0; }
+    .section-intro .story-label-text { font-family:'Barlow',sans-serif; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:3.5px; color:#CC0000; }
+    .section-intro h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:900; color:#111; margin-bottom:14px; line-height:1.2; }
+    .section-intro h2 em { font-style:italic; color:#CC0000; }
+    .section-intro p { color:#555; font-size:.97rem; line-height:1.8; max-width:680px; }
+
+    /* section tabs */
+    .sec-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 30px; }
+    .sec-tab { padding:10px 18px; border:2px solid #e5e7eb; background:#fff; border-radius:24px; font-family:'Barlow',sans-serif; font-size:.8rem; font-weight:700; color:#555; cursor:pointer; transition:all .22s ease; }
+    .sec-tab:hover { border-color:#CC0000; color:#CC0000; }
+    .sec-tab.active { background:#CC0000; border-color:#CC0000; color:#fff; }
+
+    .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
+    .prod-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); border:1px solid #f0f0f0; display:flex; flex-direction:column; cursor:pointer; transition:all .3s ease; }
+    .prod-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,.13); }
+    .prod-img { height:170px; overflow:hidden; position:relative; background:#f9fafb; display:flex; align-items:center; justify-content:center; }
+    .prod-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+    .prod-card:hover .prod-img img { transform:scale(1.06); }
+    .prod-badge { position:absolute; top:10px; left:10px; background:rgba(0,78,59,.9); color:#fff; font-family:'Barlow',sans-serif; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:4px 9px; border-radius:4px; z-index:2; }
+    .prod-badge.river { background:rgba(204,0,0,.92); }
+    .prod-count { position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.6); color:#fff; font-size:.68rem; font-weight:700; padding:3px 8px; border-radius:10px; z-index:2; }
+    .prod-body { padding:14px 16px 18px; flex:1; display:flex; flex-direction:column; }
+    .prod-name { font-family:'Barlow',sans-serif; font-size:.97rem; font-weight:800; color:#111; margin-bottom:4px; }
+    .prod-size { font-size:.78rem; color:#888; margin-bottom:12px; }
+    .prod-footer { margin-top:auto; }
+    .btn-view { display:inline-block; padding:8px 18px; background:#CC0000; color:#fff; border:none; border-radius:5px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; cursor:pointer; transition:all .25s ease; }
+    .btn-view:hover { background:#a00000; }
+
+    .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;flex-wrap:wrap;}
+    .pagination.hidden{display:none;}
+    .page-btn{min-width:40px;height:40px;padding:0 14px;border:2px solid #e5e7eb;background:#fff;color:#555;border-radius:8px;font-family:'Barlow',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+    .page-btn:hover:not(:disabled):not(.active){border-color:#CC0000;color:#CC0000;}
+    .page-btn.active{background:#CC0000;border-color:#CC0000;color:#fff;cursor:default;}
+    .page-btn:disabled{opacity:.4;cursor:not-allowed;}
+    .page-dots{color:#9aa0a6;font-weight:700;}
+
+    /* Modal */
+    .modal-overlay { position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.72); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .3s ease; }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal { background:#fff; border-radius:12px; max-width:720px; width:100%; max-height:92vh; overflow-y:auto; position:relative; transform:translateY(20px) scale(.97); transition:transform .3s ease; box-shadow:0 24px 60px rgba(0,0,0,.3); }
+    .modal-overlay.open .modal { transform:none; }
+    .modal-media { position:relative; background:#000; }
+    .modal-main { width:100%; height:300px; object-fit:cover; display:block; background:#111; }
+    .modal-video-wrap { width:100%; height:300px; display:none; background:#000; position:relative; }
+    .modal-video-wrap video { width:100%; height:100%; object-fit:contain; background:#000; }
+    .video-note { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; text-align:center; font-size:.82rem; padding:20px; background:#111; }
+    .video-note .play { font-size:2.6rem; margin-bottom:8px; }
+    .modal-thumbs { display:flex; gap:8px; padding:10px; background:#f3f4f6; overflow-x:auto; }
+    .modal-thumb { flex:0 0 auto; width:70px; height:52px; border-radius:6px; overflow:hidden; border:2px solid transparent; cursor:pointer; background:#ddd; }
+    .modal-thumb.active { border-color:#CC0000; }
+    .modal-thumb img { width:100%; height:100%; object-fit:cover; }
+    .modal-thumb.vt { display:flex; align-items:center; justify-content:center; background:#111; color:#fff; font-size:.62rem; font-weight:800; flex-direction:column; line-height:1.1; }
+    .modal-close { position:absolute; top:12px; right:12px; width:34px; height:34px; border-radius:50%; background:rgba(0,0,0,.55); border:none; color:#fff; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:6; transition:background .2s; }
+    .modal-close:hover { background:rgba(0,0,0,.85); }
+    .modal-body { padding:24px 30px 30px; }
+    .modal-cat { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#CC0000; margin-bottom:6px; }
+    .modal-name { font-family:'Barlow',sans-serif; font-size:1.4rem; font-weight:900; color:#111; margin-bottom:6px; }
+    .modal-size { font-size:.85rem; color:#888; margin-bottom:14px; }
+    .modal-sec { font-family:'Barlow',sans-serif; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#004e3b; margin:18px 0 8px; padding-bottom:5px; border-bottom:2px solid #f0fdf4; }
+    .modal-desc { color:#555; font-size:.9rem; line-height:1.75; }
+    .modal-uses { list-style:none; padding:0; }
+    .modal-uses li { font-size:.87rem; color:#555; line-height:1.6; padding-left:18px; position:relative; margin-bottom:5px; }
+    .modal-uses li::before { content:'\2713'; position:absolute; left:0; color:#004e3b; font-weight:700; }
+    .modal-news { background:#f0fdf4; border-left:4px solid #004e3b; border-radius:0 6px 6px 0; padding:12px 16px; margin-top:8px; font-size:.87rem; color:#004e3b; line-height:1.65; }
+    .modal-news strong { display:block; margin-bottom:3px; }
+
+    @media(max-width:768px) {
+      .products-section,.page-hero { padding-left:20px; padding-right:20px; }
+      .subcat-nav { padding:0 16px; }
+      .modal-body { padding:20px; }
+      .modal-main,.modal-video-wrap { height:220px; }
+    }
+</style>
+</head>
+<body class="has-contact-bar">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+<!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
+    <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
+    <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
+  </a>
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-menu" role="menubar">
+    <li><a href="../index.html">Home</a></li>
+    <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
+    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li></ul></li>
+    <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
+      <ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html" class="active">Tailoring</a></li></ul></li>
+    <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
+    <li><a href="events.html">Events</a></li>
+    <li class="has-dropdown"><a href="branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="branches.html#muhima">Muhima Branch</a></li></ul></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+<div class="page-hero"><div class="page-hero-inner">
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="products.html">Products</a><span>›</span><span>Tailoring</span></div>
+  <h1>Tailoring <em>Section</em></h1>
+  <p>Fabrics, threads, tools and machines for tailors and workshops.</p>
+</div></div>
+
+<main id="main-content" class="products-section" tabindex="-1">
+  <div class="section-intro reveal">
+    <div class="story-label"><span class="story-label-line"></span><span class="story-label-text">Tailoring</span><span class="story-label-line"></span></div>
+    <h2>Tailoring <em>Section</em></h2><p>Supplies for tailoring and garment production, from fabrics and sewing notions to machines and essential tools.</p>
+  </div>
+  <div class="sec-tabs" id="secTabs"></div>
+  <div class="product-grid" id="productGrid"></div>
+  <nav class="pagination hidden" id="pagination" aria-label="Product pages"></nav>
+</main>
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">&#215;</button>
+    <div class="modal-media">
+      <img class="modal-main" id="modalMain" src="" alt="" />
+      <div class="modal-video-wrap" id="modalVideoWrap">
+        <video id="modalVideo" controls playsinline preload="none" poster=""></video>
+        <div class="video-note" id="videoNote"><span class="play">&#9654;</span><span>10-second product video</span><span style="opacity:.7;margin-top:6px">Add file at <code>videos/&lt;product-id&gt;.mp4</code></span></div>
+      </div>
+    </div>
+    <div class="modal-thumbs" id="modalThumbs"></div>
+    <div class="modal-body">
+      <p class="modal-cat" id="modalCat"></p>
+      <h2 class="modal-name" id="modalName"></h2>
+      <p class="modal-size" id="modalSize"></p>
+      <p class="modal-sec">About This Product</p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <p class="modal-sec">How It Is Used</p>
+      <ul class="modal-uses" id="modalUses"></ul>
+      <p class="modal-sec">Product News</p>
+      <div class="modal-news" id="modalNews"></div>
+    </div>
+  </div>
+</div>
+<footer role="contentinfo">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <img src="../images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
+      </div>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+        <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788386303" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html#who-we-are">About Us</a></li>
+        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="events.html">Projects &amp; Events</a></li>
+        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="../images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788386303">+250 788 386 303</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788386303" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
+  </div>
+</footer>
+<button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+<script src="../js/main.js?v=6"></script>
+<script src="../js/product-search.js?v=4"></script>
+<script>
+const PAGE = {"sections": {"Fabrics & Cloth": [{"id": "tl1", "name": "Ankara / Wax Print", "size": "Per yard", "desc": "Colourful wax-print fabrics for dresses, skirts and shirts.", "uses": ["Tailoring and fashion", "Uniforms and events"], "news": "New season prints arrived.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EAnkara%20%2F%20Wax%20Print%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EAnkara%20%2F%20Wax%20Print%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EAnkara%20%2F%20Wax%20Print%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl1.mp4"}, {"id": "tl2", "name": "Plain Cotton Fabric", "size": "Per yard", "desc": "Breathable plain cotton for shirts, linings and uniforms.", "uses": ["Office and school uniforms", "Lining and tailoring"], "news": "Bulk discount for tailors.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EPlain%20Cotton%20Fabric%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EPlain%20Cotton%20Fabric%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EPlain%20Cotton%20Fabric%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl2.mp4"}, {"id": "tl3", "name": "Lace / Embellished", "size": "Per yard", "desc": "Decorated lace fabric for gowns and special occasions.", "uses": ["Weddings and ceremonies", "Evening wear"], "news": "New bridal lace collection.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELace%20%2F%20Embellished%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELace%20%2F%20Embellished%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELace%20%2F%20Embellished%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl3.mp4"}, {"id": "tl4", "name": "Lining & Interlining", "size": "Per yard", "desc": "Lining cloth and fusible interlining for structured garments.", "uses": ["Jackets and suits", "Collar and cuff stiffening"], "news": "Fusible interlining in stock.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELining%20%26%20Interlining%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELining%20%26%20Interlining%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ELining%20%26%20Interlining%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl4.mp4"}], "Threads & Notions": [{"id": "tl5", "name": "Sewing Thread Set", "size": "Assorted colours", "desc": "Polyester sewing threads in a full colour range.", "uses": ["Machine and hand sewing", "Match any fabric colour"], "news": "New 40-spool organizer set.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Thread%20Set%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Thread%20Set%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Thread%20Set%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl5.mp4"}, {"id": "tl6", "name": "Zips & Buttons", "size": "Assorted", "desc": "Zips, buttons and fasteners for all garment types.", "uses": ["Trouser and dress closures", "Replacement repairs"], "news": "Invisible zips now available.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EZips%20%26%20Buttons%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EZips%20%26%20Buttons%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%B5%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EZips%20%26%20Buttons%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl6.mp4"}, {"id": "tl7", "name": "Needles & Pins", "size": "Assorted pack", "desc": "Hand needles, machine needles and pins.", "uses": ["Hand and machine sewing", "Quilting and crafting"], "news": "Universal + denim needle pack.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A9%B9%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ENeedles%20%26%20Pins%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A9%B9%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ENeedles%20%26%20Pins%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A9%B9%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ENeedles%20%26%20Pins%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl7.mp4"}, {"id": "tl8", "name": "Elastic & Ribbons", "size": "Per roll", "desc": "Elastic bands and decorative ribbons.", "uses": ["Waistbands and cuffs", "Decorative trims"], "news": "Wide elastic for uniforms.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%8E%80%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EElastic%20%26%20Ribbons%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%8E%80%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EElastic%20%26%20Ribbons%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%8E%80%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EElastic%20%26%20Ribbons%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl8.mp4"}], "Tools & Machines": [{"id": "tl9", "name": "Tailoring Scissors", "size": "9in / 10in", "desc": "Professional heavy-duty fabric shears.", "uses": ["Cutting cloth cleanly", "Ergonomic handles"], "news": "New forged-steel shears.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%E2%9C%82%EF%B8%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ETailoring%20Scissors%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%E2%9C%82%EF%B8%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ETailoring%20Scissors%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%E2%9C%82%EF%B8%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ETailoring%20Scissors%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl9.mp4"}, {"id": "tl10", "name": "Measuring Tape", "size": "1.5m / 2.5m", "desc": "Flexible measuring tapes for body and fabric.", "uses": ["Taking body measurements", "Measuring fabric lengths"], "news": "Retractable tape added.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EMeasuring%20Tape%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EMeasuring%20Tape%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%93%8F%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EMeasuring%20Tape%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl10.mp4"}, {"id": "tl11", "name": "Sewing Machine", "size": "Manual / electric", "desc": "Reliable sewing machines for tailors and workshops.", "uses": ["Garment production", "Repairs and alterations"], "news": "Servicing and spares available.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Machine%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Machine%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%94%A7%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3ESewing%20Machine%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl11.mp4"}, {"id": "tl12", "name": "Iron & Pressing Board", "size": "Steam / dry", "desc": "Steam irons and folding pressing boards.", "uses": ["Finishing garments", "Professional pressing"], "news": "Steam station with boiler.", "gallery": ["data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%BD%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EIron%20%26%20Pressing%20Board%20-%20front%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d1c4e9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237e57c2%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%BD%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EIron%20%26%20Pressing%20Board%20-%20detail%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22420%22%20height%3D%22320%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%237e57c2%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234527a0%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22420%22%20height%3D%22320%22%20fill%3D%22url%28%23g%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22150%22%20font-size%3D%2296%22%20text-anchor%3D%22middle%22%3E%F0%9F%A7%BD%3C%2Ftext%3E%3Crect%20x%3D%220%22%20y%3D%22250%22%20width%3D%22420%22%20height%3D%2270%22%20fill%3D%22rgba%280%2C0%2C0%2C0.35%29%22%2F%3E%3Ctext%20x%3D%22210%22%20y%3D%22294%22%20font-size%3D%2222%22%20fill%3D%22%23fff%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20text-anchor%3D%22middle%22%3EIron%20%26%20Pressing%20Board%20-%20in%20use%3C%2Ftext%3E%3C%2Fsvg%3E"], "badge": null, "video": "../videos/tl12.mp4"}]}};
+const PER_PAGE = 6;
+const CAT_LABEL = 'Tailoring';
+
+// flatten products, attach gallery images
+const ALL = [];
+Object.keys(PAGE.sections).forEach(sec => {
+  PAGE.sections[sec].forEach(p => {
+    p.section = sec;
+    p.gallery = p.gallery; // injected below
+    ALL.push(p);
+  });
+});
+
+let curSection = 'Fabrics & Cloth';
+let curPage = 1;
+
+const grid = document.getElementById('productGrid');
+const pager = document.getElementById('pagination');
+const tabsWrap = document.getElementById('secTabs');
+
+function pool() {
+  return curSection === '*ALL*' ? ALL : ALL.filter(p => p.section === curSection);
+}
+
+function renderTabs() {
+  const secs = Object.keys(PAGE.sections);
+  let html = `<button class="sec-tab${curSection==='*ALL*'?' active':''}" data-sec="*ALL*">All (${ALL.length})</button>`;
+  secs.forEach(s => {
+    const n = PAGE.sections[s].length;
+    html += `<button class="sec-tab${curSection===s?' active':''}" data-sec="${s}">${s} (${n})</button>`;
+  });
+  tabsWrap.innerHTML = html;
+}
+
+function renderGrid() {
+  const sourceProducts = window.RIVER_CATEGORY_SEARCH.query ? ALL : pool();
+  const list = window.RIVER_CATEGORY_SEARCH.filter([...sourceProducts].sort((a,b)=>a.name.localeCompare(b.name)));
+  const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+  if (curPage > pages) curPage = pages;
+  const start = (curPage-1)*PER_PAGE;
+  grid.innerHTML = list.slice(start, start+PER_PAGE).map(p=>`
+  <article class="prod-card" onclick="openModal('${p.id}')" role="button" tabindex="0"
+    aria-label="View details for ${p.name}"
+    onkeydown="if(event.key==='Enter'||event.key===' ')openModal('${p.id}')">
+    <div class="prod-img">
+      ${p.badge?`<span class="prod-badge river">${p.badge}</span>`:''}
+      <img src="${p.gallery[0]}" alt="${p.name}" />
+      <span class="prod-count">${p.gallery.length} photos &#183; video</span>
+    </div>
+    <div class="prod-body">
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-size">&#128230; ${p.size}</div>
+      <div class="prod-footer"><button class="btn-view" tabindex="-1">View More</button></div>
+    </div>
+  </article>`).join('');
+
+  pager.classList.toggle('hidden', pages<=1);
+  if (pages>1) {
+    let html = `<button class="page-btn" data-page="${curPage-1}"${curPage===1?' disabled':''}>&#8249; Prev</button>`;
+    let from=1,to=pages;
+    if(pages>9){from=Math.max(1,Math.min(curPage-2,pages-4));to=Math.min(pages,from+4);}
+    if(from>1){html+=`<button class="page-btn" data-page="1">1</button>`+(from>2?`<span class="page-dots">&#8230;</span>`:'');}
+    for(let i=from;i<=to;i++) html+=`<button class="page-btn${i===curPage?' active':''}" data-page="${i}">${i}</button>`;
+    if(to<pages) html+=(to<pages-1?`<span class="page-dots">&#8230;</span>`:'')+`<button class="page-btn" data-page="${pages}">${pages}</button>`;
+    html+=`<button class="page-btn" data-page="${curPage+1}"${curPage===pages?' disabled':''}>Next &#8250;</button>`;
+    pager.innerHTML = html;
+  }
+}
+
+window.RIVER_CATEGORY_SEARCH.onChange(() => {
+  curPage = 1;
+  renderGrid();
+});
+
+tabsWrap.addEventListener('click', e=>{
+  const b=e.target.closest('.sec-tab'); if(!b)return;
+  curSection=b.dataset.sec; curPage=1; renderTabs(); renderGrid();
+  const y=document.getElementById('secTabs').getBoundingClientRect().top+window.scrollY-150;
+  window.scrollTo({top:y,behavior:'smooth'});
+});
+pager.addEventListener('click', e=>{
+  const btn=e.target.closest('.page-btn'); if(!btn||btn.disabled)return;
+  curPage=parseInt(btn.dataset.page,10); renderGrid();
+  const y=grid.getBoundingClientRect().top+window.scrollY-160;
+  window.scrollTo({top:y,behavior:'smooth'});
+});
+
+// ---- MODAL with gallery + video ----
+let mProd=null, mIdx=0;
+const mMain=document.getElementById('modalMain');
+const mVWrap=document.getElementById('modalVideoWrap');
+const mVid=document.getElementById('modalVideo');
+const mThumbs=document.getElementById('modalThumbs');
+
+function openModal(id){
+  mProd=ALL.find(x=>x.id===id); if(!mProd)return;
+  document.getElementById('modalCat').textContent=CAT_LABEL+' \u2014 '+mProd.section;
+  document.getElementById('modalName').textContent=mProd.name;
+  document.getElementById('modalSize').textContent='\uD83D\uDCE6 '+mProd.size;
+  document.getElementById('modalDesc').textContent=mProd.desc;
+  document.getElementById('modalNews').innerHTML='<strong>Latest:</strong> '+mProd.news;
+  document.getElementById('modalUses').innerHTML=mProd.uses.map(u=>`<li>${u}</li>`).join('');
+  mThumbs.innerHTML = mProd.gallery.map((g,i)=>
+    `<div class="modal-thumb${i===0?' active':''}" data-i="${i}"><img src="${g}" alt="${mProd.name} photo ${i+1}"/></div>`
+  ).join('') + `<div class="modal-thumb vt" data-v="1"><span>&#9654;</span>10s</div>`;
+  selectMedia(0);
+  document.getElementById('productModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function selectMedia(i){
+  mIdx=i;
+  mVWrap.style.display='none';
+  mMain.style.display='';
+  mMain.src=mProd.gallery[i];
+  [...mThumbs.children].forEach(t=>t.classList.remove('active'));
+  if(mThumbs.children[i]) mThumbs.children[i].classList.add('active');
+}
+function selectVideo(){
+  mMain.style.display='none';
+  mVWrap.style.display='block';
+  [...mThumbs.children].forEach(t=>t.classList.remove('active'));
+  const vt=[...mThumbs.children].find(t=>t.dataset.v==='1'); if(vt)vt.classList.add('active');
+  const note=document.getElementById('videoNote');
+  note.style.display='flex';
+  mVid.oncanplay=()=>{note.style.display='none';};
+  mVid.onerror=()=>{note.style.display='flex';};
+  mVid.src=mProd.video;
+  mVid.load();
+  mVid.play().catch(()=>{});
+}
+mThumbs.addEventListener('click', e=>{
+  const t=e.target.closest('.modal-thumb'); if(!t||!mProd)return;
+  if(t.dataset.v==='1') selectVideo(); else selectMedia(parseInt(t.dataset.i,10));
+});
+function closeModal(){
+  document.getElementById('productModal').classList.remove('open');
+  document.body.style.overflow='';
+  try{mVid.pause();mVid.src='';}catch(err){}
+}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('productModal').addEventListener('click',e=>{if(e.target===document.getElementById('productModal'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+renderTabs(); renderGrid();
+</script>
+</body>
+</html>

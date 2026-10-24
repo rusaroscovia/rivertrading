@@ -1,20 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us – River Trading Ltd</title>
   <meta name="description" content="Learn about River Trading Ltd – our story, mission, vision, core values, and the leadership team behind Rwanda's trusted quality products supplier." />
+  <link rel="canonical" href="https://www.rivertradingltd.com/pages/about.html" />
   <link rel="icon" type="image/png" href="../images/logo-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
     /* ── Base ──────────────────────────────────────────────── */
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'DM Sans',sans-serif; color:#111; background:#fff; overflow-x:hidden; }
-    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Archivo',sans-serif; }
+    body { font-family:'Inter',sans-serif; color:#111; background:#fff; overflow-x:hidden; }
+    h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; display:block; }
 
@@ -24,108 +25,6 @@
     .reveal-left  { opacity:0; transform:translateX(-44px); transition:opacity .8s ease,transform .8s ease; }
     .reveal-right { opacity:0; transform:translateX( 44px); transition:opacity .8s ease,transform .8s ease; }
     .reveal-left.visible,.reveal-right.visible { opacity:1; transform:none; }
-
-    /* ── HERO ──────────────────────────────────────────────── */
-    .about-hero {
-      min-height: 92vh;
-      background: #004e3b;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 120px 40px 80px;
-    }
-
-    /* decorative circles */
-    .about-hero::before {
-      content:'';
-      position:absolute; width:600px; height:600px; border-radius:50%;
-      background:rgba(255,215,0,0.06); top:-200px; right:-150px;
-    }
-    .about-hero::after {
-      content:'';
-      position:absolute; width:300px; height:300px; border-radius:50%;
-      background:rgba(204,0,0,0.08); bottom:-80px; left:-60px;
-    }
-
-    .hero-inner {
-      max-width:1180px; margin:0 auto; width:100%;
-      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
-      position:relative; z-index:2;
-    }
-
-    .hero-text-col .eyebrow {
-      display:inline-block; font-size:0.75rem; font-weight:700;
-      text-transform:uppercase; letter-spacing:3px; color:#FFD700;
-      margin-bottom:20px;
-    }
-
-    .hero-text-col h1 {
-      font-size:clamp(2.6rem,5.5vw,4rem);
-      font-weight:900; color:#fff; line-height:1.1;
-      margin-bottom:24px;
-    }
-    .hero-text-col h1 em { font-style:normal; color:#FFD700; }
-
-    .hero-text-col .hero-desc {
-      font-size:1.05rem; color:rgba(255,255,255,0.75);
-      line-height:1.8; max-width:480px; margin-bottom:36px;
-    }
-
-    .hero-cta-row { display:flex; gap:14px; flex-wrap:wrap; }
-
-    .btn-hero-primary {
-      display:inline-block; padding:14px 30px; background:#FFD700;
-      color:#111; border-radius:6px; font-family:'Archivo',sans-serif;
-      font-weight:800; font-size:0.9rem; text-transform:uppercase; letter-spacing:.5px;
-      transition:all .3s ease;
-    }
-    .btn-hero-primary:hover { background:#fff; color:#004e3b; }
-
-    .btn-hero-outline {
-      display:inline-block; padding:14px 30px; background:transparent;
-      color:#fff; border:2px solid rgba(255,255,255,0.3); border-radius:6px;
-      font-family:'Archivo',sans-serif; font-weight:700; font-size:0.9rem;
-      text-transform:uppercase; letter-spacing:.5px; transition:all .3s ease;
-    }
-    .btn-hero-outline:hover { border-color:#FFD700; color:#FFD700; }
-
-    /* Hero image side */
-    .hero-img-col { position:relative; }
-
-    .hero-img-frame {
-      width:100%; aspect-ratio:4/5;
-      border-radius:16px; overflow:hidden;
-      background:linear-gradient(160deg,#016630 0%,#CC0000 60%,#FFD700 100%);
-      display:flex; align-items:center; justify-content:center;
-      box-shadow:0 24px 60px rgba(0,0,0,0.35);
-    }
-    .hero-img-frame img {
-      width:100%; height:100%; object-fit:cover;
-    }
-    .hero-img-frame-ph {
-      width:160px; height:160px; object-fit:contain;
-      filter:drop-shadow(0 4px 24px rgba(0,0,0,.5));
-    }
-
-    /* Floating stat pill */
-    .hero-stat-pill {
-      position:absolute; bottom:-24px; left:-24px;
-      background:#FFD700; color:#111; border-radius:12px;
-      padding:20px 24px; box-shadow:0 8px 28px rgba(0,0,0,.2);
-      font-family:'Archivo',sans-serif; text-align:center; z-index:3;
-    }
-    .hero-stat-pill strong { display:block; font-size:2.2rem; font-weight:900; line-height:1; }
-    .hero-stat-pill span { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-top:4px; display:block; }
-
-    /* floating red tag */
-    .hero-tag {
-      position:absolute; top:24px; right:-16px;
-      background:#CC0000; color:#fff; padding:10px 18px;
-      border-radius:8px; font-family:'Archivo',sans-serif;
-      font-size:0.78rem; font-weight:700; letter-spacing:.5px;
-      box-shadow:0 4px 16px rgba(0,0,0,.25); z-index:3;
-    }
 
     /* ── IMPACT STATS BAND (like Igire's counter row) ──────── */
     .stats-band {
@@ -142,7 +41,7 @@
     }
     .stat-cell:last-child { border-right:none; }
     .stat-cell .big-num {
-      font-family:'Archivo',sans-serif;
+      font-family:'Barlow',sans-serif;
       font-size:clamp(2.2rem,4vw,3rem); font-weight:900;
       color:#FFD700; display:block; line-height:1;
     }
@@ -151,14 +50,14 @@
 
     /* ── WHO WE ARE ─────────────────────────────────────────── */
     .who-section {
-      padding:110px 40px; background:#fff;
-      scroll-margin-top: 80px; /* offset for fixed navbar */
+      padding:160px 40px 110px; background:#fff;
+      scroll-margin-top:160px;
     }
-    .who-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .who-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(36px,5vw,64px); align-items:center; }
 
-    .who-img-side { position:relative; }
+    .who-img-side { position:relative; width:100%; max-width:420px; }
     .who-img-main {
-      width:100%; aspect-ratio:3/4; border-radius:16px; overflow:hidden;
+      width:100%; aspect-ratio:4/3; border-radius:16px; overflow:hidden;
       background:linear-gradient(160deg,#004e3b,#CC0000);
       display:flex; align-items:center; justify-content:center;
       box-shadow:0 16px 50px rgba(0,0,0,.16);
@@ -181,13 +80,13 @@
       display:inline-block; font-size:0.72rem; font-weight:800;
       text-transform:uppercase; letter-spacing:3px; color:#CC0000; margin-bottom:16px;
     }
-    .who-text-side h2 {
+    .who-text-side h1 {
       font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111;
       line-height:1.15; margin-bottom:24px;
     }
-    .who-text-side h2 em { font-style:italic; color:#CC0000; }
+    .who-text-side h1 em { font-style:italic; color:#CC0000; }
 
-    .who-text-side p { font-size:1rem; color:#444; line-height:1.85; margin-bottom:18px; }
+    .who-text-side p { font-size:1rem; color:#444; line-height:1.85; margin-bottom:18px; text-align:justify; }
     .who-text-side p strong { color:#004e3b; font-weight:700; }
 
     /* "— OUR STORY —" label exactly like Igire */
@@ -200,7 +99,7 @@
       background:#CC0000; flex-shrink:0;
     }
     .story-label-text {
-      font-family:'Archivo',sans-serif;
+      font-family:'Barlow',sans-serif;
       font-size:0.7rem; font-weight:800;
       text-transform:uppercase; letter-spacing:3.5px;
       color:#CC0000; white-space:nowrap;
@@ -209,7 +108,7 @@
     /* Contact CTA line */
     .who-cta-line { margin-top:8px; }
     .who-contact-btn {
-      display:inline-block; font-family:'Archivo',sans-serif;
+      display:inline-block; font-family:'Barlow',sans-serif;
       font-size:0.88rem; font-weight:700; color:#004e3b;
       border-bottom:2px solid #FFD700; padding-bottom:2px;
       transition:color .2s ease, border-color .2s ease;
@@ -232,7 +131,7 @@
       background:#004e3b; border:3px solid #fff; box-shadow:0 0 0 3px #004e3b;
     }
     .tl-year { font-size:0.7rem; font-weight:800; color:#CC0000; text-transform:uppercase; letter-spacing:2px; margin-bottom:3px; }
-    .tl-item h4 { font-family:'Archivo',sans-serif; font-size:0.95rem; font-weight:800; color:#004e3b; margin-bottom:3px; }
+    .tl-item h4 { font-family:'Barlow',sans-serif; font-size:0.95rem; font-weight:800; color:#004e3b; margin-bottom:3px; }
     .tl-item p  { font-size:0.85rem; color:#777; line-height:1.6; margin:0; }
 
     /* ── MISSION & VISION ───────────────────────────────────── */
@@ -268,7 +167,9 @@
       width:64px; height:64px; border-radius:14px; margin-bottom:24px;
       display:flex; align-items:center; justify-content:center; font-size:1.9rem;
     }
+    .mv-card-icon svg { width:34px; height:34px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
     .mv-card.mission .mv-card-icon { background:rgba(255,215,0,.15); }
+    .mv-card.mission .mv-card-icon svg { color:#FFD700; }
     .mv-card.vision  .mv-card-icon { background:#f0fdf4; }
 
     .mv-card h3 { font-size:1.5rem; font-weight:900; margin-bottom:16px; }
@@ -286,6 +187,16 @@
     .mv-list li::before { content:'→'; font-weight:900; flex-shrink:0; }
     .mv-card.mission .mv-list li::before { color:#FFD700; }
     .mv-card.vision  .mv-list li::before { color:#CC0000; }
+    .mv-list.mission-points { counter-reset:mission-point; list-style:none; }
+    .mv-card.mission .mv-list.mission-points li { display:grid; grid-template-columns:2rem minmax(0,1fr); gap:12px; align-items:start; }
+    .mv-card.mission .mv-list.mission-points li::before { counter-increment:mission-point; content:counter(mission-point,decimal-leading-zero); display:grid; place-items:center; width:2rem; height:2rem; border:1px solid rgba(255,215,0,.55); border-radius:50%; color:#FFD700; font-size:.7rem; }
+    .mission-point-copy { min-width:0; }
+    .mission-point-copy strong { display:block; margin-bottom:3px; color:#fff; font-size:.92rem; }
+    .mission-point-copy span { display:block; }
+    .mv-list.vision-points { counter-reset:vision-point; list-style:none; }
+    .mv-card.vision .mv-list.vision-points li { display:grid; grid-template-columns:2rem minmax(0,1fr); gap:12px; align-items:start; }
+    .mv-card.vision .mv-list.vision-points li::before { counter-increment:vision-point; content:counter(vision-point,decimal-leading-zero); display:grid; place-items:center; width:2rem; height:2rem; border:1px solid rgba(204,0,0,.28); border-radius:50%; color:#CC0000; font-size:.7rem; }
+    .mv-card.vision .mission-point-copy strong { color:#004e3b; }
 
     /* Goals grid — like Igire's program cards row */
     .goals-label { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#CC0000; display:block; margin-bottom:10px; text-align:center; }
@@ -306,122 +217,102 @@
     .goal-card h4 { font-size:1rem; font-weight:800; color:#004e3b; margin-bottom:8px; }
     .goal-card p  { font-size:0.87rem; color:#777; line-height:1.65; }
 
-    /* Values — icon row like Igire impact numbers but horizontal pills */
-    .values-title { font-size:clamp(1.5rem,3vw,2.2rem); font-weight:900; color:#111; text-align:center; margin-bottom:40px; }
-    .values-title em { font-style:normal; color:#004e3b; }
-
-    .values-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
-    .value-pill {
-      background:#fff; border-radius:12px; padding:28px 16px;
-      text-align:center; box-shadow:0 2px 12px rgba(0,0,0,.06);
-      border-bottom:3px solid transparent; transition:all .3s ease;
-    }
-    .value-pill:hover { border-bottom-color:#FFD700; transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.11); }
-    .value-pill .vi { font-size:2rem; margin-bottom:10px; display:block; }
-    .value-pill h4 { font-size:0.9rem; font-weight:800; color:#004e3b; margin-bottom:6px; }
-    .value-pill p  { font-size:0.8rem; color:#888; line-height:1.5; }
-
     /* ── TEAM ───────────────────────────────────────────────── */
     .team-section {
-      background:#004e3b; padding:110px 40px;
+      background:#ececec; padding:80px 24px;
       scroll-margin-top: 80px;
     }
-    .team-inner { max-width:1180px; margin:0 auto; }
+    .team-inner { max-width:1200px; margin:0 auto; }
 
-    .team-header { text-align:center; max-width:620px; margin:0 auto 64px; }
-    .team-header .eyebrow { display:inline-block; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#FFD700; margin-bottom:12px; }
-    .team-header h2 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#fff; line-height:1.2; }
-    .team-header h2 em { font-style:normal; color:#FFD700; }
-    .team-header p { color:rgba(255,255,255,.65); font-size:0.95rem; margin-top:14px; line-height:1.7; }
+    .team-header { text-align:center; max-width:620px; margin:0 auto 42px; }
+    .team-header .eyebrow { display:inline-block; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#008138; margin-bottom:12px; }
+    .team-header h2 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111; line-height:1.2; }
+    .team-header h2 em { font-style:normal; color:#008138; }
+    .team-header p { color:#555; font-size:0.95rem; margin-top:14px; line-height:1.7; }
 
-    /* Team grid — like Igire alumni cards */
-    .team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:28px; }
+    .team-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2vw,28px); }
 
     .team-card {
-      background:rgba(255,255,255,.05); border:1px solid rgba(255,215,0,.15);
-      border-radius:16px; overflow:hidden; transition:all .35s ease;
+      min-width:0; position:relative; overflow:hidden; aspect-ratio:5/6;
+      background:#777; border:1px solid rgba(204,0,0,.16);
+      border-radius:28px; box-shadow:0 16px 42px rgba(0,0,0,.12);
+      transition:transform .25s ease,box-shadow .25s ease;
     }
     .team-card:hover {
-      background:rgba(255,255,255,.09); border-color:rgba(255,215,0,.45);
-      transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,.3);
+      transform:translateY(-4px); box-shadow:0 22px 48px rgba(0,0,0,.2);
     }
 
     /* Photo */
     .tc-photo {
-      height:280px; position:relative; overflow:hidden;
-      background:linear-gradient(160deg,#016630,#CC0000);
+      position:absolute; inset:0; overflow:hidden;
+      background:linear-gradient(145deg,#a4a4a4,#383838);
       display:flex; align-items:center; justify-content:center;
     }
-    .tc-photo img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .4s ease; }
-    .team-card:hover .tc-photo img { transform:scale(1.05); }
-    .tc-photo-ph { font-size:4rem; opacity:.7; }
+    .tc-photo img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .tc-photo-ph { font-size:3rem; color:#aaa; }
 
-    /* Dept ribbon */
-    .tc-dept {
-      position:absolute; top:16px; left:0;
-      background:#CC0000; color:#fff; font-size:0.65rem; font-weight:800;
-      text-transform:uppercase; letter-spacing:1.5px; padding:5px 14px 5px 12px;
-      border-radius:0 4px 4px 0;
+    .tc-dept,.tc-desc { display:none; }
+    .tc-body {
+      position:absolute; inset:auto 0 0; padding:72px 26px 18px;
+      color:#fff; background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.78) 42%,rgba(0,0,0,.94) 100%);
     }
-
-    /* Body */
-    .tc-body { padding:24px; }
-    .tc-name { font-size:1.05rem; font-weight:900; color:#FFD700; margin-bottom:4px; }
-    .tc-title { font-size:0.78rem; color:rgba(255,255,255,.5); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:14px; display:block; }
-    .tc-desc { font-size:0.87rem; color:rgba(255,255,255,.7); line-height:1.65; }
-
-    /* Link icons */
-    .tc-links { display:flex; gap:8px; margin-top:16px; }
+    .tc-name { font-size:clamp(1rem,1.8vw,1.35rem); font-weight:800; color:#fff; margin-bottom:8px; }
+    .tc-title { font-size:.9rem; font-weight:700; color:#fff; line-height:1.4; display:block; text-transform:uppercase; letter-spacing:1px; }
+    .tc-links { display:flex; gap:12px; margin-top:18px; }
     .tc-link {
-      width:32px; height:32px; border-radius:50%;
-      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
-      display:flex; align-items:center; justify-content:center;
-      font-size:0.72rem; font-weight:700; color:rgba(255,255,255,.55);
-      text-decoration:none; transition:all .3s ease;
+      width:50px; height:50px; border:1px solid rgba(255,255,255,.24);
+      border-radius:50%; display:grid; place-items:center;
+      background:rgba(255,255,255,.14); color:#fff; text-decoration:none;
+      transition:background .2s ease,transform .2s ease;
     }
-    .tc-link:hover { background:#FFD700; color:#111; border-color:#FFD700; }
-
-    /* ── CTA STRIP ──────────────────────────────────────────── */
-    .cta-band {
-      background:#CC0000; padding:88px 40px; text-align:center;
-    }
-    .cta-band h2 { font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:900; color:#fff; margin-bottom:12px; }
-    .cta-band p  { color:rgba(255,255,255,.85); font-size:1rem; max-width:520px; margin:0 auto 32px; line-height:1.7; }
-    .btn-cta {
-      display:inline-block; padding:16px 36px; background:#fff;
-      color:#CC0000; border-radius:6px; font-family:'Archivo',sans-serif;
-      font-weight:800; font-size:0.95rem; text-transform:uppercase; letter-spacing:.5px;
-      transition:all .3s ease;
-    }
-    .btn-cta:hover { background:#FFD700; color:#111; }
+    .tc-link:hover { background:rgba(255,255,255,.28); transform:translateY(-2px); }
+    .tc-link svg { width:22px; height:22px; fill:currentColor; }
 
     /* ── Responsive ─────────────────────────────────────────── */
     @media(max-width:1000px) {
-      .hero-inner,.who-inner { grid-template-columns:1fr; gap:48px; }
-      .hero-img-col { order:-1; }
       .mv-cards { grid-template-columns:1fr; }
       .stats-band-inner { grid-template-columns:1fr 1fr; }
       .stat-cell { border-right:none; border-bottom:1px solid rgba(255,255,255,.1); }
       .stat-cell:nth-child(odd) { border-right:1px solid rgba(255,255,255,.1); }
+      .team-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media(max-width:760px) {
+      .who-inner { display:flex; flex-direction:column; align-items:stretch; gap:20px; }
+      .who-text-side { display:contents; }
+      .story-label { order:0; }
+      .who-text-side h1 { order:1; }
+      .who-img-side { order:2; align-self:center; }
+      .who-text-side p { order:3; }
+      .who-img-overlay { display:none; }
     }
     @media(max-width:680px) {
-      .about-hero,.who-section,.mv-section,.team-section,.cta-band { padding:72px 20px; }
+      .who-section { padding:160px 20px 72px; }
+      .mv-section,.team-section { padding:72px 20px; }
       .stats-band { padding:48px 20px; }
       .stats-band-inner { grid-template-columns:1fr 1fr; }
-      .hero-cta-row { flex-direction:column; }
       .who-img-overlay { display:none; }
+      .team-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+      .tc-body { padding:58px 16px 14px; }
+      .tc-title { font-size:.78rem; }
+      .tc-link { width:42px; height:42px; }
+    }
+    @media(max-width:420px) {
+      .team-grid { grid-template-columns:1fr; max-width:360px; margin:0 auto; }
     }
   </style>
 </head>
-<body>
+<body class="has-contact-bar">
+  <a class="skip-link" href="#who-we-are">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════════════════════ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
+<!-- CONTACT BAR -->
+<div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
       <img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'" />
-      <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+      <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
     </a>
     <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -441,25 +332,31 @@
         <ul class="dropdown">
           <li><a href="services.html">Product Supply</a></li>
           <li><a href="services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#delivery-section">Delivery Service</a></li>
-          <li><a href="services.html#ie-heading">Import &amp; Export</a></li>
+          <li><a href="services.html#shopping-delivery">Delivery Service</a></li>
+          <li><a href="services.html#import-export">Import &amp; Export</a></li>
           <li><a href="services.html">After-Sales Support</a></li>
         </ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
-      <ul class="dropdown">
-        <li><a href="products.html">All Products</a></li>
-        <li class="dd-sub-label">Agriculture</li>
-        <li><a href="cat-sanitary.html">Sanitary Products</a></li>
-        <li><a href="cat-handtools.html">Hand Tools</a></li>
-        <li><a href="cat-electrical.html">Electrical</a></li>
-        <li><a href="cat-construction.html">Construction</a></li>
-        <li><a href="cat-chemical.html">Chemical Products</a></li>
-      </ul>
+      <ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul>
     </li>
       <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
-      <li><a href="blogs.html">Blog</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li class="has-dropdown"><a href="branches.html">Branches <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="branches.html#nyarugenge">Nyarugenge Branch</a></li><li><a href="branches.html#muhima">Muhima Branch</a></li></ul></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
   </nav>
@@ -468,80 +365,6 @@
 <!-- ═══════════════════════════════════════════════════════════
      HERO  (full-height, dark green bg, two columns)
 ════════════════════════════════════════════════════════════ -->
-<section class="about-hero" aria-labelledby="hero-heading">
-  <div class="hero-inner">
-
-    <!-- Text -->
-    <div class="hero-text-col">
-      <span class="eyebrow">About River Trading Ltd</span>
-      <h1 id="hero-heading">
-        Quality Products.<br />
-        Trusted <em>Across Rwanda.</em>
-      </h1>
-      <p class="hero-desc">
-        From a small start in Kigali in 2020 to a nationally recognized trading company —
-        this is the story of River Trading Ltd, built on hard work, genuine quality, and
-        the trust of hundreds of clients.
-      </p>
-      <div class="hero-cta-row">
-        <a href="#who-we-are" class="btn-hero-primary">Our Story</a>
-        <a href="contact.html" class="btn-hero-outline">Work With Us</a>
-      </div>
-    </div>
-
-    <!-- Image -->
-    <div class="hero-img-col reveal-right">
-      <div class="hero-img-frame">
-        <img src="../images/about-hero.jpg" alt="River Trading Ltd team and products"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-        <img src="../images/logo-icon.png" class="hero-img-frame-ph"
-             style="display:none;" alt="River Trading Ltd" />
-      </div>
-      <div class="hero-stat-pill">
-        <strong>2020</strong>
-        <span>Est. Kigali</span>
-      </div>
-      <div class="hero-tag">Quality &amp; Good Service</div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-     IMPACT STATS BAND
-════════════════════════════════════════════════════════════ -->
-<div class="stats-band" aria-label="Company impact statistics">
-  <div class="stats-band-inner">
-
-    <div class="stat-cell">
-      <span class="big-num" data-target="5" data-suffix="+">0+</span>
-      <p class="stat-label">Years in Business</p>
-      <p class="stat-desc">Serving Rwanda since 2020 with consistent quality</p>
-    </div>
-
-    <div class="stat-cell">
-      <span class="big-num" data-target="20" data-suffix="+">0+</span>
-      <p class="stat-label">Product Lines</p>
-      <p class="stat-desc">From lubricants to tools and household essentials</p>
-    </div>
-
-    <div class="stat-cell">
-      <span class="big-num" data-target="500" data-suffix="+">0+</span>
-      <p class="stat-label">Clients Served</p>
-      <p class="stat-desc">Homes, garages, construction firms and retailers</p>
-    </div>
-
-    <div class="stat-cell">
-      <span class="big-num" data-target="5" data-suffix="">0</span>
-      <p class="stat-label">Provinces Reached</p>
-      <p class="stat-desc">Delivering quality products across Rwanda</p>
-    </div>
-
-  </div>
-</div>
-
-
 <!-- ═══════════════════════════════════════════════════════════
      WHO WE ARE
 ════════════════════════════════════════════════════════════ -->
@@ -568,44 +391,43 @@
       <!-- Label line — "— OUR STORY —" style -->
       <div class="story-label">
         <span class="story-label-line"></span>
-        <span class="story-label-text">OUR STORY</span>
+        <span class="story-label-text">WHO WE ARE</span>
         <span class="story-label-line"></span>
       </div>
 
-      <h2>Quality Products,<br />Trusted <em>Across Rwanda.</em></h2>
+      <h1 id="who-heading">Quality Products,<br />Trusted <em>Across Rwanda.</em></h1>
 
       <p>
-        River Trading Ltd is a company specializing in import and export in Kigali, Rwanda.
-        With more than <strong>10 years of experience</strong> in Construction, Electric,
-        Plumbing, Wall Plaster, and Chemical materials used in construction, Food ingredients,
-        and Cosmetics.
+        Based in Kigali, Rwanda, <strong>River Trading Ltd</strong> specializes in import and
+        export. With more than 12 years of experience, we supply products for construction,
+        electrical work, plumbing, wall plastering, and construction chemicals, as well as food
+        ingredients and cosmetics.
       </p>
 
       <p>
-        Although our <strong>RIVER® brand</strong> is very popular in the Rwandan market, we have
-        also added hygiene-related products. We now manufacture all kinds of hygienic products such
-        as Liquid Detergent, Laundry Liquid, Hand Wash, and all kinds of Shampoo — for men and
-        animals — without forgetting the importation of toilet paper and towels of all kinds.
+        Alongside our popular <strong>RIVER® brand</strong>, we have expanded into hygiene
+        products. We manufacture liquid detergent, laundry liquid, hand wash, and shampoos for
+        people and animals. We also import toilet paper and towels.
       </p>
 
       <p>
-        We have also various other products that are imported mostly from <strong>PRC, Kenya,
-        Egypt, Tanzania, India, and Dubai City in the UAE</strong> — as a solution to our esteemed
-        customers ranging from individuals to small and big hardware businesses.
+        We also import a wide range of products, mainly from <strong>China (PRC), Kenya, Egypt,
+        Tanzania, India, and Dubai in the United Arab Emirates</strong>, serving customers from
+        individuals to small and large hardware businesses.
       </p>
 
       <p>
-        Our reputation is significant in the Rwanda building sector for combining experience
-        with high-quality products and responsive customer care.
+        We have built a strong reputation in Rwanda’s construction sector by combining our
+        experience with high-quality products and responsive customer care.
       </p>
 
       <p>
-        Our highly qualified staff are always delighted to welcome you at our main offices,
-        our branches, and our agents countrywide.
+        Our highly qualified staff are delighted to welcome and assist you at our main office,
+        branches, and through our agents across the country.
       </p>
 
       <p>
-        Keep contacting us for further information, support, or delivery.
+        Contact us for further information, support, or delivery assistance.
       </p>
 
       <p class="who-cta-line">
@@ -634,79 +456,31 @@
     <div class="mv-cards">
 
       <div class="mv-card mission reveal-left">
-        <div class="mv-card-icon">🎯</div>
         <h3>Our Mission</h3>
         <p class="mv-statement">
-          To supply Rwandan homes, businesses, and industries with high-quality, affordable products —
-          delivered with exceptional service, speed, and care.
+          To build on our beginnings as a small hardware shop founded in 2010 and serve customers across Rwanda and the region with trusted products and dependable service.
         </p>
-        <ul class="mv-list">
-          <li>Ensure every client receives consistent, verified product quality</li>
-          <li>Offer fair and competitive pricing for all</li>
-          <li>Build partnerships based on trust and transparency</li>
-          <li>Respond quickly with efficient delivery nationwide</li>
-          <li>Support Rwanda's economic growth through local commerce</li>
-        </ul>
+        <ol class="mv-list mission-points">
+          <li><div class="mission-point-copy"><strong>Market leadership</strong><span>Build on our beginnings to become a leading regional distributor and manufacturer.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Quality and trust</strong><span>Deliver reliable, high-standard building, electrical, plumbing, chemical, and hygiene products, including our RIVER and MIRAH brands.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Customer-centred growth</strong><span>Provide dependable service to individual customers and large hardware businesses throughout Rwanda and the wider region.</span></div></li>
+        </ol>
       </div>
 
       <div class="mv-card vision reveal-right">
-        <div class="mv-card-icon">🔭</div>
         <h3>Our Vision</h3>
         <p class="mv-statement">
-          To become the most trusted trading company in Rwanda and across East Africa —
-          setting the standard for product quality, service excellence, and reliability.
+          To be among the region’s most trusted providers of quality construction, industrial, and household products, serving customers across Rwanda and East Africa.
         </p>
-        <ul class="mv-list">
-          <li>Expand our product range to cover every industry and home</li>
-          <li>Establish distribution across all provinces of Rwanda</li>
-          <li>Grow RIVER® as a recognized mark of quality</li>
-          <li>Enter East African markets within the next 5 years</li>
-          <li>Contribute to Rwanda's Vision 2050</li>
-        </ul>
+        <ol class="mv-list vision-points">
+          <li><div class="mission-point-copy"><strong>Regional trust</strong><span>Earn lasting trust by consistently providing quality products and dependable service throughout Rwanda and East Africa.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Wider access</strong><span>Strengthen our distribution so more homes, businesses, and industries can access the products they need.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Trusted brands</strong><span>Build RIVER and MIRAH into recognized brands associated with quality, reliability, and value.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Lasting partnerships</strong><span>Develop strong, long-term relationships with customers, suppliers, and business partners.</span></div></li>
+          <li><div class="mission-point-copy"><strong>Shared progress</strong><span>Grow responsibly while contributing to the success of the communities and markets we serve.</span></div></li>
+        </ol>
       </div>
 
-    </div>
-
-    <!-- Goals we serve -->
-    <div class="reveal">
-      <span class="goals-label">What We Are Working Toward</span>
-      <h2 class="goals-title">The Goals We Are <em>Committed to Serving</em></h2>
-    </div>
-
-    <div class="goals-grid">
-      <div class="goal-card reveal">
-        <span class="goal-icon">🏭</span>
-        <h4>Industry Access</h4>
-        <p>Make professional-grade industrial products available to SMEs at accessible price points.</p>
-      </div>
-      <div class="goal-card reveal">
-        <span class="goal-icon">🏠</span>
-        <h4>Household Quality</h4>
-        <p>Ensure every Rwandan home has access to safe, effective, and affordable products.</p>
-      </div>
-      <div class="goal-card reveal">
-        <span class="goal-icon">🔨</span>
-        <h4>Craftsmen &amp; Builders</h4>
-        <p>Equip Rwanda's artisans and builders with tools that help them do great work.</p>
-      </div>
-      <div class="goal-card reveal">
-        <span class="goal-icon">🌍</span>
-        <h4>Regional Expansion</h4>
-        <p>Grow beyond Rwanda's borders to supply East Africa with our proven product lines.</p>
-      </div>
-    </div>
-
-    <!-- Core values -->
-    <div class="reveal">
-      <h2 class="values-title">Our Core <em>Values</em></h2>
-    </div>
-    <div class="values-row">
-      <div class="value-pill reveal"><span class="vi">🏅</span><h4>Quality First</h4><p>Every product is checked before it reaches a customer.</p></div>
-      <div class="value-pill reveal"><span class="vi">🤝</span><h4>Integrity</h4><p>Honest pricing and transparent dealings always.</p></div>
-      <div class="value-pill reveal"><span class="vi">⚡</span><h4>Reliability</h4><p>We show up, deliver on time, and stand behind every product.</p></div>
-      <div class="value-pill reveal"><span class="vi">💡</span><h4>Innovation</h4><p>Always improving our products and service.</p></div>
-      <div class="value-pill reveal"><span class="vi">🌱</span><h4>Community</h4><p>Rooted in Rwanda, contributing to its future.</p></div>
-      <div class="value-pill reveal"><span class="vi">🎖️</span><h4>Excellence</h4><p>Good enough is never enough.</p></div>
     </div>
 
   </div>
@@ -739,8 +513,11 @@
           <span class="tc-title">Executive Leadership</span>
           <p class="tc-desc">Leads all company operations and drives the strategic vision of River Trading Ltd across Rwanda.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=General%20Manager" class="tc-link" aria-label="Email General Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp General Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -757,8 +534,11 @@
           <span class="tc-title">Sales &amp; Customer Growth</span>
           <p class="tc-desc">Leads all sales activities and ensures every client finds the right product with outstanding support.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=Sales%20and%20Marketing" class="tc-link" aria-label="Email Sales and Marketing Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp Sales and Marketing Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -775,8 +555,11 @@
           <span class="tc-title">Supply Chain &amp; Quality Control</span>
           <p class="tc-desc">Manages all product sourcing and quality assurance — every item passes rigorous vetting before distribution.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=Procurement" class="tc-link" aria-label="Email Procurement Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp Procurement Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -793,8 +576,11 @@
           <span class="tc-title">Finance &amp; Administration</span>
           <p class="tc-desc">Oversees all financial operations, keeping the company on a sustainable and transparent growth path.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=Finance" class="tc-link" aria-label="Email Finance Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp Finance Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -811,8 +597,11 @@
           <span class="tc-title">Delivery &amp; Distribution</span>
           <p class="tc-desc">Coordinates fast and reliable delivery of all products to clients across Rwanda.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=Logistics" class="tc-link" aria-label="Email Logistics Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp Logistics Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -829,8 +618,11 @@
           <span class="tc-title">Client Relations &amp; Support</span>
           <p class="tc-desc">Manages all client interactions and after-sales support — making sure every client leaves satisfied.</p>
           <div class="tc-links">
-            <a href="#" class="tc-link" aria-label="LinkedIn">in</a>
-            <a href="contact.html" class="tc-link" aria-label="Contact">✉</a>
+            <a href="mailto:info@rivertradingltd.com?subject=Customer%20Service" class="tc-link" aria-label="Email Customer Service Manager">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+            </a>
+            <a href="https://wa.me/250794427058" class="tc-link" target="_blank" rel="noopener" aria-label="WhatsApp Customer Service Manager"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
@@ -841,66 +633,47 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-     CTA BAND
-════════════════════════════════════════════════════════════ -->
-<div class="cta-band reveal">
-  <h2>Ready to work with us?</h2>
-  <p>Get in touch and discover how River Trading Ltd can serve your business or household needs.</p>
-  <a href="contact.html" class="btn-cta">Contact Us Today</a>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════════════════ -->
 <footer role="contentinfo">
   <div class="footer-main">
     <div class="footer-brand">
       <div class="nav-logo">
-        <img src="../images/logo-icon.png" alt="River Trading Ltd" style="height:50px;width:50px;object-fit:contain;border-radius:50%;border:2px solid #FFD700;" onerror="this.style.display='none'" />
-        <div class="nav-logo-text"><span class="river">RIVER</span><span class="trading">Trading Ltd</span></div>
+        <img src="../images/logo-icon.png" alt="River Trading Ltd" onerror="this.style.display='none'" />
+        <div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div>
       </div>
-      <p>Rwanda's trusted supplier of quality tools, lubricants, cleaning products, and hardware.</p>
+      <p>Reliable industrial and general trading partner across Rwanda and East Africa.</p>
       <div class="social-links">
         <a href="https://facebook.com/rivertradingltd" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-        <a href="https://wa.me/250794427058" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">W</a>
         <a href="https://instagram.com/rivertradingltd" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">In</a>
+        <a href="https://wa.me/250788386303" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /></a>
       </div>
     </div>
     <div class="footer-col">
-      <h5>Quick Links</h5>
+      <h5>Explore</h5>
       <ul>
-        <li><a href="../index.html">&#8250; Home</a></li>
-        <li><a href="about.html">&#8250; About Us</a></li>
-        <li><a href="services.html">&#8250; Services</a></li>
-        <li><a href="products.html">&#8250; Products</a></li>
-        <li><a href="blogs.html">&#8250; Blog</a></li>
-        <li><a href="contact.html">&#8250; Contact Us</a></li>
+        <li><a href="about.html#who-we-are">About Us</a></li>
+        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="brands.html">Brands</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="events.html">Projects &amp; Events</a></li>
+        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>About Us</h5>
-      <ul>
-        <li><a href="about.html#who-we-are">&#8250; Who We Are</a></li>
-        <li><a href="about.html#mission-vision">&#8250; Mission &amp; Vision</a></li>
-        <li><a href="about.html#our-team">&#8250; Our Team</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact Us</h5>
-      <div class="contact-item"><span class="contact-icon">📍</span><span>Kigali, Rwanda</span></div>
-      <div class="contact-item"><span class="contact-icon">📞</span><span>+250 794 427 058<br />+250 788 386 303<br />+250 788 735 441</span></div>
-      <div class="contact-item"><span class="contact-icon">✉️</span><span><a href="mailto:info@rivertradingltd.com" style="color:#FFD700;">info@rivertradingltd.com</a></span></div>
-      <div class="contact-item"><span class="contact-icon">🌐</span><span><a href="https://www.rivertradingltd.com" style="color:#FFD700;">www.rivertradingltd.com</a></span></div>
+      <h5>Headquarters</h5>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true"><img class="footer-location-mark" src="../images/location-pin-footer.png" alt="" /></span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=KN%204%20St%2C%20Kigali%2C%20Rwanda" target="_blank" rel="noopener">KN 4 St, Kigali, Rwanda</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9742;</span><span><a href="tel:+250788386303">+250 788 386 303</a></span></div>
+      <div class="contact-item"><span class="contact-icon" aria-hidden="true">&#9993;</span><span><a href="mailto:info@rivertradingltd.com">info@rivertradingltd.com</a></span></div>
+      <div class="contact-item"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /><span><a href="https://wa.me/250788386303" target="_blank" rel="noopener">Chat on WhatsApp</a></span></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2024 River Trading Ltd. All rights reserved.</p>
-    <p>Designed with care &mdash; <a href="contact.html">Contact Us</a></p>
+    <p>&copy; 2019 - 2026 River Trading Ltd. All rights reserved.</p>
   </div>
 </footer>
 
 <button id="scrollTop" aria-label="Scroll to top">&#8679;</button>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=5"></script>
 </body>
 </html>
