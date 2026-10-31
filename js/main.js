@@ -1,13 +1,13 @@
-// ============================================
-//  RIVER TRADING LTD - Main JavaScript
-// ============================================
+
+
+
 
 document.documentElement.classList.add('js');
 
 document.addEventListener('DOMContentLoaded', () => {
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // ---- NAVBAR: Scroll shrink + active link ----
+
   const navbar = document.getElementById('navbar');
   const scrollTopBtn = document.getElementById('scrollTop');
   const categoryPageFiles = new Set([
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Highlight active nav link based on section in view
+
     const sections = document.querySelectorAll('section[id]');
     sections.forEach(sec => {
       const top = sec.getBoundingClientRect().top;
@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- SCROLL TO TOP ----
+
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: motionPreference.matches ? 'auto' : 'smooth' });
     });
   }
 
-  // ---- HAMBURGER MENU ----
+
   const hamburger = document.querySelector('.hamburger');
   const navMenu   = document.querySelector('.nav-menu');
 
@@ -94,13 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open') ? 'true' : 'false');
     });
 
-    // Close on regular link click (not dropdown toggles)
+
     navMenu.querySelectorAll('a:not(.has-dropdown > a)').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         navMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
-        // also close all dropdowns
+
         navMenu.querySelectorAll('li.has-dropdown').forEach(d => d.classList.remove('open'));
       });
     });
@@ -116,41 +116,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- DROPDOWN MENUS ----
+
   const dropdownParents = document.querySelectorAll('.nav-menu li.has-dropdown');
 
   dropdownParents.forEach(parent => {
     const trigger = parent.querySelector(':scope > a');
 
-    // Desktop: hover is handled by CSS
-    // Click: toggle open class (works for both mobile tap and desktop click)
+
+
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = parent.classList.contains('open');
-      // Close all others first
+
       dropdownParents.forEach(p => p.classList.remove('open'));
       if (!isOpen) parent.classList.add('open');
     });
   });
 
-  // Close dropdowns when clicking outside
+
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-dropdown')) {
       dropdownParents.forEach(p => p.classList.remove('open'));
     }
   });
 
-  // ---- LANDING PHOTOS: build the hero slides from the shared list ----
-  // js/landing-photos.js holds every photo in one place. The static markup keeps
-  // three slides as a no-JS fallback; when the list loads we rebuild so the hero
-  // cycles through ALL of them, one after another, at the 3s cadence below.
+
+
+
+
   const landingPhotos = Array.isArray(window.RIVER_PHOTOS) ? window.RIVER_PHOTOS : [];
   const sliderEl       = document.querySelector('.slider');
   const dotsWrap       = document.querySelector('.slider-dots');
   const arrowPrev      = document.querySelector('.slider-arrow.prev');
 
   if (sliderEl && landingPhotos.length > 0) {
-    // Remove the static fallback slides, then rebuild one per photo.
+
     sliderEl.querySelectorAll('.slide').forEach(el => el.remove());
 
     landingPhotos.forEach((photo, i) => {
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.fetchPriority = 'high';
         img.src = photo.src;
       }
-      // Missing file → hide the img so the gradient behind it shows instead.
+
       img.onerror = function () { this.style.display = 'none'; };
 
       visual.appendChild(img);
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sliderEl.insertBefore(slide, arrowPrev);
     });
 
-    // Rebuild the dots to match the new slide count.
+
     if (dotsWrap) {
       dotsWrap.innerHTML = '';
       landingPhotos.forEach((photo, i) => {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ---- IMAGE SLIDER ----
+
   const slides    = document.querySelectorAll('.slide');
   const dots      = document.querySelectorAll('.dot');
   const prevBtn   = document.querySelector('.slider-arrow.prev');
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let current  = 0;
   let autoPlay = null;
 
-  // Company lines shown under the hero title — each one rotates with its slide
+
   const HERO_LINES = [
     '— Quality and Good Service —',
     '— Tools · Lubricants · Cleaning Products · Hardware —',
@@ -219,10 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setHeroLine(i) {
     if (!heroSub) return;
-    heroSub.classList.add('swap');                       // fade out
+    heroSub.classList.add('swap');
     setTimeout(() => {
       heroSub.textContent = HERO_LINES[i % HERO_LINES.length];
-      heroSub.classList.remove('swap');                  // fade back in
+      heroSub.classList.remove('swap');
     }, 250);
   }
 
@@ -275,17 +275,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- PHOTO STRIP (home page) — the same shared photo list ----
-  // One image every 3s, same cadence as the hero, so both advance together.
-  // The set is duplicated in the DOM: when the first set has scrolled fully
-  // past, the transform snaps back to the identical second set — no visible jump.
+
+
+
+
   const stripTrack = document.querySelector('.strip-track');
   let startStripMotion = null;
   let stopStripMotion = null;
 
   if (stripTrack && landingPhotos.length > 0) {
-    const CELL_W = 220;   // must match .strip-cell width in index.html
-    const GAP    = 16;    // must match .strip-track gap in index.html
+    const CELL_W = 220;
+    const GAP    = 16;
     const STEP   = CELL_W + GAP;
 
     const buildCell = (photo) => {
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const advanceStrip = () => {
       stripOffset += STEP;
-      if (stripOffset >= SET_W) stripOffset -= SET_W;   // seamless wrap
+      if (stripOffset >= SET_W) stripOffset -= SET_W;
       stripTrack.style.transform = 'translateX(' + (-stripOffset) + 'px)';
     };
 
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startStrip();
 
-    // Let people look at a photo: pause on hover, resume on leave.
+
     const stripViewport = stripTrack.closest('.strip-viewport') || stripTrack;
     stripViewport.addEventListener('mouseenter', stopStrip);
     stripViewport.addEventListener('mouseleave', startStrip);
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---- COUNTER ANIMATION ----
+
   const counters = document.querySelectorAll('.num[data-target]');
 
   if (motionPreference.matches) {
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!motionPreference.matches) counters.forEach(c => countObserver.observe(c));
 
-  // ---- SCROLL REVEAL ----
+
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -393,8 +393,8 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => revealObserver.observe(el));
   }
 
-  // Also trigger immediately for any elements already in viewport on load
-  // (handles direct anchor navigation like #who-we-are)
+
+
   setTimeout(() => {
     reveals.forEach(el => {
       const rect = el.getBoundingClientRect();

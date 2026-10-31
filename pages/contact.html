@@ -19,10 +19,10 @@
     .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* Page hero */
+
     .page-hero {
       height:300px;
-      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      background:linear-gradient(135deg,#173F8A 0%,#204D91 35%,#D71920 75%,#F5E900 100%);
       display:flex; align-items:center; justify-content:center;
       flex-direction:column; text-align:center; padding:20px; padding-top:80px;
       position:relative; overflow:hidden;
@@ -30,19 +30,19 @@
     .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
     .page-hero-content { position:relative; z-index:2; }
     .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; text-shadow:2px 2px 12px rgba(0,0,0,0.4); }
-    .page-hero h1 span { color:#FFD700; }
+    .page-hero h1 span { color:#F5E900; }
     .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
-    .breadcrumb a { color:#FFD700; }
+    .breadcrumb a { color:#F5E900; }
 
-    /* ---- Contact layout ---- */
+
     .contact-section { padding:80px 40px; }
     .contact-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:stretch; }
 
-    /* Info column */
+
     .contact-info-col { border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 4px 30px rgba(0,0,0,0.09); }
     .contact-map-frame { width:100%; height:250px; border:0; display:block; }
     .contact-info-content { padding:26px 30px 30px; }
-    .contact-info-col h2 { font-size:1.55rem; font-weight:900; color:#004e3b; margin:0 0 18px; }
+    .contact-info-col h2 { font-size:1.55rem; font-weight:900; color:#173F8A; margin:0 0 18px; }
 
     .info-card {
       display:flex; gap:16px; align-items:flex-start;
@@ -52,15 +52,15 @@
     .ic-icon { font-size:1.25rem; flex-shrink:0; margin-top:2px; }
     .ic-icon .location-mark, .ic-icon .phone-mark { width:28px; height:28px; display:block; object-fit:contain; }
     .info-card h4 { font-family:'Barlow',sans-serif; font-size:0.78rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#888; margin-bottom:4px; }
-    .info-card p, .info-card a { color:#004e3b; font-weight:600; font-size:0.95rem; line-height:1.55; }
+    .info-card p, .info-card a { color:#173F8A; font-weight:600; font-size:0.95rem; line-height:1.55; }
     .info-card a { text-decoration:none; transition:color 0.2s ease; }
-    .info-card a:hover { color:#CC0000; }
+    .info-card a:hover { color:#D71920; }
     .sales-contacts { display:grid; gap:2px; }
     .contact-hours { color:#666; font-size:0.9rem; line-height:1.5; }
 
-    /* ---- Contact Form ---- */
+
     .contact-form-col { background:#fff; border-radius:12px; box-shadow:0 4px 30px rgba(0,0,0,0.09); padding:40px; border:1px solid #f0f0f0; }
-    .contact-form-col h3 { font-size:1.3rem; font-weight:900; color:#004e3b; margin-bottom:8px; }
+    .contact-form-col h3 { font-size:1.3rem; font-weight:900; color:#173F8A; margin-bottom:8px; }
     .form-note { font-size:0.85rem; color:#888; margin-bottom:24px; line-height:1.5; }
 
     .form-group { margin-bottom:18px; }
@@ -75,11 +75,11 @@
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color:#004e3b; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
+    .form-group textarea:focus { border-color:#173F8A; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
     .form-group textarea { resize:vertical; min-height:120px; }
     .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 
-    /* Two submit options */
+
     .form-actions { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
     .form-actions button { flex:1; min-width:160px; }
     .btn-whatsapp-send {
@@ -93,16 +93,16 @@
     .btn-whatsapp-send:hover { background:#128C7E; }
     .btn-email-send {
       display:flex; align-items:center; justify-content:center; gap:8px;
-      padding:13px 20px; background:#004e3b; color:#fff; border:none;
+      padding:13px 20px; background:#173F8A; color:#fff; border:none;
       border-radius:8px; font-family:'Barlow',sans-serif; font-size:0.9rem;
       font-weight:700; cursor:pointer; transition:all 0.3s ease;
     }
-    .btn-email-send:hover { background:#016630; }
+    .btn-email-send:hover { background:#204D91; }
 
-    /* Success toast */
+
     .toast {
       position:fixed; bottom:30px; right:30px; z-index:9999;
-      background:#004e3b; color:#fff; padding:16px 22px;
+      background:#173F8A; color:#fff; padding:16px 22px;
       border-radius:10px; box-shadow:0 8px 28px rgba(0,0,0,0.2);
       display:flex; align-items:center; gap:10px;
       transform:translateY(20px); opacity:0;
@@ -119,12 +119,13 @@
       .contact-info-content { padding:22px 20px 24px; }
     }
   </style>
+  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
 </head>
 <body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <!-- CONTACT BAR -->
+
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="https://wa.me/250788403079" target="_blank" rel="noopener"><span aria-hidden="true">&#9742;</span><span>0788403079</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -146,13 +147,7 @@
       </li>
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="services.html">Product Supply</a></li>
-          <li><a href="services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#shopping-delivery">Delivery Service</a></li>
-          <li><a href="services.html#import-export">Import &amp; Export</a></li>
-          <li><a href="services.html">After-Sales Support</a></li>
-        </ul>
+        <ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
@@ -178,7 +173,7 @@
     </ul>
   </nav>
 
-  <!-- PAGE HERO -->
+
   <div class="page-hero">
     <div class="page-hero-content">
       <h1 id="main-content" tabindex="-1">Contact <span>Us</span></h1>
@@ -188,11 +183,11 @@
     </div>
   </div>
 
-  <!-- CONTACT SECTION -->
+
   <section class="contact-section" aria-labelledby="contact-heading">
     <div class="contact-inner">
 
-      <!-- LEFT: Map and contact details -->
+
       <div class="contact-info-col reveal">
         <iframe
           class="contact-map-frame"
@@ -243,9 +238,9 @@
 
           <p class="contact-hours">Business hours: Mon–Sat · 08:00–18:00 EAT</p>
         </div>
-      </div><!-- /contact-info-col -->
+      </div>
 
-      <!-- RIGHT: Form -->
+
       <div class="contact-form-col reveal">
         <h3>Send Us a Message</h3>
         <p class="form-note">
@@ -258,11 +253,11 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="fname">First Name <span style="color:#CC0000">*</span></label>
+              <label for="fname">First Name <span style="color:#D71920">*</span></label>
               <input type="text" id="fname" name="fname" placeholder="Your first name" required autocomplete="given-name" />
             </div>
             <div class="form-group">
-              <label for="lname">Last Name <span style="color:#CC0000">*</span></label>
+              <label for="lname">Last Name <span style="color:#D71920">*</span></label>
               <input type="text" id="lname" name="lname" placeholder="Your last name" required autocomplete="family-name" />
             </div>
           </div>
@@ -278,7 +273,7 @@
           </div>
 
           <div class="form-group">
-            <label for="subject">Subject <span style="color:#CC0000">*</span></label>
+            <label for="subject">Subject <span style="color:#D71920">*</span></label>
             <select id="subject" name="subject" required>
               <option value="">— Select a subject —</option>
               <option value="Product Inquiry">Product Inquiry</option>
@@ -292,11 +287,11 @@
           </div>
 
           <div class="form-group">
-            <label for="message">Message <span style="color:#CC0000">*</span></label>
+            <label for="message">Message <span style="color:#D71920">*</span></label>
             <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
           </div>
 
-          <!-- Two send options -->
+
           <div class="form-actions">
             <button type="button" class="btn-whatsapp-send" id="sendWhatsApp" aria-label="Send message via WhatsApp">
               <img class="form-action-icon whatsapp-form-icon" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /> Send via WhatsApp
@@ -312,13 +307,13 @@
     </div>
   </section>
 
-  <!-- Toast notification -->
+
   <div class="toast" id="toast" role="alert" aria-live="polite">
     <span class="toast-icon" id="toastIcon">✅</span>
     <span id="toastMsg">Opening WhatsApp…</span>
   </div>
 
-  <!-- FOOTER -->
+
   <footer role="contentinfo">
   <div class="footer-main">
     <div class="footer-brand">
@@ -336,12 +331,14 @@
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -361,12 +358,12 @@
   <script src="../js/main.js?v=5"></script>
 
   <script>
-  // ============================================================
-  //  CONTACT FORM — WhatsApp + Email submission
-  //  ⚠ UPDATE: Change WHATSAPP_NUMBER and EMAIL to real values
-  // ============================================================
+
+
+
+
   const WHATSAPP_NUMBER = '250788403079';
-  const EMAIL_ADDRESS   = 'info@rivertradingltd.com'; // ← Real company email address
+  const EMAIL_ADDRESS   = 'info@rivertradingltd.com';
 
   function getFormData() {
     const fname   = document.getElementById('fname').value.trim();
@@ -405,12 +402,12 @@
     setTimeout(() => toast.classList.remove('show'), 4000);
   }
 
-  // ---- Send via WhatsApp ----
+
   document.getElementById('sendWhatsApp').addEventListener('click', () => {
     const d = getFormData();
     if (!validateForm(d)) return;
 
-    // Build a readable WhatsApp message
+
     const text = [
       '👋 Hello River Trading Ltd!',
       '',
@@ -430,7 +427,7 @@
     showToast('whatsapp', 'Opening WhatsApp with your message…');
   });
 
-  // ---- Send via Email (mailto fallback) ----
+
   document.getElementById('sendEmail').addEventListener('click', () => {
     const d = getFormData();
     if (!validateForm(d)) return;

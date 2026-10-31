@@ -16,10 +16,10 @@
     body { font-family:'Inter',sans-serif; }
     h1,h2,h3,h4,h5,h6,.section-title,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
 
-    /* Page hero */
+
     .page-hero {
       height:300px;
-      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      background:linear-gradient(135deg,#173F8A 0%,#204D91 35%,#D71920 75%,#F5E900 100%);
       display:flex; align-items:center; justify-content:center;
       flex-direction:column; text-align:center; padding:20px; padding-top:80px;
       position:relative; overflow:hidden;
@@ -27,18 +27,18 @@
     .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
     .page-hero-content { position:relative; z-index:2; }
     .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; }
-    .page-hero h1 span { color:#FFD700; }
+    .page-hero h1 span { color:#F5E900; }
     .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
-    .breadcrumb a { color:#FFD700; }
+    .breadcrumb a { color:#F5E900; }
 
-    /* ---- Search & Filter bar ---- */
+
     .products-toolbar {
       position:sticky; top:80px; z-index:99;
       background:#fff; border-bottom:2px solid #e5e7eb;
       padding:16px 40px;
       display:flex; gap:16px; align-items:center; flex-wrap:wrap;
     }
-    .products-toolbar, .products-page { display:none !important; }
+    .products-toolbar { display:none !important; }
     .search-wrap {
       position:relative; flex:1; min-width:220px; max-width:400px;
     }
@@ -48,7 +48,7 @@
       font-family:'Inter',sans-serif; font-size:0.95rem; color:#333;
       transition:all 0.3s ease; background:#fafafa;
     }
-    .search-wrap input:focus { border-color:#004e3b; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
+    .search-wrap input:focus { border-color:#173F8A; background:#fff; outline:none; box-shadow:0 0 0 3px rgba(0,78,59,0.1); }
     .search-icon {
       position:absolute; left:15px; top:50%; transform:translateY(-50%);
       width:18px; height:18px; color:#9aa0a6; pointer-events:none;
@@ -60,22 +60,22 @@
     }
     .clear-search.visible { display:block; }
 
-    /* Category chip (only when arriving via a ?cat= link) */
+
     .filter-chip {
       display:inline-flex; align-items:center; gap:8px;
       padding:7px 8px 7px 14px; border-radius:20px;
-      background:#f0fdf4; border:2px solid #bbf7d0; color:#004e3b;
+      background:#EFF4FB; border:2px solid #bbf7d0; color:#173F8A;
       font-family:'Barlow',sans-serif; font-size:0.78rem; font-weight:700;
       text-transform:uppercase; letter-spacing:0.5px; white-space:nowrap;
     }
     .filter-chip[hidden] { display:none; }
     .filter-chip button {
-      background:none; border:none; color:#004e3b; cursor:pointer;
+      background:none; border:none; color:#173F8A; cursor:pointer;
       font-size:1rem; line-height:1; padding:2px 6px;
     }
-    .filter-chip button:hover { color:#CC0000; }
+    .filter-chip button:hover { color:#D71920; }
 
-    /* Pagination */
+
     .pagination {
       display:flex; justify-content:center; align-items:center; gap:8px;
       margin-top:48px; flex-wrap:wrap;
@@ -89,19 +89,19 @@
       transition:all 0.25s ease;
       display:inline-flex; align-items:center; justify-content:center; gap:6px;
     }
-    .page-btn:hover:not(:disabled):not(.active) { border-color:#004e3b; color:#004e3b; }
-    .page-btn.active { background:#004e3b; border-color:#004e3b; color:#fff; cursor:default; }
+    .page-btn:hover:not(:disabled):not(.active) { border-color:#173F8A; color:#173F8A; }
+    .page-btn.active { background:#173F8A; border-color:#173F8A; color:#fff; cursor:default; }
     .page-btn:disabled { opacity:0.4; cursor:not-allowed; }
 
     .page-dots { color:#9aa0a6; font-weight:700; padding:0 2px; align-self:center; }
 
-    /* Product count */
+
     .product-count { font-size:0.85rem; color:#888; white-space:nowrap; margin-left:auto; }
 
-    /* ---- Full stock item catalogue ---- */
+
     .inventory-section { padding:48px 40px 24px; max-width:1240px; margin:0 auto; }
     .inventory-section { padding-top:24px; }
-    .inventory-category-heading { margin:0 0 24px; color:#004e3b; font-size:clamp(1.35rem,3vw,1.8rem); font-weight:900; }
+    .inventory-category-heading { margin:0 0 24px; color:#173F8A; font-size:clamp(1.35rem,3vw,1.8rem); font-weight:900; }
     .inventory-category-heading[hidden] { display:none; }
     .inventory-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
     .inventory-card { display:flex; flex-direction:column; overflow:hidden; border:1px solid #f0f0f0; border-radius:10px; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.07); transition:transform .32s ease,box-shadow .32s ease; }
@@ -113,15 +113,15 @@
     .inventory-card-spec { margin:0; color:#555; font-size:.9rem; line-height:1.5; }
     .inventory-card-code { margin-top:6px; color:#737b76; font-size:.82rem; }
     .inventory-card-footer { display:flex; justify-content:flex-end; margin-top:auto; padding-top:16px; }
-    .inventory-view-more { display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border:0; border-radius:7px; background:#004e3b; color:#fff; font:700 .8rem 'Barlow',sans-serif; text-transform:uppercase; cursor:pointer; }
-    .inventory-view-more:hover { background:#CC0000; }
+    .inventory-view-more { display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border:0; border-radius:7px; background:#173F8A; color:#fff; font:700 .8rem 'Barlow',sans-serif; text-transform:uppercase; cursor:pointer; }
+    .inventory-view-more:hover { background:#D71920; }
     .inventory-detail-overlay { position:fixed; inset:0; z-index:2000; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0,.7); opacity:0; pointer-events:none; transition:opacity .25s ease; }
     .inventory-detail-overlay.open { opacity:1; pointer-events:auto; }
     .inventory-detail { position:relative; width:100%; max-width:900px; max-height:90vh; overflow:auto; border-radius:14px; background:#fff; box-shadow:0 24px 60px rgba(0,0,0,.3); }
     .inventory-detail-close { position:sticky; top:10px; float:right; margin:10px 10px -48px 0; z-index:2; width:38px; height:38px; border:0; border-radius:50%; background:rgba(0,0,0,.68); color:#fff; font-size:1.4rem; cursor:pointer; }
     .inventory-media-list { display:flex; gap:10px; min-height:86px; overflow-x:auto; padding:12px 16px; background:#f1f2f4; }
-    .inventory-media-choice { position:relative; flex:0 0 84px; width:84px; height:64px; overflow:hidden; padding:0; border:2px solid transparent; border-radius:8px; background:linear-gradient(135deg,#004e3b,#b51e18); color:#fff; cursor:pointer; }
-    .inventory-media-choice[aria-pressed="true"] { border-color:#008138; }
+    .inventory-media-choice { position:relative; flex:0 0 84px; width:84px; height:64px; overflow:hidden; padding:0; border:2px solid transparent; border-radius:8px; background:linear-gradient(135deg,#173F8A,#b51e18); color:#fff; cursor:pointer; }
+    .inventory-media-choice[aria-pressed="true"] { border-color:#2954A0; }
     .inventory-media-choice img { display:block; width:100%; height:100%; object-fit:cover; }
     .inventory-media-placeholder { display:flex; width:100%; height:100%; align-items:center; justify-content:center; font-size:1.25rem; }
     .inventory-media-choice-video { background:#111; font-size:.72rem; font-weight:700; }
@@ -130,42 +130,42 @@
     .inventory-detail-preview[hidden] { display:none; }
     .inventory-detail-preview img, .inventory-detail-preview video { width:100%; height:100%; object-fit:contain; }
     .inventory-detail-body { padding:30px 40px 36px; }
-    .inventory-detail-category { margin:0 0 10px; color:#008138; font-size:.82rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
+    .inventory-detail-category { margin:0 0 10px; color:#2954A0; font-size:.82rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; }
     .inventory-detail-body h2 { margin:0 0 12px; color:#111; font-size:clamp(1.7rem,4vw,2.35rem); font-weight:900; line-height:1.2; }
     .inventory-detail-subtitle { margin:0 0 20px; color:#555; font-size:1rem; line-height:1.6; }
     .inventory-detail-section { margin-top:20px; }
-    .inventory-detail-section h3 { margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #d9f1e2; color:#004e3b; font-size:.9rem; font-weight:900; letter-spacing:1.5px; text-transform:uppercase; }
+    .inventory-detail-section h3 { margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #d9f1e2; color:#173F8A; font-size:.9rem; font-weight:900; letter-spacing:1.5px; text-transform:uppercase; }
     .inventory-detail-section p, .inventory-detail-uses li { color:#626a65; font-size:1rem; line-height:1.75; }
     .inventory-detail-section p { margin:0; }
     .inventory-detail-uses { margin:0; padding:0; list-style:none; }
     .inventory-detail-uses li { position:relative; margin:0 0 7px; padding-left:22px; }
-    .inventory-detail-uses li::before { position:absolute; left:0; color:#008138; content:'✓'; font-weight:800; }
-    .inventory-detail-news { padding:14px 18px; border-left:4px solid #008138; border-radius:0 7px 7px 0; background:#f0fdf4; color:#286044; }
-    .inventory-detail-news strong { display:block; margin-bottom:5px; color:#004e3b; }
+    .inventory-detail-uses li::before { position:absolute; left:0; color:#2954A0; content:'✓'; font-weight:800; }
+    .inventory-detail-news { padding:14px 18px; border-left:4px solid #2954A0; border-radius:0 7px 7px 0; background:#EFF4FB; color:#286044; }
+    .inventory-detail-news strong { display:block; margin-bottom:5px; color:#173F8A; }
     .inventory-empty { padding:28px 16px; text-align:center; color:#666; }
-    /* ---- Products layout ---- */
+
     .products-page { padding:48px 40px 80px; max-width:1240px; margin:0 auto; }
 
-    /* Category section */
+
     .cat-section { margin-bottom:56px; }
     .cat-section[data-hidden="true"] { display:none; }
     .cat-heading {
       display:flex; align-items:center; gap:16px; margin-bottom:28px;
-      padding-bottom:14px; border-bottom:3px solid #004e3b;
+      padding-bottom:14px; border-bottom:3px solid #173F8A;
     }
     .cat-heading .cat-icon { font-size:1.8rem; }
-    .cat-heading h2 { font-size:1.3rem; font-weight:900; color:#004e3b; margin:0; }
-    .cat-heading .cat-count { font-size:0.78rem; font-weight:700; background:#f0fdf4;
-      color:#004e3b; padding:4px 10px; border-radius:12px; margin-left:auto; }
+    .cat-heading h2 { font-size:1.3rem; font-weight:900; color:#173F8A; margin:0; }
+    .cat-heading .cat-count { font-size:0.78rem; font-weight:700; background:#EFF4FB;
+      color:#173F8A; padding:4px 10px; border-radius:12px; margin-left:auto; }
 
-    /* Product card grid — 3 across so 6-per-page fills two even rows */
+
     .product-grid {
       display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
     }
     @media(max-width:900px) { .product-grid { grid-template-columns:repeat(2,1fr); } }
     @media(max-width:560px)  { .product-grid { grid-template-columns:1fr; } }
 
-    /* Product card */
+
     .prod-card {
       background:#fff; border-radius:10px;
       box-shadow:0 2px 12px rgba(0,0,0,0.07); overflow:hidden;
@@ -174,7 +174,7 @@
     }
     .prod-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,0.13); border-color:#e5e7eb; }
 
-    /* Product image area */
+
     .prod-img {
       height:170px; overflow:hidden;
       display:flex; align-items:center; justify-content:center;
@@ -184,7 +184,7 @@
     .prod-card:hover .prod-img img { transform:scale(1.06); }
     .prod-img-placeholder { font-size:3.2rem; }
 
-    /* Category badge on image */
+
     .prod-cat-badge {
       position:absolute; top:10px; left:10px;
       background:rgba(0,78,59,0.85); color:#fff;
@@ -192,7 +192,7 @@
       letter-spacing:1px; padding:4px 10px; border-radius:4px;
     }
 
-    /* Product card body */
+
     .prod-body { padding:14px 16px 18px; flex:1; display:flex; flex-direction:column; }
     .prod-name {
       font-family:'Barlow',sans-serif;
@@ -212,26 +212,26 @@
     .prod-footer { display:flex; justify-content:flex-end; margin-top:auto; padding-top:12px; }
     .btn-view {
       display:inline-flex; align-items:center; gap:6px;
-      padding:8px 16px; background:#004e3b; color:#fff;
+      padding:8px 16px; background:#173F8A; color:#fff;
       border:none; border-radius:6px; font-family:'Barlow',sans-serif;
       font-size:0.78rem; font-weight:700; text-transform:uppercase;
       letter-spacing:0.5px; cursor:pointer; transition:all 0.25s ease;
     }
-    .btn-view:hover { background:#CC0000; }
+    .btn-view:hover { background:#D71920; }
 
-    /* No results message */
+
     .no-results {
       display:none; text-align:center; padding:60px 20px;
       grid-column:1/-1;
     }
     .no-results.visible { display:block; }
     .no-results .nr-icon { font-size:3rem; margin-bottom:12px; }
-    .no-results h3 { color:#004e3b; margin-bottom:8px; }
+    .no-results h3 { color:#173F8A; margin-bottom:8px; }
     .no-results p { color:#888; font-size:0.9rem; }
 
-    /* ============================================================
-       PRODUCT MODAL
-       ============================================================ */
+
+
+
     .modal-overlay {
       position:fixed; inset:0; z-index:2000;
       background:rgba(0,0,0,0.7);
@@ -255,7 +255,7 @@
     .modal-img {
       width:100%; height:240px; object-fit:cover;
       border-radius:14px 14px 0 0;
-      background:linear-gradient(135deg,#004e3b,#CC0000);
+      background:linear-gradient(135deg,#173F8A,#D71920);
       display:flex; align-items:center; justify-content:center;
       overflow:hidden; position:relative;
     }
@@ -273,7 +273,7 @@
     .modal-close:hover { background:rgba(0,0,0,0.8); }
 
     .modal-body { padding:28px 32px 32px; }
-    .modal-cat { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#008138; margin-bottom:8px; }
+    .modal-cat { font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:2px; color:#2954A0; margin-bottom:8px; }
     .modal-name {
       font-family:'Barlow',sans-serif;
       font-size:1.9rem;
@@ -288,8 +288,8 @@
 
     .modal-section-title {
       font-family:'Barlow',sans-serif; font-size:0.8rem; font-weight:800;
-      text-transform:uppercase; letter-spacing:1.5px; color:#004e3b;
-      margin:20px 0 8px; padding-bottom:6px; border-bottom:2px solid #f0fdf4;
+      text-transform:uppercase; letter-spacing:1.5px; color:#173F8A;
+      margin:20px 0 8px; padding-bottom:6px; border-bottom:2px solid #EFF4FB;
     }
     .modal-desc { color:#555; font-size:0.92rem; line-height:1.75; }
     .modal-uses { list-style:none; padding:0; }
@@ -297,12 +297,12 @@
       font-size:0.88rem; color:#555; line-height:1.6;
       padding-left:18px; position:relative; margin-bottom:6px;
     }
-    .modal-uses li::before { content:'✓'; position:absolute; left:0; color:#004e3b; font-weight:700; }
+    .modal-uses li::before { content:'✓'; position:absolute; left:0; color:#173F8A; font-weight:700; }
 
     .modal-news {
-      background:#f0fdf4; border-left:4px solid #004e3b;
+      background:#EFF4FB; border-left:4px solid #173F8A;
       border-radius:0 6px 6px 0; padding:14px 16px; margin-top:8px;
-      font-size:0.88rem; color:#004e3b; line-height:1.65;
+      font-size:0.88rem; color:#173F8A; line-height:1.65;
     }
     .modal-news strong { display:block; margin-bottom:4px; }
 
@@ -320,12 +320,13 @@
     }
     @media(max-width:560px) { .inventory-grid { grid-template-columns:1fr; } }
   </style>
+  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
 </head>
 <body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <!-- CONTACT BAR -->
+
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -347,13 +348,7 @@
       </li>
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="services.html">Product Supply</a></li>
-          <li><a href="services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#shopping-delivery">Delivery Service</a></li>
-          <li><a href="services.html#import-export">Import &amp; Export</a></li>
-          <li><a href="services.html">After-Sales Support</a></li>
-        </ul>
+        <ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
@@ -379,7 +374,7 @@
     </ul>
   </nav>
 
-  <!-- PAGE HERO -->
+
   <div class="page-hero">
     <div class="page-hero-content">
       <h1>Our <span>Products</span></h1>
@@ -389,7 +384,7 @@
     </div>
   </div>
 
-  <!-- SEARCH & FILTER TOOLBAR -->
+
   <div class="products-toolbar" role="search" aria-label="Product search and filter">
     <div class="search-wrap">
       <input type="search" id="productSearch" placeholder="Search featured products…" aria-label="Search featured products" />
@@ -406,7 +401,7 @@
     <a href="#productGrid">Featured products</a>
   </div>
 
-  <!-- COMPLETE STOCK ITEM CATALOGUE -->
+
   <section class="inventory-section" id="inventoryCatalog" aria-label="Product catalogue">
     <h2 class="inventory-category-heading" id="inventoryCategoryHeading" hidden></h2>
     <div class="inventory-grid" id="inventoryCards" aria-live="polite"></div>
@@ -440,25 +435,25 @@
     </div>
   </div>
 
-  <!-- PRODUCTS CONTENT -->
+
   <main id="main-content" class="products-page" aria-label="Products catalogue" tabindex="-1">
 
-    <!-- No results placeholder -->
+
     <div class="no-results" id="noResults" role="alert" aria-live="polite">
       <div class="nr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#c4c9cf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:48px;height:48px;display:inline-block;"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
       <h3>No products found</h3>
       <p>Try a different search term.</p>
     </div>
 
-    <!-- ONE SECTION PER CATEGORY, EACH WITH ITS OWN 6-PER-PAGE PAGER -->
+
     <div class="product-grid" id="productGrid"></div>
 
-    <!-- PAGINATION -->
+
     <nav class="pagination hidden" id="pagination" aria-label="Product pages"></nav>
 
   </main>
 
-  <!-- PRODUCT MODAL -->
+
   <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
     <div class="modal">
       <div class="modal-img" id="modalImg">
@@ -485,7 +480,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+
   <footer role="contentinfo">
   <div class="footer-main">
     <div class="footer-brand">
@@ -503,12 +498,14 @@
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -531,13 +528,13 @@
   <script src="../js/item-catalog.js"></script>
 
   <script>
-  // ============================================================
-  //  PRODUCTS DATA  (add / edit products here)
-  //  Fields: id, name, category, size, icon, image, desc, uses[], news
-  // ============================================================
+
+
+
+
   const PRODUCTS = [
 
-    // ---- CLEANING ----
+
     { id:'c1', name:'Car Wash Soap (RIVER®)', category:'cleaning', size:'500ml / 1L / 5L',
       icon:'🚗', image:'../images/prod-carwash.jpg',
       desc:'RIVER® Car Wash Soap is a premium formula containing active surfactants and conditioning agents that lift dirt and grime while leaving a protective shine. Free from harmful salts that corrode paint.',
@@ -568,7 +565,7 @@
       uses:['Removing nail polish from fingernails','Dissolving dried super glue and contact adhesive','Removing sticker residue from surfaces','Cleaning permanent marker from hard surfaces','Thinning certain paints and varnishes'],
       news:'The 250ml bottle now comes with a precision dropper applicator for mess-free use.' },
 
-    // ---- HARDWARE ----
+
     { id:'h1', name:'Barbed Wire', category:'hardware', size:'Per Roll (100m)',
       icon:'🔩', image:'../images/prod-barbed.jpg',
       desc:'Heavy-gauge galvanised barbed wire for perimeter security, livestock fencing, and crop protection. Rust-resistant coating ensures long service life outdoors.',
@@ -689,7 +686,7 @@
       uses:['Pendant light installation','Living room lamps','Office lighting points','Decorative lighting fixtures'],
       news:'Double-rose versions are available for multiple lighting points in one fitting.' },
 
-    // ---- HOUSEHOLD ----
+
     { id:'hh1', name:'Dog Shampoo (RIVER®)', category:'household', size:'250ml / 500ml',
       icon:'🐕', image:'../images/prod-dogshampoo.jpg',
       desc:'RIVER® Dog Shampoo is a gentle yet effective formula for cleaning and conditioning your dog\'s coat. Removes dirt, parasites, and odor while keeping skin healthy.',
@@ -708,7 +705,7 @@
       uses:['Daily commuting and outdoor walks','Agricultural and fieldwork in wet weather','Construction site use','Sporting events and outdoor activities'],
       news:'New reflective strip variant now available for improved visibility during night-time rain.' },
 
-    // ---- LUBRICANTS ----
+
     { id:'l1', name:'Machine Lubricant (RIVER®)', category:'lubricants', size:'500ml / 1L / 5L / 20L',
       icon:'🛢️', image:'../images/prod-lubricant.jpg',
       desc:'RIVER® Multipurpose Machine Lubricant is a high-performance oil that reduces friction, prevents rust and corrosion, and extends the life of mechanical components.',
@@ -721,14 +718,14 @@
       uses:['Loosening rusty nuts and bolts','Lubricating squeaky hinges','Protecting metal tools from rust','Electrical contact cleaning','Waterproofing leather and rubber seals'],
       news:'Now available with a precision long-nozzle applicator for hard-to-reach lubrication points.' },
 
-    // ---- SAFETY ----
+
     { id:'s1', name:'Safety Helmet (Hard Hat)', category:'safety', size:'One Size Adjustable',
       icon:'⛑️', image:'../images/prod-helmet.jpg',
       desc:'High-impact polycarbonate safety helmet (Ingofero y\'ubwirinzi) for head protection on construction sites, in workshops, and during industrial work.',
       uses:['Construction site workers','Workshop and factory floor','Mining and quarry operations','Electrical work environments','Any environment with overhead hazards'],
       news:'New ventilated design available — provides airflow to keep workers cool without compromising protection.' },
 
-    // ---- TOOLS ----
+
     { id:'t1', name:'Glass Cutter (Aka Kuma)', category:'tools', size:'Standard / Heavy Duty',
       icon:'🪟', image:'../images/prod-glasscutter.jpg',
       desc:'A diamond-tipped glass scoring tool (Aka kuma gakata ibirahure) for cutting glass panels cleanly along a scored line. The hardened diamond tip scores without cracking.',
@@ -755,9 +752,9 @@
 
   ];
 
-  // ============================================================
-  //  RENDER ENGINE  (6 products per page)
-  // ============================================================
+
+
+
   const PER_PAGE = 6;
   const CAT_LABELS = {
     cleaning:  'Cleaning Products',
@@ -770,9 +767,9 @@
   const CAT_ORDER = ['cleaning','hardware','household','lubricants','safety','tools'];
 
   let currentPage = 1;
-  let activeCat   = null;   // set by ?cat= links in the footer
+  let activeCat   = null;
 
-  // By category order, then alphabetically inside it
+
   const allProducts = PRODUCTS.slice().sort((a,b) => {
     const d = CAT_ORDER.indexOf(a.category) - CAT_ORDER.indexOf(b.category);
     return d !== 0 ? d : a.name.localeCompare(b.name);
@@ -801,7 +798,7 @@
       </article>`;
   }
 
-  // Prev / numbered pages / Next — numbers windowed past 9 pages
+
   function pagerHTML(page, pages) {
     if (pages <= 1) return '';
     let html = `<button class="page-btn" data-page="${page-1}"${page === 1 ? ' disabled' : ''}>&#8249; Prev</button>`;
@@ -883,13 +880,13 @@
     render();
   });
 
-  // ---- URL param: ?cat=xxx (footer category links) ----
+
   (function applyURLCat() {
     const cat = new URLSearchParams(window.location.search).get('cat');
     if (cat && CAT_LABELS[cat]) activeCat = cat;
   })();
 
-  // ---- Modal ----
+
   function openModal(id) {
     const p = PRODUCTS.find(x => x.id === id);
     if (!p) return;
@@ -920,7 +917,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 
-  // ---- Init ----
+
   render();
   </script>
 

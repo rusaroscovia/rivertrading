@@ -10,24 +10,24 @@
 <style>
 body{font-family:'Inter',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a{font-family:'Barlow',sans-serif;}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}.reveal.visible{opacity:1;transform:none;}
-.page-hero{min-height:320px;padding:120px 40px 60px;background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);position:relative;overflow:hidden;}
+.page-hero{min-height:320px;padding:120px 40px 60px;background:linear-gradient(135deg,#173F8A 0%,#204D91 40%,#D71920 80%,#F5E900 100%);position:relative;overflow:hidden;}
 .page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.42);}
 .page-hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;}
 .breadcrumb{display:flex;gap:8px;align-items:center;color:rgba(255,255,255,.65);font-size:0.85rem;margin-bottom:16px;flex-wrap:wrap;}
-.breadcrumb a{color:#FFD700;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
-.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#FFD700;}
+.breadcrumb a{color:#F5E900;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
+.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#F5E900;}
 .page-hero p{color:rgba(255,255,255,.78);font-size:1rem;max-width:580px;line-height:1.7;}
 .subcat-nav{background:#fff;border-bottom:2px solid #e5e7eb;padding:0 40px;position:sticky;top:72px;z-index:90;}
 .subcat-nav-inner{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
 .subcat-nav a{display:inline-block;padding:16px 22px;font-family:'Barlow',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
-.subcat-nav a:hover{color:#004e3b;border-bottom-color:#FFD700;}.subcat-nav a.active{color:#CC0000;border-bottom-color:#CC0000;}
+.subcat-nav a:hover{color:#173F8A;border-bottom-color:#F5E900;}.subcat-nav a.active{color:#D71920;border-bottom-color:#D71920;}
 .products-section{padding:72px 40px 80px;max-width:1180px;margin:0 auto;}
 .section-intro{margin-bottom:48px;}
 .story-label{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-.story-label-line{display:block;height:2px;width:28px;background:#CC0000;flex-shrink:0;}
-.story-label-text{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
+.story-label-line{display:block;height:2px;width:28px;background:#D71920;flex-shrink:0;}
+.story-label-text{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#D71920;}
 .section-intro h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:#111;margin-bottom:14px;line-height:1.2;}
-.section-intro h2 em{font-style:italic;color:#CC0000;}.section-intro p{color:#555;font-size:0.97rem;line-height:1.8;max-width:680px;}
+.section-intro h2 em{font-style:italic;color:#D71920;}.section-intro p{color:#555;font-size:0.97rem;line-height:1.8;max-width:680px;}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px;}
 .prod-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1px solid #f0f0f0;display:flex;flex-direction:column;cursor:pointer;transition:all .3s ease;}
 .prod-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.13);}
@@ -37,40 +37,41 @@ body{font-family:'Inter',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a
 .prod-body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;}
 .prod-name{font-family:'Barlow',sans-serif;font-size:0.97rem;font-weight:800;color:#111;margin-bottom:4px;}
 .prod-size{font-size:0.78rem;color:#888;margin-bottom:12px;}.prod-footer{margin-top:auto;}
-.btn-view{display:inline-block;padding:8px 18px;background:#CC0000;color:#fff;border:none;border-radius:5px;font-family:'Barlow',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;}
+.btn-view{display:inline-block;padding:8px 18px;background:#D71920;color:#fff;border:none;border-radius:5px;font-family:'Barlow',sans-serif;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:all .25s ease;}
 .btn-view:hover{background:#a00000;}
 .modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
 .modal{background:#fff;border-radius:12px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(20px) scale(.97);transition:transform .3s ease;box-shadow:0 24px 60px rgba(0,0,0,.3);}
 .modal-overlay.open .modal{transform:none;}
-.modal-img{height:220px;background:linear-gradient(135deg,#004e3b,#CC0000);display:flex;align-items:center;justify-content:center;border-radius:12px 12px 0 0;overflow:hidden;}
+.modal-img{height:220px;background:linear-gradient(135deg,#173F8A,#D71920);display:flex;align-items:center;justify-content:center;border-radius:12px 12px 0 0;overflow:hidden;}
 .modal-img img{width:100%;height:100%;object-fit:cover;}.modal-img-ph{font-size:5rem;}
 .modal-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);border:none;color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;}
 .modal-close:hover{background:rgba(0,0,0,.85);}
 .modal-body{padding:26px 30px 30px;}
-.modal-cat{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#CC0000;margin-bottom:6px;}
+.modal-cat{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#D71920;margin-bottom:6px;}
 .modal-name{font-family:'Barlow',sans-serif;font-size:1.4rem;font-weight:900;color:#111;margin-bottom:6px;}
 .modal-size{font-size:0.85rem;color:#888;margin-bottom:14px;}
-.modal-sec{font-family:'Barlow',sans-serif;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#004e3b;margin:18px 0 8px;padding-bottom:5px;border-bottom:2px solid #f0fdf4;}
+.modal-sec{font-family:'Barlow',sans-serif;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#173F8A;margin:18px 0 8px;padding-bottom:5px;border-bottom:2px solid #EFF4FB;}
 .modal-desc{color:#555;font-size:0.9rem;line-height:1.75;}
 .modal-uses{list-style:none;padding:0;}
 .modal-uses li{font-size:0.87rem;color:#555;line-height:1.6;padding-left:18px;position:relative;margin-bottom:5px;}
-.modal-uses li::before{content:'✓';position:absolute;left:0;color:#004e3b;font-weight:700;}
-.modal-news{background:#f0fdf4;border-left:4px solid #004e3b;border-radius:0 6px 6px 0;padding:12px 16px;margin-top:8px;font-size:0.87rem;color:#004e3b;line-height:1.65;}
+.modal-uses li::before{content:'✓';position:absolute;left:0;color:#173F8A;font-weight:700;}
+.modal-news{background:#EFF4FB;border-left:4px solid #173F8A;border-radius:0 6px 6px 0;padding:12px 16px;margin-top:8px;font-size:0.87rem;color:#173F8A;line-height:1.65;}
 .modal-news strong{display:block;margin-bottom:3px;}
 .dd-sub-label{padding:8px 16px 4px;font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#aaa;}
 @media(max-width:768px){.products-section,.page-hero{padding-left:20px;padding-right:20px;}.subcat-nav{padding:0 16px;}.modal-body{padding:20px;}}
-    /* Pagination — 6 products per page */
+
     .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;flex-wrap:wrap;}
     .pagination.hidden{display:none;}
     .page-btn{min-width:40px;height:40px;padding:0 14px;border:2px solid #e5e7eb;background:#fff;color:#555;border-radius:8px;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
-    .page-btn:hover:not(:disabled):not(.active){border-color:#CC0000;color:#CC0000;}
-    .page-btn.active{background:#CC0000;border-color:#CC0000;color:#fff;cursor:default;}
+    .page-btn:hover:not(:disabled):not(.active){border-color:#D71920;color:#D71920;}
+    .page-btn.active{background:#D71920;border-color:#D71920;color:#fff;cursor:default;}
     .page-btn:disabled{opacity:.4;cursor:not-allowed;}
     .page-dots{color:#9aa0a6;font-weight:700;}
-  </style></head><body class="has-contact-bar">
+  </style>  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
+</head><body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- CONTACT BAR -->
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="nav-logo"><img src="../images/logo-icon.png" alt="River Trading Ltd logo" onerror="this.style.display='none'"/><div class="nav-logo-text"><span class="river">River Trading</span><span class="trading">Rwanda Ltd</span></div></a>
@@ -78,7 +79,7 @@ body{font-family:'Inter',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a
   <ul class="nav-menu" role="menubar">
     <li><a href="../index.html">Home</a></li>
     <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
-    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
+    <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul></li>
     <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li>
 
 
@@ -142,12 +143,14 @@ body{font-family:'Inter',sans-serif;}h1,h2,h3,h4,.nav-logo-text,.btn,.nav-menu a
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -176,7 +179,7 @@ const PRODUCTS = [
   { "id":"cn5","name":"Wall Plaster Mix","size":"25kg / 50kg Bag","image":"../images/prod-plaster.jpg","desc":"High-quality wall plaster mix for smooth internal and external wall finishing in construction projects.","uses":["Internal wall plastering","External render coats","Ceiling finishing","Block and brick surface preparation"],"news":"New fast-setting formula reduces drying time by 30%."},
   { "id":"cn6","name":"PVC Conduit Pipe","size":"16mm / 20mm / 25mm","image":"../images/prod-conduit.jpg","desc":"Rigid PVC conduit for protecting cables routed through walls, ceilings, and floors.","uses":["Surface and concealed cable routing","Wall and ceiling cable protection","Underground cable ducting"],"news":"Flexible conduit variants now in stock."}
 ];
-// ── PAGINATION — 6 products per page, Next/Prev only ───────────
+
 const PER_PAGE = 6;
 let curPage = 1;
 const sorted = [...PRODUCTS].sort((a,b)=>a.name.localeCompare(b.name));

@@ -17,13 +17,9 @@
     .page-hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.42);}
     .page-hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;}
     .breadcrumb{display:flex;gap:8px;align-items:center;color:rgba(255,255,255,.65);font-size:0.85rem;margin-bottom:16px;flex-wrap:wrap;}
-    .breadcrumb a{color:#FFD700;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
-    .page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#FFD700;}
+    .breadcrumb a{color:#F5E900;text-decoration:none;}.breadcrumb a:hover{color:#fff;}.breadcrumb span{color:rgba(255,255,255,.4);}
+    .page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#fff;margin-bottom:12px;}.page-hero h1 em{font-style:italic;color:#F5E900;}
     .page-hero p{color:rgba(255,255,255,.8);font-size:1.05rem;max-width:600px;line-height:1.75;}
-    .brand-tabs{background:#fff;border-bottom:2px solid #e5e7eb;padding:0 40px;position:sticky;top:72px;z-index:90;}
-    .brand-tabs-inner{max-width:1180px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
-    .brand-tabs a{display:inline-block;padding:16px 22px;font-family:'Barlow',sans-serif;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .25s ease;text-decoration:none;}
-    .brand-tabs a:hover{color:#004e3b;border-bottom-color:#FFD700;}.brand-tabs a.active{color:#CC0000;border-bottom-color:#CC0000;}
     .brand-main{padding:72px 40px 96px;max-width:1180px;margin:0 auto;}
     .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
     .brand-img-col{position:relative;}
@@ -31,25 +27,26 @@
     .brand-img-frame img{width:100%;height:100%;object-fit:contain;padding:32px;}
     .brand-img-frame-ph{font-family:'Barlow',sans-serif;font-size:4rem;font-weight:900;color:rgba(255,255,255,.6);}
     .story-label{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-    .story-label-line{display:block;height:2px;width:28px;background:#CC0000;flex-shrink:0;}
-    .story-label-text{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#CC0000;}
+    .story-label-line{display:block;height:2px;width:28px;background:#D71920;flex-shrink:0;}
+    .story-label-text{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:3.5px;color:#D71920;}
     .brand-text h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#111;margin-bottom:10px;line-height:1.15;}
-    .brand-text h2 em{font-style:italic;color:#CC0000;}
+    .brand-text h2 em{font-style:italic;color:#D71920;}
     .brand-tagline-text{font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:22px;display:block;}
     .brand-text p{font-size:1rem;color:#444;line-height:1.88;margin-bottom:16px;}
-    .brand-text p strong{color:#004e3b;font-weight:700;}
-    .brand-products-label{font-family:'Barlow',sans-serif;font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#004e3b;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid #f0fdf4;display:block;}
+    .brand-text p strong{color:#173F8A;font-weight:700;}
+    .brand-products-label{font-family:'Barlow',sans-serif;font-size:0.82rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#173F8A;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid #EFF4FB;display:block;}
     .brand-products-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
     .brand-products-list li{font-size:0.9rem;color:#555;padding-left:16px;position:relative;line-height:1.6;}
-    .brand-products-list li::before{content:'→';position:absolute;left:0;color:#CC0000;font-weight:700;}
-    .brand-cta{display:inline-block;margin-top:28px;padding:13px 28px;background:#CC0000;color:#fff;border-radius:5px;font-family:'Barlow',sans-serif;font-size:0.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;transition:all .25s ease;}
+    .brand-products-list li::before{content:'→';position:absolute;left:0;color:#D71920;font-weight:700;}
+    .brand-cta{display:inline-block;margin-top:28px;padding:13px 28px;background:#D71920;color:#fff;border-radius:5px;font-family:'Barlow',sans-serif;font-size:0.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;transition:all .25s ease;}
     .brand-cta:hover{background:#a00000;}
     @media(max-width:960px){.brand-grid{grid-template-columns:1fr;gap:40px;}}
-    @media(max-width:768px){.brand-main,.page-hero{padding-left:20px;padding-right:20px;}.brand-tabs{padding:0 16px;}.brand-products-list{grid-template-columns:1fr;}}
-.page-hero { background:linear-gradient(135deg,#CC0000 0%,#8B0000 50%,#CC0000 100%); }
-</style></head><body class="has-contact-bar">
+    @media(max-width:768px){.brand-main,.page-hero{padding-left:20px;padding-right:20px;}.brand-products-list{grid-template-columns:1fr;}}
+.page-hero { background:linear-gradient(135deg,#D71920 0%,#8B0000 50%,#D71920 100%); }
+</style>  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
+</head><body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <!-- CONTACT BAR -->
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -62,7 +59,7 @@
     <ul class="nav-menu" role="menubar">
       <li><a href="../index.html">Home</a></li>
       <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
-      <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li><li><a href="services.html">After-Sales Support</a></li></ul></li>
+      <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul></li>
       <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li>
 
 
@@ -88,19 +85,10 @@
   <h1>Mirah <em>Brand</em></h1>
   <p>River Trading Ltd's personal care brand — everyday hygiene and beauty products crafted for Rwandan homes, salons, and institutions.</p>
 </div></div>
-<nav class="brand-tabs" aria-label="Brand navigation">
-  <div class="brand-tabs-inner">
-    <a href="brands.html">All Brands</a>
-    <a href="brand-river.html">RIVER®</a>
-    <a href="brand-mirah.html" class="active">Mirah</a>
-    <a href="brand-diamondmix.html">Diamond Mix</a>
-    <a href="brand-magpow.html">MAGPOW</a>
-  </div>
-</nav>
 <main id="main-content" class="brand-main" tabindex="-1">
   <div class="brand-grid">
     <div class="brand-img-col reveal-left">
-      <div class="brand-img-frame" style="background:linear-gradient(135deg,#CC0000,#8B0000);">
+      <div class="brand-img-frame" style="background:linear-gradient(135deg,#D71920,#8B0000);">
         <img src="../images/brand-mirah.png" alt="Mirah logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"/>
         <div class="brand-img-frame-ph" style="display:none;">M</div>
       </div>
@@ -157,12 +145,14 @@
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">

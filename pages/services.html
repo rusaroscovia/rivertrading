@@ -12,23 +12,23 @@ now <!DOCTYPE html>
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
-    /* ── Base ──────────────────────────────────────────────── */
+
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'Inter',sans-serif; color:#111; background:#fff; overflow-x:hidden; }
     h1,h2,h3,h4,h5,h6,.nav-logo-text,.btn,.nav-menu a { font-family:'Barlow',sans-serif; }
     a { text-decoration:none; color:inherit; }
     img { max-width:100%; display:block; }
 
-    /* ── Scroll reveal ─────────────────────────────────────── */
+
     .reveal { opacity:0; transform:translateY(36px); transition:opacity .8s ease,transform .8s ease; }
     .reveal.visible { opacity:1; transform:none; }
     .reveal-left  { opacity:0; transform:translateX(-44px); transition:opacity .8s ease,transform .8s ease; }
     .reveal-right { opacity:0; transform:translateX( 44px); transition:opacity .8s ease,transform .8s ease; }
     .reveal-left.visible,.reveal-right.visible { opacity:1; transform:none; }
 
-    /* ── HERO ──────────────────────────────────────────────── */
+
     .services-hero {
-      background:#004e3b;
+      background:#173F8A;
       display:flex; align-items:center;
       padding:40px 40px; position:relative; overflow:hidden;
     }
@@ -45,14 +45,14 @@ now <!DOCTYPE html>
 
     .eyebrow {
       display:inline-block; font-size:0.72rem; font-weight:800;
-      text-transform:uppercase; letter-spacing:3px; color:#FFD700; margin-bottom:18px;
+      text-transform:uppercase; letter-spacing:3px; color:#F5E900; margin-bottom:18px;
     }
 
     .hero-inner h1 {
       font-size:clamp(2.4rem,5vw,3.8rem); font-weight:900; color:#fff;
       line-height:1.1; margin-bottom:20px;
     }
-    .hero-inner h1 em { font-style:normal; color:#FFD700; }
+    .hero-inner h1 em { font-style:normal; color:#F5E900; }
 
     .hero-inner .hero-sub {
       font-size:1.05rem; color:rgba(255,255,255,.72); line-height:1.8;
@@ -66,14 +66,14 @@ now <!DOCTYPE html>
       font-size:0.82rem; font-weight:600; letter-spacing:.3px;
     }
 
-    /* ── SERVICES ──────────────────────────────────────────── */
+
     .services-section { padding:150px 40px 88px; background:#f9fafb; }
     .services-inner { max-width:1180px; margin:0 auto; }
 
     .section-header { text-align:center; max-width:640px; margin:0 auto 64px; }
-    .section-header .eyebrow { display:inline-block; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#CC0000; margin-bottom:12px; }
+    .section-header .eyebrow { display:inline-block; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:3px; color:#D71920; margin-bottom:12px; }
     .section-header h1 { font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:900; color:#111; line-height:1.2; }
-    .section-header h1 em { font-style:normal; color:#004e3b; }
+    .section-header h1 em { font-style:normal; color:#173F8A; }
     .section-header p { color:#666; font-size:0.97rem; margin-top:14px; line-height:1.75; }
 
     .service-list { display:grid; gap:26px; }
@@ -90,25 +90,25 @@ now <!DOCTYPE html>
     .service-photo-placeholder {
       width:100%; min-height:270px; padding:28px; border:2px dashed #b9c8c1;
       border-radius:12px; display:flex; flex-direction:column; align-items:center;
-      justify-content:center; text-align:center; gap:10px; color:#004e3b;
+      justify-content:center; text-align:center; gap:10px; color:#173F8A;
       background:rgba(255,255,255,.6);
     }
     .service-photo-icon { font-size:2.8rem; line-height:1; }
     .service-photo-label { font-family:'Barlow',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; }
     .service-photo-hint { color:#717b76; font-size:.78rem; }
     .service-copy { padding:38px clamp(28px,4vw,52px); align-self:center; }
-    .service-copy h3 { margin:8px 0 14px; color:#004e3b; font-size:clamp(1.35rem,2.4vw,1.8rem); font-weight:900; line-height:1.15; }
+    .service-copy h3 { margin:8px 0 14px; color:#173F8A; font-size:clamp(1.35rem,2.4vw,1.8rem); font-weight:900; line-height:1.15; }
     .service-copy p { color:#555; font-size:.95rem; line-height:1.8; margin-bottom:16px; text-align:justify; }
     .service-copy h4 { color:#333; font-family:'Barlow',sans-serif; font-size:.9rem; font-weight:800; margin:18px 0 8px; }
     .service-list-items { list-style:none; padding:0; display:grid; gap:8px; }
     .service-list-items li { position:relative; padding-left:20px; color:#444; font-size:.88rem; line-height:1.65; }
-    .service-list-items li::before { content:'•'; position:absolute; left:2px; color:#CC0000; font-size:1.1rem; font-weight:900; }
+    .service-list-items li::before { content:'•'; position:absolute; left:2px; color:#D71920; font-size:1.1rem; font-weight:900; }
     .service-product-groups { display:grid; gap:10px; }
     .service-product-groups li { padding-left:0; }
     .service-product-groups li::before { content:none; }
-    .service-product-groups strong { display:block; color:#004e3b; margin-bottom:2px; }
+    .service-product-groups strong { display:block; color:#173F8A; margin-bottom:2px; }
 
-    /* ── Responsive ─────────────────────────────────────────── */
+
     @media(max-width:760px) {
       .services-hero { padding:72px 20px; }
       .services-section { padding:140px 20px 72px; }
@@ -120,14 +120,15 @@ now <!DOCTYPE html>
     }
 
 </style>
+  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
 </head>
 <body class="has-contact-bar">
   <a class="skip-link" href="#services-grid-heading">Skip to main content</a>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════════════════════════ -->
-<!-- CONTACT BAR -->
+
+
+
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="https://wa.me/250788403079" target="_blank" rel="noopener"><span aria-hidden="true">&#9742;</span><span>0788403079</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -149,13 +150,7 @@ now <!DOCTYPE html>
       </li>
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li>
-          <li><a href="services.html#import-export">Import &amp; Export Operations</a></li>
-          <li><a href="services.html#local-manufacturing">Local Manufacturing</a></li>
-          <li><a href="services.html#shopping-delivery">In-Store Shopping &amp; Delivery</a></li>
-          <li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li>
-        </ul>
+        <ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
@@ -182,9 +177,9 @@ now <!DOCTYPE html>
   </nav>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════════════════ -->
+
+
+
 <section class="services-section" aria-labelledby="services-grid-heading">
   <div class="services-inner">
     <div class="section-header reveal">
@@ -297,9 +292,9 @@ now <!DOCTYPE html>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════════ -->
+
+
+
 <footer role="contentinfo">
   <div class="footer-main">
     <div class="footer-brand">
@@ -317,12 +312,14 @@ now <!DOCTYPE html>
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">

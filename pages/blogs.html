@@ -19,10 +19,10 @@ jf
     .reveal { opacity:0; transform:translateY(32px); transition:opacity 0.75s ease,transform 0.75s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
-    /* Page hero */
+
     .page-hero {
       height:340px;
-      background:linear-gradient(135deg,#004e3b 0%,#016630 35%,#CC0000 75%,#FFD700 100%);
+      background:linear-gradient(135deg,#173F8A 0%,#204D91 35%,#D71920 75%,#F5E900 100%);
       display:flex; align-items:center; justify-content:center;
       flex-direction:column; text-align:center; padding:20px; padding-top:80px;
       position:relative; overflow:hidden;
@@ -30,33 +30,37 @@ jf
     .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.38); }
     .page-hero-content { position:relative; z-index:2; }
     .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:10px; text-shadow:2px 2px 12px rgba(0,0,0,0.4); }
-    .page-hero h1 span { color:#FFD700; }
+    .page-hero h1 span { color:#F5E900; }
     .page-hero p { color:rgba(255,255,255,0.8); font-size:1rem; max-width:560px; line-height:1.65; margin-top:10px; }
     .breadcrumb { display:flex; gap:8px; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.9rem; }
-    .breadcrumb a { color:#FFD700; }
+    .breadcrumb a { color:#F5E900; }
 
-    /* Intro strip */
+
     .blog-intro {
-      background:#f0fdf4; border-bottom:2px solid #dcfce7;
+      background:#EFF4FB; border-bottom:2px solid #dcfce7;
       padding:32px 40px; text-align:center;
     }
-    .blog-intro p { color:#004e3b; font-size:0.97rem; max-width:720px; margin:0 auto; line-height:1.75; }
-    .blog-intro strong { color:#CC0000; }
+    .blog-intro p { color:#173F8A; font-size:0.97rem; max-width:720px; margin:0 auto; line-height:1.75; }
+    .blog-intro strong { color:#D71920; }
 
-    /* ---- Main layout ---- */
-    .blog-page { padding:72px 40px 80px; max-width:1200px; margin:0 auto; }
 
-    /* Section heading */
+    .blog-page {
+      padding:72px 40px 80px; max-width:1200px; margin:0 auto;
+      background-image:linear-gradient(rgba(255,255,255,.96),rgba(255,255,255,.96)),url("../images/blog-vision-background.png");
+      background-position:center; background-size:cover;
+    }
+
+
     .blog-section-head { margin-bottom:40px; }
     .blog-section-head p { color:#666; font-size:0.97rem; margin-top:8px; }
 
-    /* ---- Blog grid ---- */
+
     .blog-grid {
       display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:32px;
       margin-bottom:72px;
     }
 
-    /* Blog card */
+
     .blog-card {
       background:#fff; border-radius:14px;
       box-shadow:0 3px 18px rgba(0,0,0,0.08); overflow:hidden;
@@ -65,7 +69,7 @@ jf
     }
     .blog-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.14); border-color:#e5e7eb; }
 
-    /* Shop photo */
+
     .blog-photo {
       height:220px; overflow:hidden; position:relative; flex-shrink:0;
     }
@@ -77,36 +81,36 @@ jf
       font-size:4rem;
     }
 
-    /* Type badge */
+
     .blog-badge {
       position:absolute; top:14px; left:14px;
       padding:5px 12px; border-radius:4px;
       font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px;
-      color:#fff; background:#004e3b;
+      color:#fff; background:#173F8A;
     }
-    .blog-badge.partner { background:#CC0000; }
-    .blog-badge.longterm { background:#008138; }
+    .blog-badge.partner { background:#D71920; }
+    .blog-badge.longterm { background:#2954A0; }
 
-    /* Card body */
+
     .blog-body { padding:22px 24px 26px; flex:1; display:flex; flex-direction:column; }
 
-    /* Author row */
+
     .blog-author {
       display:flex; align-items:center; gap:12px; margin-bottom:14px;
     }
     .author-avatar {
       width:46px; height:46px; border-radius:50%; overflow:hidden; flex-shrink:0;
-      background:linear-gradient(135deg,#004e3b,#CC0000);
+      background:linear-gradient(135deg,#173F8A,#D71920);
       display:flex; align-items:center; justify-content:center;
-      font-size:1.2rem; font-weight:900; color:#FFD700;
-      font-family:'Barlow',sans-serif; border:2px solid #FFD700;
+      font-size:1.2rem; font-weight:900; color:#F5E900;
+      font-family:'Barlow',sans-serif; border:2px solid #F5E900;
     }
     .author-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
     .author-info { flex:1; }
     .author-name { font-family:'Barlow',sans-serif; font-size:0.95rem; font-weight:800; color:#111; line-height:1.2; }
     .author-biz  { font-size:0.78rem; color:#888; margin-top:2px; }
 
-    /* Story date */
+
     .blog-date { font-size:0.75rem; color:#bbb; letter-spacing:0.5px; text-align:right; }
 
     .blog-title {
@@ -119,7 +123,7 @@ jf
     }
 
     .blog-quote {
-      border-left:4px solid #FFD700; padding:10px 14px;
+      border-left:4px solid #F5E900; padding:10px 14px;
       background:#fffbeb; border-radius:0 6px 6px 0;
       font-size:0.88rem; font-style:italic; color:#555;
       line-height:1.65; margin-bottom:16px;
@@ -132,17 +136,17 @@ jf
     .blog-tags { display:flex; gap:6px; flex-wrap:wrap; }
     .blog-tag {
       font-size:0.7rem; font-weight:700; text-transform:uppercase;
-      letter-spacing:0.5px; color:#008138; background:#f0fdf4;
+      letter-spacing:0.5px; color:#2954A0; background:#EFF4FB;
       padding:3px 8px; border-radius:10px;
     }
     .read-more {
       font-family:'Barlow',sans-serif; font-size:0.8rem; font-weight:700;
-      color:#CC0000; text-transform:uppercase; letter-spacing:0.5px;
+      color:#D71920; text-transform:uppercase; letter-spacing:0.5px;
       text-decoration:none; transition:color 0.2s ease;
     }
-    .read-more:hover { color:#004e3b; }
+    .read-more:hover { color:#173F8A; }
 
-    /* ---- Blog Modal ---- */
+
     .modal-overlay {
       position:fixed; inset:0; z-index:2000;
       background:rgba(0,0,0,0.75); display:flex; align-items:center; justify-content:center;
@@ -177,15 +181,15 @@ jf
     .modal-body-text { color:#555; font-size:0.93rem; line-height:1.8; }
     .modal-body-text p { margin-bottom:14px; }
     .modal-pullquote {
-      border-left:5px solid #FFD700; padding:14px 18px;
+      border-left:5px solid #F5E900; padding:14px 18px;
       background:#fffbeb; border-radius:0 6px 6px 0;
-      font-size:1rem; font-style:italic; color:#004e3b; font-weight:600;
+      font-size:1rem; font-style:italic; color:#173F8A; font-weight:600;
       margin:20px 0; line-height:1.65;
     }
 
-    /* ---- CTA to share story ---- */
+
     .share-cta {
-      background:#004e3b; padding:72px 40px; text-align:center;
+      background:#173F8A; padding:72px 40px; text-align:center;
     }
     .share-cta h2 { font-family:'Barlow',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:900; color:#fff; margin-bottom:12px; }
     .share-cta p { color:rgba(255,255,255,0.8); font-size:1rem; max-width:560px; margin:0 auto 28px; line-height:1.7; }
@@ -197,12 +201,13 @@ jf
       .share-cta { padding:52px 20px; }
     }
   </style>
+  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
 </head>
 <body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- NAVBAR -->
-  <!-- CONTACT BAR -->
+
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -224,13 +229,7 @@ jf
       </li>
       <li class="has-dropdown">
         <a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
-        <ul class="dropdown">
-          <li><a href="services.html">Product Supply</a></li>
-          <li><a href="services.html">Bulk &amp; Wholesale</a></li>
-          <li><a href="services.html#shopping-delivery">Delivery Service</a></li>
-          <li><a href="services.html#import-export">Import &amp; Export</a></li>
-          <li><a href="services.html">After-Sales Support</a></li>
-        </ul>
+        <ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul>
       </li>
       <li class="has-dropdown">
       <a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
@@ -256,7 +255,7 @@ jf
     </ul>
   </nav>
 
-  <!-- PAGE HERO -->
+
   <div class="page-hero">
     <div class="page-hero-content">
       <h1>Client <span>Stories</span> &amp; Blog</h1>
@@ -267,7 +266,7 @@ jf
     </div>
   </div>
 
-  <!-- INTRO STRIP -->
+
   <div class="blog-intro">
     <p>
       Below are stories and insights shared by businesses and individuals who have worked with River Trading Ltd.
@@ -276,7 +275,7 @@ jf
     </p>
   </div>
 
-  <!-- BLOG CONTENT -->
+
   <main id="main-content" class="blog-page" tabindex="-1">
 
     <div class="blog-section-head reveal">
@@ -286,12 +285,12 @@ jf
     </div>
 
     <div class="blog-grid" id="blogGrid">
-      <!-- Cards rendered by JS below -->
+
     </div>
 
   </main>
 
-  <!-- BLOG MODAL -->
+
   <div class="modal-overlay" id="blogModal" role="dialog" aria-modal="true" aria-labelledby="bModalTitle">
     <div class="modal">
       <div class="modal-hero" id="bModalHero">
@@ -314,19 +313,19 @@ jf
     </div>
   </div>
 
-  <!-- CTA: share your story -->
+
   <div class="share-cta reveal">
     <h2>Have a Story to Share?</h2>
     <p>
       Are you a client or business partner of River Trading Ltd? We'd love to feature your experience.
       Get in touch and let us know — your story could inspire others.
     </p>
-    <a href="contact.html" class="btn btn-outline" style="border-color:#FFD700; color:#fff;">
+    <a href="contact.html" class="btn btn-outline" style="border-color:#F5E900; color:#fff;">
       Share Your Story &rarr;
     </a>
   </div>
 
-  <!-- FOOTER -->
+
   <footer role="contentinfo">
   <div class="footer-main">
     <div class="footer-brand">
@@ -344,12 +343,14 @@ jf
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -369,11 +370,11 @@ jf
   <script src="../js/main.js?v=5"></script>
 
   <script>
-  // ============================================================
-  //  BLOG / CLIENT STORIES DATA
-  //  Replace image paths and fill in real client names/photos.
-  //  avatar: initials string (2 chars) OR path to a real photo
-  // ============================================================
+
+
+
+
+
   const BLOGS = [
     {
       id: 'b1',
@@ -497,7 +498,7 @@ jf
     }
   ];
 
-  // ---- Render cards ----
+
   function renderBlogCard(b) {
     const avatarContent = b.avatar
       ? `<img src="${b.avatar}" alt="${b.author}" onerror="this.style.display='none'; this.parentNode.textContent='${b.avatarInitials}';" />`
@@ -534,7 +535,7 @@ jf
 
   document.getElementById('blogGrid').innerHTML = BLOGS.map(renderBlogCard).join('');
 
-  // ---- Modal ----
+
   function openBlog(id) {
     const b = BLOGS.find(x => x.id === id);
     if (!b) return;
@@ -544,20 +545,20 @@ jf
     document.getElementById('bModalDate').textContent   = b.date;
     document.getElementById('bModalTitle').textContent  = b.title;
 
-    // Avatar
+
     const av = document.getElementById('bModalAvatar');
     av.innerHTML = b.avatar
       ? `<img src="${b.avatar}" alt="${b.author}" onerror="this.style.display='none'; this.parentNode.textContent='${b.avatarInitials}';" />`
       : b.avatarInitials;
 
-    // Hero photo
+
     const heroImg = document.getElementById('bModalImg');
     heroImg.src = b.photo; heroImg.alt = b.author + ' shop';
     heroImg.style.display = '';
     heroImg.onerror = () => { heroImg.style.display='none'; document.getElementById('bModalHeroPh').textContent = b.photoPh; };
     document.getElementById('bModalHeroPh').textContent = b.photoPh;
 
-    // Body
+
     const body = document.getElementById('bModalBody');
     body.innerHTML = b.fullStory.map((para,i) => {
       const text = `<p>${para}</p>`;

@@ -16,38 +16,38 @@
     .reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease,transform .7s ease; }
     .reveal.visible { opacity:1; transform:none; }
     .page-hero { min-height:300px; padding:120px 40px 56px;
-      background:linear-gradient(135deg,#004e3b 0%,#016630 40%,#CC0000 80%,#FFD700 100%);
+      background:linear-gradient(135deg,#173F8A 0%,#204D91 40%,#D71920 80%,#F5E900 100%);
       position:relative; overflow:hidden; }
     .page-hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.42); }
     .page-hero-inner { position:relative; z-index:2; max-width:1180px; margin:0 auto; }
     .breadcrumb { display:flex; gap:8px; align-items:center; color:rgba(255,255,255,.65); font-size:.85rem; margin-bottom:16px; flex-wrap:wrap; }
-    .breadcrumb a { color:#FFD700; text-decoration:none; }
+    .breadcrumb a { color:#F5E900; text-decoration:none; }
     .breadcrumb a:hover { color:#fff; }
     .breadcrumb span { color:rgba(255,255,255,.4); }
     .page-hero h1 { font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; margin-bottom:12px; }
-    .page-hero h1 em { font-style:italic; color:#FFD700; }
+    .page-hero h1 em { font-style:italic; color:#F5E900; }
     .page-hero p { color:rgba(255,255,255,.78); font-size:1rem; max-width:620px; line-height:1.7; }
 
     .subcat-nav { background:#fff; border-bottom:2px solid #e5e7eb; padding:0 40px; position:sticky; top:72px; z-index:90; }
     .subcat-nav-inner { max-width:1180px; margin:0 auto; display:flex; gap:0; overflow-x:auto; }
     .subcat-nav a { display:inline-block; padding:16px 20px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#666; border-bottom:3px solid transparent; margin-bottom:-2px; white-space:nowrap; transition:all .25s ease; text-decoration:none; }
-    .subcat-nav a:hover { color:#004e3b; border-bottom-color:#FFD700; }
-    .subcat-nav a.active { color:#CC0000; border-bottom-color:#CC0000; }
+    .subcat-nav a:hover { color:#173F8A; border-bottom-color:#F5E900; }
+    .subcat-nav a.active { color:#D71920; border-bottom-color:#D71920; }
 
     .products-section { padding:56px 40px 80px; max-width:1180px; margin:0 auto; }
     .section-intro { margin-bottom:36px; }
     .section-intro .story-label { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
-    .section-intro .story-label-line { display:block; height:2px; width:28px; background:#CC0000; flex-shrink:0; }
-    .section-intro .story-label-text { font-family:'Barlow',sans-serif; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:3.5px; color:#CC0000; }
+    .section-intro .story-label-line { display:block; height:2px; width:28px; background:#D71920; flex-shrink:0; }
+    .section-intro .story-label-text { font-family:'Barlow',sans-serif; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:3.5px; color:#D71920; }
     .section-intro h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:900; color:#111; margin-bottom:14px; line-height:1.2; }
-    .section-intro h2 em { font-style:italic; color:#CC0000; }
+    .section-intro h2 em { font-style:italic; color:#D71920; }
     .section-intro p { color:#555; font-size:.97rem; line-height:1.8; max-width:680px; }
 
-    /* section tabs */
+
     .sec-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 30px; }
     .sec-tab { padding:10px 18px; border:2px solid #e5e7eb; background:#fff; border-radius:24px; font-family:'Barlow',sans-serif; font-size:.8rem; font-weight:700; color:#555; cursor:pointer; transition:all .22s ease; }
-    .sec-tab:hover { border-color:#CC0000; color:#CC0000; }
-    .sec-tab.active { background:#CC0000; border-color:#CC0000; color:#fff; }
+    .sec-tab:hover { border-color:#D71920; color:#D71920; }
+    .sec-tab.active { background:#D71920; border-color:#D71920; color:#fff; }
 
     .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
     .prod-card { background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); border:1px solid #f0f0f0; display:flex; flex-direction:column; cursor:pointer; transition:all .3s ease; }
@@ -62,18 +62,18 @@
     .prod-name { font-family:'Barlow',sans-serif; font-size:.97rem; font-weight:800; color:#111; margin-bottom:4px; }
     .prod-size { font-size:.78rem; color:#888; margin-bottom:12px; }
     .prod-footer { margin-top:auto; }
-    .btn-view { display:inline-block; padding:8px 18px; background:#CC0000; color:#fff; border:none; border-radius:5px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; cursor:pointer; transition:all .25s ease; }
+    .btn-view { display:inline-block; padding:8px 18px; background:#D71920; color:#fff; border:none; border-radius:5px; font-family:'Barlow',sans-serif; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; cursor:pointer; transition:all .25s ease; }
     .btn-view:hover { background:#a00000; }
 
     .pagination{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:36px;flex-wrap:wrap;}
     .pagination.hidden{display:none;}
     .page-btn{min-width:40px;height:40px;padding:0 14px;border:2px solid #e5e7eb;background:#fff;color:#555;border-radius:8px;font-family:'Barlow',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
-    .page-btn:hover:not(:disabled):not(.active){border-color:#CC0000;color:#CC0000;}
-    .page-btn.active{background:#CC0000;border-color:#CC0000;color:#fff;cursor:default;}
+    .page-btn:hover:not(:disabled):not(.active){border-color:#D71920;color:#D71920;}
+    .page-btn.active{background:#D71920;border-color:#D71920;color:#fff;cursor:default;}
     .page-btn:disabled{opacity:.4;cursor:not-allowed;}
     .page-dots{color:#9aa0a6;font-weight:700;}
 
-    /* Modal */
+
     .modal-overlay { position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,.72); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity .3s ease; }
     .modal-overlay.open { opacity:1; pointer-events:all; }
     .modal { background:#fff; border-radius:12px; max-width:720px; width:100%; max-height:92vh; overflow-y:auto; position:relative; transform:translateY(20px) scale(.97); transition:transform .3s ease; box-shadow:0 24px 60px rgba(0,0,0,.3); }
@@ -86,21 +86,21 @@
     .video-note .play { font-size:2.6rem; margin-bottom:8px; }
     .modal-thumbs { display:flex; gap:8px; padding:10px; background:#f3f4f6; overflow-x:auto; }
     .modal-thumb { flex:0 0 auto; width:70px; height:52px; border-radius:6px; overflow:hidden; border:2px solid transparent; cursor:pointer; background:#ddd; }
-    .modal-thumb.active { border-color:#CC0000; }
+    .modal-thumb.active { border-color:#D71920; }
     .modal-thumb img { width:100%; height:100%; object-fit:cover; }
     .modal-thumb.vt { display:flex; align-items:center; justify-content:center; background:#111; color:#fff; font-size:.62rem; font-weight:800; flex-direction:column; line-height:1.1; }
     .modal-close { position:absolute; top:12px; right:12px; width:34px; height:34px; border-radius:50%; background:rgba(0,0,0,.55); border:none; color:#fff; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:6; transition:background .2s; }
     .modal-close:hover { background:rgba(0,0,0,.85); }
     .modal-body { padding:24px 30px 30px; }
-    .modal-cat { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#CC0000; margin-bottom:6px; }
+    .modal-cat { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#D71920; margin-bottom:6px; }
     .modal-name { font-family:'Barlow',sans-serif; font-size:1.4rem; font-weight:900; color:#111; margin-bottom:6px; }
     .modal-size { font-size:.85rem; color:#888; margin-bottom:14px; }
-    .modal-sec { font-family:'Barlow',sans-serif; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#004e3b; margin:18px 0 8px; padding-bottom:5px; border-bottom:2px solid #f0fdf4; }
+    .modal-sec { font-family:'Barlow',sans-serif; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1.5px; color:#173F8A; margin:18px 0 8px; padding-bottom:5px; border-bottom:2px solid #EFF4FB; }
     .modal-desc { color:#555; font-size:.9rem; line-height:1.75; }
     .modal-uses { list-style:none; padding:0; }
     .modal-uses li { font-size:.87rem; color:#555; line-height:1.6; padding-left:18px; position:relative; margin-bottom:5px; }
-    .modal-uses li::before { content:'\2713'; position:absolute; left:0; color:#004e3b; font-weight:700; }
-    .modal-news { background:#f0fdf4; border-left:4px solid #004e3b; border-radius:0 6px 6px 0; padding:12px 16px; margin-top:8px; font-size:.87rem; color:#004e3b; line-height:1.65; }
+    .modal-uses li::before { content:'\2713'; position:absolute; left:0; color:#173F8A; font-weight:700; }
+    .modal-news { background:#EFF4FB; border-left:4px solid #173F8A; border-radius:0 6px 6px 0; padding:12px 16px; margin-top:8px; font-size:.87rem; color:#173F8A; line-height:1.65; }
     .modal-news strong { display:block; margin-bottom:3px; }
 
     @media(max-width:768px) {
@@ -110,41 +110,42 @@
       .modal-main,.modal-video-wrap { height:220px; }
     }
 
-    /* Events / Branches shared */
+
     .content-section { padding:64px 40px; max-width:1180px; margin:0 auto; }
     .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
     .info-card2 { background:#fff; border:1px solid #f0f0f0; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); transition:all .3s ease; display:flex; flex-direction:column; }
     .info-card2:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,.12); }
-    .card-top { height:8px; background:linear-gradient(90deg,#004e3b,#CC0000); }
+    .card-top { height:8px; background:linear-gradient(90deg,#173F8A,#D71920); }
     .card-body { padding:22px 24px 24px; flex:1; display:flex; flex-direction:column; }
     .card-icon { font-size:2rem; margin-bottom:12px; }
     .card-icon .branch-location-mark { display:block; width:30px; height:30px; object-fit:contain; }
     .card-body h3 { font-family:'Barlow',sans-serif; font-size:1.1rem; font-weight:900; color:#111; margin-bottom:8px; }
     .card-body p { color:#555; font-size:.9rem; line-height:1.7; }
     .tag { display:inline-block; font-family:'Barlow',sans-serif; font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:4px 10px; border-radius:12px; margin-bottom:12px; }
-    .tag.upcoming { background:#f0fdf4; color:#004e3b; }
+    .tag.upcoming { background:#EFF4FB; color:#173F8A; }
     .tag.past { background:#f3f4f6; color:#666; }
-    .tag.branch { background:#fef2f2; color:#CC0000; }
+    .tag.branch { background:#fef2f2; color:#D71920; }
     .card-meta { margin-top:auto; padding-top:14px; border-top:1px solid #f0f0f0; font-size:.8rem; color:#888; display:flex; flex-direction:column; gap:4px; }
     .wa-inline { display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:#25D366; color:#fff; padding:11px 18px; border-radius:8px; font-family:'Barlow',sans-serif; font-size:.85rem; font-weight:700; text-decoration:none; transition:all .3s ease; align-self:flex-start; }
     .wa-inline:hover { background:#128C7E; transform:translateY(-2px); }
     .empty-note { background:#f9fafb; border:2px dashed #e5e7eb; border-radius:12px; padding:40px; text-align:center; color:#888; font-size:.92rem; margin-top:28px; }
     @media(max-width:768px){ .content-section,.page-hero{ padding-left:20px; padding-right:20px; } }
 
-    /* Branch photo placeholder (drop file at ../images/branch-*.jpg) */
+
     .branch-photo { position:relative; height:170px; background:#f8f9fa; border-bottom:1px dashed #e2e5e9; overflow:hidden; }
-    .branch-photo-ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#004e3b; background:linear-gradient(135deg,#f2f7f4,#e7efe9); font-size:2rem; text-align:center; padding:14px; }
+    .branch-photo-ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#173F8A; background:linear-gradient(135deg,#f2f7f4,#e7efe9); font-size:2rem; text-align:center; padding:14px; }
     .branch-photo-ph img { width:36px; height:36px; object-fit:contain; }
     .branch-photo-ph small { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; line-height:1.5; }
     .branch-photo-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
     .info-card2 .branch-photo + .card-body { padding-top:18px; }
-    /* keep anchored cards clear of the fixed nav when jumping via #muhima/#nyarugenge */
+
     #muhima, #nyarugenge { scroll-margin-top: 100px; }
 </style>
+  <link rel="stylesheet" href="../css/brand-refresh.css?v=2" />
 </head>
 <body class="has-contact-bar">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- CONTACT BAR -->
+
 <div class="contact-bar" role="region" aria-label="Contact information and business hours"><div class="contact-bar-inner"><a href="tel:0788386303"><span aria-hidden="true">&#9742;</span><span>0788386303</span></a><span class="contact-bar-branch">Branch: Kigali, Rwanda</span><span class="contact-bar-hours">Mon&#8211;Sat &#183; 08:00&#8211;18:00 EAT</span></div></div>
   <nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="../index.html" class="nav-logo" aria-label="River Trading Ltd Home">
@@ -157,7 +158,7 @@
     <li class="has-dropdown"><a href="about.html">About Us <span class="drop-arrow">&#9660;</span></a>
       <ul class="dropdown"><li><a href="about.html#who-we-are">Who We Are</a></li><li><a href="about.html#mission-vision">Mission &amp; Vision</a></li><li><a href="about.html#our-team">Our Team</a></li></ul></li>
     <li class="has-dropdown"><a href="services.html">Services <span class="drop-arrow">&#9660;</span></a>
-      <ul class="dropdown"><li><a href="services.html">Product Supply</a></li><li><a href="services.html">Bulk &amp; Wholesale</a></li><li><a href="services.html#shopping-delivery">Delivery Service</a></li><li><a href="services.html#import-export">Import &amp; Export</a></li></ul></li>
+      <ul class="dropdown"><li><a href="services.html#wholesale-retail">Wholesale &amp; Retail Distribution</a></li><li><a href="services.html#import-export">Import &amp; Export Operations</a></li><li><a href="services.html#local-manufacturing">Local Manufacturing &amp; Production</a></li><li><a href="services.html#shopping-delivery">In-Store Shopping, Pick-Up &amp; Delivery</a></li><li><a href="services.html#project-supply">B2B &amp; Project Supply</a></li></ul></li>
     <li class="has-dropdown"><a href="products.html">Products <span class="drop-arrow">&#9660;</span></a>
       <ul class="dropdown"><li><a href="products.html#inventoryCatalog">All Products</a></li><li><a href="cat-agriculture.html">Agriculture</a></li><li><a href="cat-chemical.html">Chemical Products</a></li><li><a href="cat-construction.html">Construction</a></li><li><a href="cat-electrical.html">Electrical</a></li><li><a href="cat-handtools.html">Hand Tools</a></li><li><a href="party-supplies.html">Party Supplies</a></li><li><a href="safety-equipment.html">Safety Equipment</a></li><li><a href="salon-assets.html">Salon Assets</a></li><li><a href="cat-sanitary.html">Sanitary Products</a></li><li><a href="special-products.html">Special Products</a></li><li><a href="tailoring.html">Tailoring</a></li></ul></li>
     <li class="has-dropdown"><a href="brands.html">Brands <span class="drop-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="brand-river.html">River</a></li><li><a href="brand-mirah.html">Mirah</a></li><li><a href="brand-diamondmix.html">Diamond Mix</a></li><li><a href="brand-magpow.html">MAGPOW</a></li></ul></li>
@@ -200,10 +201,6 @@
       </div>
     </div>
   </div>
-  <div class="empty-note reveal">
-    Not near a branch? We deliver nationwide.
-    <div style="margin-top:16px"><a class="wa-inline" href="https://wa.me/250794427058?text=Hello%20River%20Trading%20Ltd%2C%20I%20would%20like%20to%20know%20the%20nearest%20branch%20to%20me." target="_blank" rel="noopener"><img class="whatsapp-mark" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /> Ask for the nearest branch</a></div>
-  </div>
 </main>
 <footer role="contentinfo">
   <div class="footer-main">
@@ -222,12 +219,14 @@
     <div class="footer-col">
       <h5>Explore</h5>
       <ul>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="about.html#who-we-are">About Us</a></li>
-        <li><a href="products.html">Products &amp; Services</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
         <li><a href="brands.html">Brands</a></li>
+        <li><a href="events.html">Events</a></li>
         <li><a href="branches.html">Branches</a></li>
-        <li><a href="events.html">Projects &amp; Events</a></li>
-        <li><a href="about.html#our-team">Teams &amp; Departments</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">

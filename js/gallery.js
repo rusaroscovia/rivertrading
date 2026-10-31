@@ -1,6 +1,6 @@
-/* gallery.js — adds a 3+ photo gallery and a 10-second product video
-   to the existing product modal on legacy pages (products.html + cat-*.html).
-   Load AFTER the inline script that defines PRODUCTS and openModal. */
+
+
+
 (function () {
   function ready(cb) {
     if (document.readyState !== 'loading') cb();
@@ -10,7 +10,7 @@
   function svgURI(name, kind) {
     var s = '<svg xmlns="http://www.w3.org/2000/svg" width="420" height="320">' +
       '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-      '<stop offset="0" stop-color="#004e3b"/><stop offset="1" stop-color="#CC0000"/>' +
+      '<stop offset="0" stop-color="#173F8A"/><stop offset="1" stop-color="#D71920"/>' +
       '</linearGradient></defs><rect width="420" height="320" fill="url(#g)"/>' +
       '<text x="210" y="150" font-size="92" text-anchor="middle">&#128230;</text>' +
       '<rect x="0" y="250" width="420" height="70" fill="rgba(0,0,0,0.35)"/>' +
@@ -32,7 +32,7 @@
     var modal = document.getElementById('productModal');
     if (!modal || typeof window.openModal !== 'function') return;
 
-    // Inject gallery CSS once
+
     var css = document.createElement('style');
     css.textContent =
       '.modal-media{position:relative;background:#000;border-radius:12px 12px 0 0;overflow:hidden;}' +
@@ -43,14 +43,14 @@
       '.video-note .play{font-size:2.6rem;margin-bottom:8px;}' +
       '.modal-thumbs{display:flex;gap:8px;padding:10px;background:#f3f4f6;overflow-x:auto;}' +
       '.modal-thumb{flex:0 0 auto;width:70px;height:52px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;background:#ddd;}' +
-      '.modal-thumb.active{border-color:#CC0000;}' +
+      '.modal-thumb.active{border-color:#D71920;}' +
       '.modal-thumb img{width:100%;height:100%;object-fit:cover;}' +
       '.modal-thumb.vt{display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-size:.62rem;font-weight:800;flex-direction:column;line-height:1.1;}' +
       '@media(max-width:768px){.modal-main,.modal-video-wrap{height:200px;}}';
     document.head.appendChild(css);
 
-    // Build gallery UI inside the existing modal, hiding the static .modal-img
-    // (kept in the DOM: legacy openModal() still writes to #modalImgSrc).
+
+
     var oldImg = modal.querySelector('.modal-img');
     if (!oldImg) return;
     oldImg.style.display = 'none';
@@ -73,8 +73,8 @@
     var mVid = document.getElementById('modalVideo');
     var cur = null, idx = 0;
 
-    // Real photos may not be uploaded yet (images/prod-*.jpg): fall back to
-    // the SVG placeholder instead of showing a broken image.
+
+
     function guard(img, fallback) {
       img.onerror = function () {
         img.onerror = null;
@@ -112,7 +112,7 @@
       else selectImage(parseInt(t.dataset.i, 10));
     });
 
-    // Wrap openModal to populate the gallery
+
     var origOpen = window.openModal;
     window.openModal = function (id) {
       origOpen.call(this, id);
@@ -131,7 +131,7 @@
       selectImage(0);
     };
 
-    // Stop video when the modal closes
+
     var origClose = window.closeModal;
     if (typeof origClose === 'function') {
       window.closeModal = function () {

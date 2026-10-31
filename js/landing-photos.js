@@ -1,30 +1,30 @@
-// ============================================================
-//  RIVER TRADING LTD — landing-page photo list
-//
-//  Single source of truth for BOTH landing-page sliders: the
-//  hero banner and the photo strip beneath it read this array,
-//  so adding, removing or reordering photos means editing ONE
-//  place — no other file needs to change.
-//
-//  Optimized images live in images/welcomeimages-optimized/
-// ============================================================
+
+
+
+
+
+
+
+
+
+
 
 (function () {
   'use strict';
 
-  // Resolve the image folder from this file's own URL so the list also works
-  // from pages/ sub-pages without anyone editing paths by hand.
+
+
   var base = 'images/welcomeimages-optimized/';
   if (document.currentScript && document.currentScript.src) {
     try {
       base = new URL('../images/welcomeimages-optimized/', document.currentScript.src).href;
     } catch (e) {
-      /* fall back to the relative path */
+
     }
   }
 
-  // file  = exact filename inside images/welcomeimages-optimized/
-  // alt   = description read by search engines and screen readers
+
+
   var FILES = [
     { file: 'AIR-NAIL-GUN-kinya-b.jpg',                alt: 'Air nail gun' },
     { file: 'AMAVUTA-YIMASHINI-B.jpg',                 alt: 'RIVER® machine lubricating oil' },
