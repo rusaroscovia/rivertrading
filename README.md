@@ -1,54 +1,114 @@
-# River Trading Ltd website
+# River Trading Ltd Website
 
-Welcome! This is the website for River Trading Ltd, a Rwandan supplier of hardware, household and industrial products. It brings the company's products, services, brands, branches, events and team together in one place.
+**Quality and Good Service**
 
-## See the website on your computer
+The River Trading Ltd website presents the company, its product catalogue, brands, services, locations, and news. It is designed to help customers across Rwanda and the wider East African region learn about the company and find the products and support they need.
 
-You don't need to install project dependencies or build anything. You just need [Node.js](https://nodejs.org/) installed.
+**Live website:** [rivertradingltd.com](https://www.rivertradingltd.com/)
 
-On Windows, double-click `run-website.cmd`. Or, from this project folder, run:
+## About River Trading Ltd
 
-```bash
+River Trading Ltd is a Kigali-based import, export, distribution, and manufacturing company. The company serves individual customers, businesses, contractors, and hardware retailers with construction, electrical, plumbing, industrial, household, and hygiene products.
+
+Alongside its distribution and trading operations, River Trading produces selected cleaning, hygiene, and car-care products under the RIVER® and MIRAH® brands.
+
+## Website sections
+
+| Section | What visitors can find |
+| --- | --- |
+| Home | Company introduction, featured products, and key links |
+| About | Company background, mission, vision, and team |
+| Products | Product catalogue, category pages, search, and filtering |
+| Services | Wholesale and retail distribution, import and export, local manufacturing, shopping and delivery, and project supply |
+| Brands | RIVER®, MIRAH®, Diamond Mix, and MAGPOW |
+| Branches | Branch information and locations |
+| Events | Company events, achievements, award images, and event media |
+| Blogs | Company stories and updates |
+| Contact | Contact information and customer enquiry form |
+
+## Technology
+
+The website uses browser-native technologies and does not depend on a front-end framework.
+
+| Technology | Role |
+| --- | --- |
+| HTML5 | Page structure and content |
+| CSS3 | Layout, responsive styling, and visual design |
+| JavaScript (ES6+) | Navigation, product search, galleries, sliders, forms, and data-driven content |
+| Node.js built-in modules | Lightweight local web server for previewing the site |
+
+There is no package installation or asset compilation step for local development. The website's content and interactions run in the browser; Node.js is used to serve the files locally.
+
+## Project structure
+
+```text
+river-trading-website/
+├── index.html                 # Home page
+├── pages/                     # About, products, services, brands, events, and other pages
+├── css/
+│   ├── style.css              # Shared site styles
+│   └── brand-refresh.css      # Brand presentation styles
+├── js/
+│   ├── *-products-data.js     # Product category data
+│   ├── event-media-data.js    # Event and award content
+│   ├── event-gallery.js       # Event gallery and image viewer
+│   ├── landing-photos.js      # Home-page photography data
+│   ├── item-list-data.js      # Product catalogue data
+│   ├── main.js                # Shared site interactions
+│   └── product-search.js      # Product search and filtering
+├── images/                    # Logos, product photos, event images, and other artwork
+├── videos/                    # Video assets
+├── serve-site.js              # Local preview server
+├── run-website.cmd            # Windows launcher
+├── robots.txt                 # Search engine crawling rules
+└── sitemap.xml                # Public page sitemap
+```
+
+## Run the website locally
+
+### Requirements
+
+- Node.js with ES module support. The local server has been verified with Node.js 22.
+
+### Start
+
+On Windows, double-click `run-website.cmd`. Or open a terminal in the project folder and run:
+
+```sh
 node serve-site.js
 ```
 
-Then open [http://localhost:8000](http://localhost:8000) in your browser. Leave the terminal window open while you browse; it is running the local website. To stop it, press `Ctrl+C` in that window.
+Open [http://localhost:8000](http://localhost:8000) in your browser. Keep the terminal open while previewing the site; press `Ctrl+C` to stop the server.
 
-The server uses port `8000` by default. If that port is already in use, choose another one:
+To run on another port, set the `PORT` environment variable.
 
-```bash
+**PowerShell**
+
+```powershell
+$env:PORT = 8080
+node serve-site.js
+```
+
+**macOS, Linux, or a Unix-compatible shell**
+
+```sh
 PORT=8080 node serve-site.js
 ```
 
-In Windows PowerShell, use:
+Then visit [http://localhost:8080](http://localhost:8080).
 
-```powershell
-$env:PORT=8080
-node serve-site.js
-```
+## Maintaining website content
 
-Then visit `http://localhost:8080`.
+Most updates can be made directly in the existing HTML or JavaScript files:
 
-## Finding your way around
+- **Pages and copy:** Edit `index.html` or the relevant page in `pages/`.
+- **Shared design:** Edit `css/style.css`. Brand-specific presentation is in `css/brand-refresh.css`.
+- **Products:** Update the relevant product data file in `js/`.
+- **Events and awards:** Update `js/event-media-data.js` and add media to `images/events/`. See [`images/events/README.md`](images/events/README.md) for the media format.
+- **Home-page photos:** Update `js/landing-photos.js` and add the referenced image files.
 
-- `index.html` is the home page.
-- `pages/` contains the rest of the website, including the product, brand, service, branch, event and company pages.
-- `css/` contains the shared and brand-specific styles.
-- `js/` contains the page interactions and the data used to display products, events, and landing-page photos.
-- `images/` and `videos/` hold the site's visual media.
+Keep media paths consistent with the location of each file, then preview the affected page locally before publishing.
 
-## Updating content
+## Deployment
 
-Many parts of the site are driven by data files, so you can update content without rebuilding the website:
-
-- Event details, award descriptions and event photos are managed in `js/event-media-data.js`. Event images belong in `images/events/`; see `images/events/README.md` for the expected format.
-- Landing-page photos are listed in `js/landing-photos.js`.
-- Product information is kept in the product data files in `js/`.
-- Page layouts and text are in `index.html` and the matching file in `pages/`.
-- Shared visual styles are in `css/style.css`.
-
-When adding an image or video, put it in the appropriate folder and make sure the path in the page or data file matches its location. After saving your changes, refresh the browser to see them.
-
-## A note for contributors
-
-This is a straightforward static website with a small built-in Node.js server—there is no package manager, framework, or build step. Keep content in the existing pages and data files where possible, and check your changes in a browser using the local server before sharing them.
+The public site is available at [rivertradingltd.com](https://www.rivertradingltd.com/). `serve-site.js` is for local preview; production hosting and deployment are managed separately.
