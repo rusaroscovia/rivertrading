@@ -61,7 +61,8 @@
 
     .contact-form-col { background:#fff; border-radius:12px; box-shadow:0 4px 30px rgba(0,0,0,0.09); padding:40px; border:1px solid #f0f0f0; }
     .contact-form-col h3 { font-size:1.3rem; font-weight:900; color:#173F8A; margin-bottom:8px; }
-    .form-note { font-size:0.85rem; color:#888; margin-bottom:24px; line-height:1.5; }
+    .form-email-alternative { margin-top:14px; color:#666; font-size:0.9rem; text-align:center; }
+    .form-email-alternative a { color:#173F8A; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
 
     .form-group { margin-bottom:18px; }
     .form-group label { display:block; font-family:'Barlow',sans-serif; font-size:0.78rem; font-weight:800; color:#444; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px; }
@@ -81,7 +82,7 @@
 
 
     .form-actions { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
-    .form-actions button { flex:1; min-width:160px; }
+    .form-actions button { width:100%; min-height:48px; }
     .btn-whatsapp-send {
       display:flex; align-items:center; justify-content:center; gap:8px;
       padding:13px 20px; background:#25D366; color:#fff; border:none;
@@ -91,15 +92,6 @@
     .form-action-icon { width:26px; height:26px; display:block; object-fit:contain; flex:0 0 auto; }
     .form-action-icon.whatsapp-form-icon { border-radius:50%; object-fit:cover; }
     .btn-whatsapp-send:hover { background:#128C7E; }
-    .btn-email-send {
-      display:flex; align-items:center; justify-content:center; gap:8px;
-      padding:13px 20px; background:#173F8A; color:#fff; border:none;
-      border-radius:8px; font-family:'Barlow',sans-serif; font-size:0.9rem;
-      font-weight:700; cursor:pointer; transition:all 0.3s ease;
-    }
-    .btn-email-send:hover { background:#204D91; }
-
-
     .toast {
       position:fixed; bottom:30px; right:30px; z-index:9999;
       background:#173F8A; color:#fff; padding:16px 22px;
@@ -243,33 +235,27 @@
 
       <div class="contact-form-col reveal">
         <h3>Send Us a Message</h3>
-        <p class="form-note">
-          Fill in the form below and choose how to send it —
-          directly to our WhatsApp or to our email inbox.
-          We aim to respond within a few hours.
-        </p>
-
-        <form id="contactForm" novalidate>
+        <form id="contactForm">
 
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name <span style="color:#D71920">*</span></label>
-              <input type="text" id="fname" name="fname" placeholder="Your first name" required autocomplete="given-name" />
+              <input type="text" id="fname" name="fname" placeholder="Your first name" required maxlength="80" autocomplete="given-name" />
             </div>
             <div class="form-group">
               <label for="lname">Last Name <span style="color:#D71920">*</span></label>
-              <input type="text" id="lname" name="lname" placeholder="Your last name" required autocomplete="family-name" />
+              <input type="text" id="lname" name="lname" placeholder="Your last name" required maxlength="80" autocomplete="family-name" />
             </div>
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+            <input type="email" id="email" name="email" placeholder="your@email.com" maxlength="254" autocomplete="email" />
           </div>
 
           <div class="form-group">
             <label for="phone">Phone / WhatsApp Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" autocomplete="tel" />
+            <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" maxlength="32" autocomplete="tel" />
           </div>
 
           <div class="form-group">
@@ -288,20 +274,19 @@
 
           <div class="form-group">
             <label for="message">Message <span style="color:#D71920">*</span></label>
-            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required maxlength="2000"></textarea>
           </div>
 
 
           <div class="form-actions">
-            <button type="button" class="btn-whatsapp-send" id="sendWhatsApp" aria-label="Send message via WhatsApp">
-              <img class="form-action-icon whatsapp-form-icon" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /> Send via WhatsApp
-            </button>
-            <button type="button" class="btn-email-send" id="sendEmail" aria-label="Send message via email">
-              <img class="form-action-icon" src="../images/email-send-icon.svg" alt="" aria-hidden="true" /> Send via Email
+            <button type="submit" class="btn-whatsapp-send" id="sendWhatsApp">
+              <img class="form-action-icon whatsapp-form-icon" src="../images/whatsapp-icon-round.png" alt="" aria-hidden="true" /> Continue to WhatsApp
             </button>
           </div>
-
         </form>
+        <p class="form-email-alternative">
+          Prefer email? <a href="mailto:info@rivertradingltd.com">Write to us directly</a>.
+        </p>
       </div>
 
     </div>
@@ -363,7 +348,7 @@
 
 
   const WHATSAPP_NUMBER = '250788403079';
-  const EMAIL_ADDRESS   = 'info@rivertradingltd.com';
+  const contactForm = document.getElementById('contactForm');
 
   function getFormData() {
     const fname   = document.getElementById('fname').value.trim();
@@ -376,12 +361,27 @@
   }
 
   function validateForm(data) {
-    if (!data.fname) { alert('Please enter your first name.'); document.getElementById('fname').focus(); return false; }
-    if (!data.lname) { alert('Please enter your last name.');  document.getElementById('lname').focus(); return false; }
-    if (!data.subject) { alert('Please select a subject.');   document.getElementById('subject').focus(); return false; }
-    if (!data.message) { alert('Please enter your message.'); document.getElementById('message').focus(); return false; }
+    const requiredFields = [
+      ['fname', data.fname, 'Please enter your first name.'],
+      ['lname', data.lname, 'Please enter your last name.'],
+      ['subject', data.subject, 'Please select a subject.'],
+      ['message', data.message, 'Please enter your message.']
+    ];
+
+    for (const [id, value, message] of requiredFields) {
+      const field = document.getElementById(id);
+      field.setCustomValidity(value ? '' : message);
+      if (!field.reportValidity()) return false;
+    }
+
     return true;
   }
+
+  ['fname', 'lname', 'subject', 'message'].forEach(id => {
+    const field = document.getElementById(id);
+    field.addEventListener('input', () => field.setCustomValidity(''));
+    field.addEventListener('change', () => field.setCustomValidity(''));
+  });
 
   function showToast(icon, msg) {
     const toast = document.getElementById('toast');
@@ -403,10 +403,10 @@
   }
 
 
-  document.getElementById('sendWhatsApp').addEventListener('click', () => {
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault();
     const d = getFormData();
     if (!validateForm(d)) return;
-
 
     const text = [
       '👋 Hello River Trading Ltd!',
@@ -422,26 +422,13 @@
 
     const encoded = encodeURIComponent(text);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
-
-    window.open(url, '_blank', 'noopener,noreferrer');
-    showToast('whatsapp', 'Opening WhatsApp with your message…');
-  });
-
-
-  document.getElementById('sendEmail').addEventListener('click', () => {
-    const d = getFormData();
-    if (!validateForm(d)) return;
-
-    const subject = encodeURIComponent(`[River Trading Ltd] ${d.subject}`);
-    const body = encodeURIComponent(
-      `Name: ${d.fname} ${d.lname}\n` +
-      (d.phone ? `Phone: ${d.phone}\n` : '') +
-      (d.email ? `Reply-to: ${d.email}\n` : '') +
-      `\nMessage:\n${d.message}`
-    );
-
-    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
-    showToast('✉️', 'Opening your email app…');
+    const whatsappWindow = window.open(url, '_blank');
+    if (whatsappWindow) {
+      whatsappWindow.opener = null;
+    } else {
+      window.location.assign(url);
+    }
+    showToast('whatsapp', 'Review your message in WhatsApp and tap Send.');
   });
   </script>
 

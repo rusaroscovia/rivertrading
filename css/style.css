@@ -753,35 +753,6 @@ html:not(.js) .reveal-right {
   font-size: 5rem;
 }
 
-.about-badge {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background: var(--yellow);
-  color: var(--black);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.about-badge strong {
-  display: block;
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.about-badge span {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-
-
-
 #products-preview,
 #branches-preview {
   padding: 80px 40px;
@@ -1297,7 +1268,6 @@ footer {
   .footer-main > :last-child { grid-column: auto; }
   .footer-bottom { padding: 20px; flex-direction: column; text-align: center; }
   .stats-row { justify-content: center; }
-  .about-badge { position: static; margin-top: 20px; display: inline-block; }
 }
 
 @media (max-width: 480px) {
